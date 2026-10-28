@@ -1,0 +1,4 @@
+# Preserve the exported source bytes and synthetic binary assets on every OS.
+* -text
+*.pdf binary
+*.png binary

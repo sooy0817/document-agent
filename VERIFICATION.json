@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-28T07:53:18.697184+00:00",
+  "source_snapshot_files": 154,
+  "byte_identical_copied_files": 154,
+  "synthetic_tests": 61,
+  "junit_cases_including_subtests": 66,
+  "subtests_passed": 5,
+  "tests_seconds": 4.222,
+  "demo": {
+    "pages": 1,
+    "tables": 1,
+    "physical_cells": 14,
+    "merged_header_colspan": 3,
+    "source_text_preserved": true
+  },
+  "document_demo": {
+    "search_entries": 4,
+    "cell_candidates": 9,
+    "api_calls": 0,
+    "database_calls": 0,
+    "facts_published": 0
+  },
+  "environment": "Windows, existing project Python dependencies; imports verified to use this candidate source. Not a clean-venv live database/model deployment.",
+  "python_files_parsed": 145,
+  "credential_pattern_findings": [],
+  "broken_document_links": [],
+  "verification_stage": "pre-publication source and offline demo verification",
+  "limits": [
+    "Finite pattern scan, not a security certification",
+    "Project-wide reuse license not selected",
+    "No live GPT/PostgreSQL rerun in this source export"
+  ]
+}
