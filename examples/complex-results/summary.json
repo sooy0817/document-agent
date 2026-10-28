@@ -1,0 +1,17 @@
+{
+  "physical_cells": 48,
+  "geometry_and_span_checks": 48,
+  "exact_text_checks": 42,
+  "matched_value_paths": 22,
+  "nested_parent_links": 1,
+  "reading_order": "paragraph, paragraph, caption, table, note, paragraph",
+  "semantic_status": "not_validated",
+  "facts_published": 0,
+  "api_calls": 0,
+  "database_calls": 0,
+  "limitations": [
+    "Authored development fixture, not an independent generalization benchmark.",
+    "Outer-cell text coverage is checked via original spans; 42 cell texts are exact-matched.",
+    "Correct fixture paths do not override inferred/unresolved runtime evidence states."
+  ]
+}

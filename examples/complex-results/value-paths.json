@@ -1,0 +1,298 @@
+[
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0010",
+    "raw_value": "120",
+    "row_path_labels": [
+      "Assets",
+      "Cash"
+    ],
+    "column_path_labels": [
+      "2024",
+      "Amount"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0011",
+    "raw_value": "30",
+    "row_path_labels": [
+      "Assets",
+      "Cash"
+    ],
+    "column_path_labels": [
+      "2024",
+      "Share"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0012",
+    "raw_value": "150",
+    "row_path_labels": [
+      "Assets",
+      "Cash"
+    ],
+    "column_path_labels": [
+      "2025",
+      "Amount"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0013",
+    "raw_value": "33.3",
+    "row_path_labels": [
+      "Assets",
+      "Cash"
+    ],
+    "column_path_labels": [
+      "2025",
+      "Share"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0015",
+    "raw_value": "280",
+    "row_path_labels": [
+      "Assets",
+      "Receivables"
+    ],
+    "column_path_labels": [
+      "2024",
+      "Amount"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0016",
+    "raw_value": "70",
+    "row_path_labels": [
+      "Assets",
+      "Receivables"
+    ],
+    "column_path_labels": [
+      "2024",
+      "Share"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0017",
+    "raw_value": "300",
+    "row_path_labels": [
+      "Assets",
+      "Receivables"
+    ],
+    "column_path_labels": [
+      "2025",
+      "Amount"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0018",
+    "raw_value": "66.7",
+    "row_path_labels": [
+      "Assets",
+      "Receivables"
+    ],
+    "column_path_labels": [
+      "2025",
+      "Share"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0021",
+    "raw_value": "80",
+    "row_path_labels": [
+      "Liabilities",
+      "Short-term debt"
+    ],
+    "column_path_labels": [
+      "2024",
+      "Amount"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0022",
+    "raw_value": "",
+    "row_path_labels": [
+      "Liabilities",
+      "Short-term debt"
+    ],
+    "column_path_labels": [
+      "2024",
+      "Share"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0023",
+    "raw_value": "0",
+    "row_path_labels": [
+      "Liabilities",
+      "Short-term debt"
+    ],
+    "column_path_labels": [
+      "2025",
+      "Amount"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0024",
+    "raw_value": "",
+    "row_path_labels": [
+      "Liabilities",
+      "Short-term debt"
+    ],
+    "column_path_labels": [
+      "2025",
+      "Share"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0026",
+    "raw_value": "-10",
+    "row_path_labels": [
+      "Liabilities",
+      "Adjustment"
+    ],
+    "column_path_labels": [
+      "2024",
+      "Amount"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0027",
+    "raw_value": "",
+    "row_path_labels": [
+      "Liabilities",
+      "Adjustment"
+    ],
+    "column_path_labels": [
+      "2024",
+      "Share"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0028",
+    "raw_value": "-12",
+    "row_path_labels": [
+      "Liabilities",
+      "Adjustment"
+    ],
+    "column_path_labels": [
+      "2025",
+      "Amount"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0001/physical000/cell0029",
+    "raw_value": "",
+    "row_path_labels": [
+      "Liabilities",
+      "Adjustment"
+    ],
+    "column_path_labels": [
+      "2025",
+      "Share"
+    ],
+    "evidence_state": "inferred"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0002/physical001",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0002/physical001/cell0004",
+    "raw_value": "40",
+    "row_path_labels": [
+      "One person"
+    ],
+    "column_path_labels": [
+      "2024"
+    ],
+    "evidence_state": "unresolved"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0002/physical001",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0002/physical001/cell0005",
+    "raw_value": "45",
+    "row_path_labels": [
+      "One person"
+    ],
+    "column_path_labels": [
+      "2025"
+    ],
+    "evidence_state": "unresolved"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0002/physical001",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0002/physical001/cell0007",
+    "raw_value": "65",
+    "row_path_labels": [
+      "Two people"
+    ],
+    "column_path_labels": [
+      "2024"
+    ],
+    "evidence_state": "unresolved"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0002/physical001",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0002/physical001/cell0008",
+    "raw_value": "70",
+    "row_path_labels": [
+      "Two people"
+    ],
+    "column_path_labels": [
+      "2025"
+    ],
+    "evidence_state": "unresolved"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0002/physical001",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0002/physical001/cell0010",
+    "raw_value": "80",
+    "row_path_labels": [
+      "Three or more"
+    ],
+    "column_path_labels": [
+      "2024"
+    ],
+    "evidence_state": "unresolved"
+  },
+  {
+    "table_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0002/physical001",
+    "cell_id": "sha256:54de4302d282c98cdf32ea1d56a0829d4ede4d069b0b8802b28731aa441bfb8b/p0002/physical001/cell0011",
+    "raw_value": "90",
+    "row_path_labels": [
+      "Three or more"
+    ],
+    "column_path_labels": [
+      "2025"
+    ],
+    "evidence_state": "unresolved"
+  }
+]

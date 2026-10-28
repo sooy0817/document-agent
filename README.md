@@ -22,6 +22,18 @@ It combines PDF structure reconstruction, typed document contracts, PostgreSQL/p
 
 The strongest engineering focus is traceability: a retrieved result can be followed back to a document, table, row/column path, and original cell.
 
+## Complex tables, visible end to end
+
+The showcase uses **fictional data** and runs through the unchanged parser. It demonstrates both merged row/column headers and a separate table contained inside a narrative cell.
+
+| Merged row and column groups | Paragraph → nested table → note |
+|---|---|
+| [![Merged headers and row groups](examples/complex-page-1.png)](examples/complex-page-1.png) | [![A table inside a narrative cell](examples/complex-page-2.png)](examples/complex-page-2.png) |
+
+**Actual local result:** 48 cell geometries/spans matched; 42 cell strings matched; 22 value paths matched; one parent-cell link with complete span coverage and reading order. These checks apply to this authored fixture. Semantic candidates retain their original `inferred`/`unresolved` states; no facts are approved.
+
+[Source PDF](examples/complex-synthetic.pdf) · [Walkthrough and actual JSON](docs/COMPLEX_DEMO.md) · [Full CanonicalDocument](examples/complex-results/canonical-document.json) · [Nested links](examples/complex-results/nested-content.json) · [Value paths](examples/complex-results/value-paths.json)
+
 ## Try the offline demo
 
 Python 3.11+ is required. The included PDF is synthetic; no bank documents, account credentials, or model API calls are needed.
@@ -33,12 +45,13 @@ python -m venv .venv
 python -m pip install ".[dev]"
 python examples/demo.py
 python examples/inspect_document.py --output demo-output
+python examples/complex_demo.py --output demo-output-complex
 python -m pytest -q
 ```
 
 The geometry demo checks one page, one table, 14 physical cells, and a three-column merged header. The inspection demo writes the actual CanonicalDocument, search projections, nested-content sidecar, and source-linked cell candidates. It does **not** simulate a successful GPT answer or approve semantic relationships.
 
-![Synthetic PDF input](examples/synthetic-preview.png)
+The original [small grid fixture](examples/synthetic-preview.png) remains available as a basic regression test. The richer two-page showcase above exercises 2-row and 2-column merges, row and column hierarchies, blank/zero/negative values, and the ordering of text around a nested grid. [Recorded checks](examples/complex-results/summary.json) are separate from real-document evaluation.
 
 ## How the system works
 
