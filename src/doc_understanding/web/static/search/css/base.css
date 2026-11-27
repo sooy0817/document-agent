@@ -1,0 +1,51 @@
+/* 역할: 기본 글자·제목·아이콘과 조작 요소(버튼·입력·펼침), 상태 표시(꼬리표·알림). 색은 tokens.css의 변수만 쓴다. */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--sans);font-feature-settings:"tnum" 1;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p{margin:0}
+h1{font-size:17px;font-weight:700;letter-spacing:-.01em}
+h2{font-size:16px;font-weight:650;letter-spacing:-.01em}
+h3{font-size:14px;font-weight:650}
+a{color:var(--accent)}
+[hidden]{display:none!important}
+.icon{width:18px;height:18px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.muted{color:var(--muted);font-size:13px}
+.hint{color:var(--muted);font-size:13px;margin:var(--s2) 0}
+
+/* 조작 요소 */
+button,input,textarea,select{font:inherit;color:inherit}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);min-height:40px;padding:0 var(--s4);border-radius:var(--r-control);border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);font-weight:550;cursor:pointer;white-space:nowrap;transition:background .15s var(--ease),border-color .15s var(--ease),transform .08s var(--ease)}
+.btn:hover{background:var(--sunken)}
+.btn:active{transform:translateY(1px)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn.primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.btn.small{min-height:32px;padding:0 var(--s3);font-size:13px}
+.btn.icon-only{width:40px;padding:0}
+.btn.icon-only.small{width:32px}
+.btn.text{border-color:transparent;background:none;color:var(--accent);padding:0 var(--s1);min-height:28px;font-weight:550}
+.btn.text:hover{text-decoration:underline;background:none}
+.btn:disabled,fieldset:disabled .btn{opacity:.5;cursor:not-allowed;transform:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+.field{display:flex;flex-direction:column;gap:6px}
+.field>label,.label{font-size:13px;font-weight:600;color:var(--ink-2)}
+textarea,input[type=search],input[type=text],input[type=number]{width:100%;padding:10px var(--s3);border:1px solid var(--line-strong);border-radius:var(--r-control);background:var(--surface);color:var(--ink);transition:border-color .15s var(--ease),box-shadow .15s var(--ease)}
+textarea{min-height:92px;resize:vertical;line-height:1.55}
+textarea:focus,input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+::placeholder{color:var(--muted);opacity:.85}
+input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent);vertical-align:-2px}
+input[type=range]{accent-color:var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center}
+details>summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:6px;color:var(--ink-2);font-weight:550;font-size:13px;min-height:28px}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";width:6px;height:6px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(-45deg);transition:transform .15s var(--ease);margin-right:2px}
+details[open]>summary::before{transform:rotate(45deg)}
+
+/* 상태 표시 */
+.tag{display:inline-flex;align-items:center;font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--sunken);color:var(--ink-2);white-space:nowrap}
+.tag.ok{background:var(--ok-soft);color:var(--ok)}.tag.warn{background:var(--warn-soft);color:var(--warn)}.tag.bad{background:var(--bad-soft);color:var(--bad)}
+.notice{padding:var(--s3) var(--s4);border-radius:var(--r-control);font-size:14px;white-space:pre-line;border-left:3px solid var(--line-strong);background:var(--sunken)}
+.notice b{font-weight:700}
+.notice.error{background:var(--bad-soft);color:var(--bad);border-left-color:var(--bad)}
+.notice.warn{background:var(--warn-soft);color:var(--warn);border-left-color:var(--warn)}

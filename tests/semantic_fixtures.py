@@ -5,12 +5,7 @@ No real-PDF cell is copied here; labels have no role in layout construction.
 
 from uuid import UUID
 from doc_understanding.domain.models import BBox, SourceRef
-from doc_understanding.table_understanding.physical_models import (
-    GridBand,
-    GridPolicy,
-    PhysicalCell,
-    PhysicalTableIR,
-)
+from doc_understanding.parser.physical.physical_models import GridBand, GridPolicy, PhysicalCell, PhysicalTableIR
 
 
 def compound(kind="laboratory", rename=False):

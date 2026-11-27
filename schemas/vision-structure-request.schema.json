@@ -1,0 +1,1589 @@
+{
+  "$defs": {
+    "Ambiguity": {
+      "additionalProperties": false,
+      "properties": {
+        "ambiguity_id": {
+          "title": "Ambiguity Id",
+          "type": "string"
+        },
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "target_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Target Ids",
+          "type": "array"
+        },
+        "candidate_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Candidate Ids",
+          "type": "array"
+        },
+        "review_regions": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "title": "Review Regions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "ambiguity_id",
+        "code",
+        "reason",
+        "target_ids",
+        "review_regions"
+      ],
+      "title": "Ambiguity",
+      "type": "object"
+    },
+    "ArtifactRef": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "media_type": {
+          "minLength": 1,
+          "title": "Media Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "media_type"
+      ],
+      "title": "ArtifactRef",
+      "type": "object"
+    },
+    "BBox": {
+      "additionalProperties": false,
+      "description": "Unrotated visible page, PDF points, top-left origin (72 pt/in).",
+      "properties": {
+        "x0": {
+          "title": "X0",
+          "type": "number"
+        },
+        "y0": {
+          "title": "Y0",
+          "type": "number"
+        },
+        "x1": {
+          "title": "X1",
+          "type": "number"
+        },
+        "y1": {
+          "title": "Y1",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "title": "BBox",
+      "type": "object"
+    },
+    "Boundary": {
+      "additionalProperties": false,
+      "properties": {
+        "boundary_id": {
+          "title": "Boundary Id",
+          "type": "string"
+        },
+        "axis": {
+          "enum": [
+            "horizontal",
+            "vertical"
+          ],
+          "title": "Axis",
+          "type": "string"
+        },
+        "row": {
+          "minimum": 0,
+          "title": "Row",
+          "type": "integer"
+        },
+        "column": {
+          "minimum": 0,
+          "title": "Column",
+          "type": "integer"
+        },
+        "position": {
+          "title": "Position",
+          "type": "number"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "coverage": {
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Coverage",
+          "type": "number"
+        },
+        "status": {
+          "enum": [
+            "present",
+            "absent",
+            "uncertain",
+            "inferred"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "line_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Line Ids",
+          "type": "array"
+        },
+        "evidence_level": {
+          "default": "observed",
+          "enum": [
+            "observed",
+            "small_gap_bridged",
+            "endpoint_alignment",
+            "text_conflict",
+            "missing",
+            "fill_transition"
+          ],
+          "title": "Evidence Level",
+          "type": "string"
+        },
+        "text_conflict_span_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Text Conflict Span Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "boundary_id",
+        "axis",
+        "row",
+        "column",
+        "position",
+        "start",
+        "end",
+        "coverage",
+        "status",
+        "line_ids"
+      ],
+      "title": "Boundary",
+      "type": "object"
+    },
+    "CellIR": {
+      "additionalProperties": false,
+      "properties": {
+        "cell_id": {
+          "minLength": 1,
+          "title": "Cell Id",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        },
+        "row_index": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row Index"
+        },
+        "column_index": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Column Index"
+        },
+        "rowspan": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rowspan"
+        },
+        "colspan": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Colspan"
+        },
+        "text_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Text Raw"
+        },
+        "span_refs": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Span Refs",
+          "type": "array"
+        },
+        "extraction_status": {
+          "enum": [
+            "observed",
+            "blank",
+            "unreadable"
+          ],
+          "title": "Extraction Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cell_id",
+        "source",
+        "text_raw",
+        "extraction_status"
+      ],
+      "title": "CellIR",
+      "type": "object"
+    },
+    "CellPath": {
+      "additionalProperties": false,
+      "properties": {
+        "cell_id": {
+          "title": "Cell Id",
+          "type": "string"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BBox"
+        },
+        "original_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Original Text"
+        },
+        "panel_id": {
+          "title": "Panel Id",
+          "type": "string"
+        },
+        "row_path": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Row Path",
+          "type": "array"
+        },
+        "column_path": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Column Path",
+          "type": "array"
+        },
+        "row_candidates": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Row Candidates",
+          "type": "array"
+        },
+        "column_candidates": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Column Candidates",
+          "type": "array"
+        },
+        "evidence_state": {
+          "enum": [
+            "observed",
+            "inferred",
+            "unresolved"
+          ],
+          "title": "Evidence State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cell_id",
+        "bbox",
+        "original_text",
+        "panel_id",
+        "evidence_state"
+      ],
+      "title": "CellPath",
+      "type": "object"
+    },
+    "CellRole": {
+      "additionalProperties": false,
+      "properties": {
+        "cell_id": {
+          "title": "Cell Id",
+          "type": "string"
+        },
+        "role": {
+          "enum": [
+            "corner",
+            "row_label",
+            "column_header",
+            "value",
+            "unknown"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "evidence_state": {
+          "enum": [
+            "observed",
+            "inferred",
+            "unresolved"
+          ],
+          "title": "Evidence State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cell_id",
+        "role",
+        "evidence_state"
+      ],
+      "title": "CellRole",
+      "type": "object"
+    },
+    "GridBand": {
+      "additionalProperties": false,
+      "properties": {
+        "index": {
+          "minimum": 0,
+          "title": "Index",
+          "type": "integer"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        }
+      },
+      "required": [
+        "index",
+        "start",
+        "end"
+      ],
+      "title": "GridBand",
+      "type": "object"
+    },
+    "GridPolicy": {
+      "additionalProperties": false,
+      "properties": {
+        "tolerance": {
+          "default": 0.75,
+          "exclusiveMinimum": 0,
+          "maximum": 3,
+          "title": "Tolerance",
+          "type": "number"
+        },
+        "min_line_length": {
+          "default": 12,
+          "exclusiveMinimum": 0,
+          "title": "Min Line Length",
+          "type": "number"
+        },
+        "max_grid_slots": {
+          "default": 20000,
+          "exclusiveMinimum": 0,
+          "title": "Max Grid Slots",
+          "type": "integer"
+        },
+        "raster_threshold": {
+          "default": 100,
+          "maximum": 255,
+          "minimum": 0,
+          "title": "Raster Threshold",
+          "type": "integer"
+        },
+        "max_lines": {
+          "default": 6000,
+          "exclusiveMinimum": 0,
+          "title": "Max Lines",
+          "type": "integer"
+        },
+        "max_small_gap": {
+          "default": 2.0,
+          "maximum": 3,
+          "minimum": 0,
+          "title": "Max Small Gap",
+          "type": "number"
+        },
+        "minimum_gap_coverage": {
+          "default": 0.94,
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Minimum Gap Coverage",
+          "type": "number"
+        },
+        "raster_strategy": {
+          "default": "adaptive_contrast",
+          "enum": [
+            "legacy_dark",
+            "adaptive_dark",
+            "adaptive_contrast"
+          ],
+          "title": "Raster Strategy",
+          "type": "string"
+        },
+        "raster_contrast": {
+          "default": 12,
+          "maximum": 100,
+          "minimum": 1,
+          "title": "Raster Contrast",
+          "type": "integer"
+        },
+        "infer_open_outer": {
+          "default": true,
+          "title": "Infer Open Outer",
+          "type": "boolean"
+        }
+      },
+      "title": "GridPolicy",
+      "type": "object"
+    },
+    "HierarchyNode": {
+      "additionalProperties": false,
+      "properties": {
+        "node_id": {
+          "title": "Node Id",
+          "type": "string"
+        },
+        "axis": {
+          "enum": [
+            "row",
+            "column"
+          ],
+          "title": "Axis",
+          "type": "string"
+        },
+        "panel_id": {
+          "title": "Panel Id",
+          "type": "string"
+        },
+        "label_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Label Raw"
+        },
+        "parent_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent Id"
+        },
+        "candidate_parent_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Candidate Parent Ids",
+          "type": "array"
+        },
+        "source_cell_id": {
+          "title": "Source Cell Id",
+          "type": "string"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BBox"
+        },
+        "row_range": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Row Range",
+          "type": "array"
+        },
+        "column_range": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Column Range",
+          "type": "array"
+        },
+        "physical_evidence": {
+          "enum": [
+            "observed",
+            "inferred",
+            "unresolved"
+          ],
+          "title": "Physical Evidence",
+          "type": "string"
+        },
+        "evidence_state": {
+          "default": "inferred",
+          "enum": [
+            "observed",
+            "inferred",
+            "unresolved"
+          ],
+          "title": "Evidence State",
+          "type": "string"
+        },
+        "boundary_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Boundary Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "node_id",
+        "axis",
+        "panel_id",
+        "label_raw",
+        "source_cell_id",
+        "bbox",
+        "row_range",
+        "column_range",
+        "physical_evidence"
+      ],
+      "title": "HierarchyNode",
+      "type": "object"
+    },
+    "Intersection": {
+      "additionalProperties": false,
+      "properties": {
+        "intersection_id": {
+          "title": "Intersection Id",
+          "type": "string"
+        },
+        "x": {
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "title": "Y",
+          "type": "number"
+        },
+        "line_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Line Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "intersection_id",
+        "x",
+        "y",
+        "line_ids"
+      ],
+      "title": "Intersection",
+      "type": "object"
+    },
+    "Issue": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "minLength": 1,
+          "title": "Code",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "message": {
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "source_references": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "title": "Source References",
+          "type": "array"
+        }
+      },
+      "required": [
+        "code",
+        "severity",
+        "message"
+      ],
+      "title": "Issue",
+      "type": "object"
+    },
+    "LineSegment": {
+      "additionalProperties": false,
+      "properties": {
+        "line_id": {
+          "minLength": 1,
+          "title": "Line Id",
+          "type": "string"
+        },
+        "axis": {
+          "enum": [
+            "horizontal",
+            "vertical"
+          ],
+          "title": "Axis",
+          "type": "string"
+        },
+        "position": {
+          "title": "Position",
+          "type": "number"
+        },
+        "start": {
+          "title": "Start",
+          "type": "number"
+        },
+        "end": {
+          "title": "End",
+          "type": "number"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        },
+        "method": {
+          "enum": [
+            "vector",
+            "raster"
+          ],
+          "title": "Method",
+          "type": "string"
+        },
+        "evidence_kind": {
+          "default": "stroke",
+          "enum": [
+            "stroke",
+            "fill_transition"
+          ],
+          "title": "Evidence Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "line_id",
+        "axis",
+        "position",
+        "start",
+        "end",
+        "source",
+        "method"
+      ],
+      "title": "LineSegment",
+      "type": "object"
+    },
+    "Panel": {
+      "additionalProperties": false,
+      "properties": {
+        "panel_id": {
+          "title": "Panel Id",
+          "type": "string"
+        },
+        "column_range": {
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Column Range",
+          "type": "array"
+        },
+        "header_rows": {
+          "title": "Header Rows",
+          "type": "integer"
+        },
+        "stub_columns": {
+          "title": "Stub Columns",
+          "type": "integer"
+        },
+        "evidence_state": {
+          "default": "inferred",
+          "enum": [
+            "observed",
+            "inferred",
+            "unresolved"
+          ],
+          "title": "Evidence State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "panel_id",
+        "column_range",
+        "header_rows",
+        "stub_columns"
+      ],
+      "title": "Panel",
+      "type": "object"
+    },
+    "PhysicalCell": {
+      "additionalProperties": false,
+      "properties": {
+        "cell_id": {
+          "minLength": 1,
+          "title": "Cell Id",
+          "type": "string"
+        },
+        "row_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Row Index"
+        },
+        "column_index": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Column Index"
+        },
+        "rowspan": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Rowspan"
+        },
+        "colspan": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Colspan"
+        },
+        "original_text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Original Text"
+        },
+        "source_bbox": {
+          "$ref": "#/$defs/BBox"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        },
+        "source_cell_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Cell Ids",
+          "type": "array"
+        },
+        "span_refs": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Span Refs",
+          "type": "array"
+        },
+        "extraction_method": {
+          "enum": [
+            "vector_grid",
+            "raster_grid",
+            "mixed_grid",
+            "unresolved"
+          ],
+          "title": "Extraction Method",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "resolved",
+            "inferred",
+            "unresolved"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "boundary_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Boundary Ids",
+          "type": "array"
+        },
+        "occupied_slots": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Occupied Slots",
+          "type": "array"
+        }
+      },
+      "required": [
+        "cell_id",
+        "row_index",
+        "column_index",
+        "rowspan",
+        "colspan",
+        "original_text",
+        "source_bbox",
+        "source",
+        "extraction_method",
+        "status",
+        "occupied_slots"
+      ],
+      "title": "PhysicalCell",
+      "type": "object"
+    },
+    "PhysicalTableIR": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "physical-table-ir/2.1",
+          "default": "physical-table-ir/2.1",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "table_id": {
+          "minLength": 1,
+          "title": "Table Id",
+          "type": "string"
+        },
+        "document_id": {
+          "minLength": 1,
+          "title": "Document Id",
+          "type": "string"
+        },
+        "analysis_run_id": {
+          "format": "uuid",
+          "title": "Analysis Run Id",
+          "type": "string"
+        },
+        "analyzer_version": {
+          "default": "physical-grid/0.2.0",
+          "title": "Analyzer Version",
+          "type": "string"
+        },
+        "policy": {
+          "$ref": "#/$defs/GridPolicy"
+        },
+        "source_ir_sha256": {
+          "title": "Source Ir Sha256",
+          "type": "string"
+        },
+        "page_number": {
+          "exclusiveMinimum": 0,
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "bounding_box": {
+          "$ref": "#/$defs/BBox"
+        },
+        "rows": {
+          "items": {
+            "$ref": "#/$defs/GridBand"
+          },
+          "title": "Rows",
+          "type": "array"
+        },
+        "columns": {
+          "items": {
+            "$ref": "#/$defs/GridBand"
+          },
+          "title": "Columns",
+          "type": "array"
+        },
+        "cells": {
+          "items": {
+            "$ref": "#/$defs/PhysicalCell"
+          },
+          "title": "Cells",
+          "type": "array"
+        },
+        "source_cells": {
+          "items": {
+            "$ref": "#/$defs/CellIR"
+          },
+          "title": "Source Cells",
+          "type": "array"
+        },
+        "source_links": {
+          "items": {
+            "$ref": "#/$defs/SourceCellLink"
+          },
+          "title": "Source Links",
+          "type": "array"
+        },
+        "unassigned_source_cell_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Unassigned Source Cell Ids",
+          "type": "array"
+        },
+        "table_candidate_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Table Candidate Ids",
+          "type": "array"
+        },
+        "page_refs": {
+          "items": {
+            "exclusiveMinimum": 0,
+            "type": "integer"
+          },
+          "title": "Page Refs",
+          "type": "array"
+        },
+        "source_references": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "title": "Source References",
+          "type": "array"
+        },
+        "crop_refs": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/RasterRef"
+          },
+          "title": "Crop Refs",
+          "type": "array"
+        },
+        "lines": {
+          "items": {
+            "$ref": "#/$defs/LineSegment"
+          },
+          "title": "Lines",
+          "type": "array"
+        },
+        "intersections": {
+          "items": {
+            "$ref": "#/$defs/Intersection"
+          },
+          "title": "Intersections",
+          "type": "array"
+        },
+        "boundaries": {
+          "items": {
+            "$ref": "#/$defs/Boundary"
+          },
+          "title": "Boundaries",
+          "type": "array"
+        },
+        "unresolved_boundaries": {
+          "items": {
+            "$ref": "#/$defs/Boundary"
+          },
+          "title": "Unresolved Boundaries",
+          "type": "array"
+        },
+        "validation_issues": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Issue"
+          },
+          "title": "Validation Issues",
+          "type": "array"
+        },
+        "analysis_state": {
+          "default": "candidate",
+          "enum": [
+            "candidate",
+            "validated",
+            "partial",
+            "review_required",
+            "invalid"
+          ],
+          "title": "Analysis State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "table_id",
+        "document_id",
+        "analysis_run_id",
+        "policy",
+        "source_ir_sha256",
+        "page_number",
+        "bounding_box",
+        "rows",
+        "columns",
+        "cells",
+        "source_cells",
+        "source_links",
+        "page_refs",
+        "source_references",
+        "lines",
+        "intersections",
+        "boundaries",
+        "unresolved_boundaries"
+      ],
+      "title": "PhysicalTableIR",
+      "type": "object"
+    },
+    "RasterRef": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "width_pixels": {
+          "exclusiveMinimum": 0,
+          "title": "Width Pixels",
+          "type": "integer"
+        },
+        "height_pixels": {
+          "exclusiveMinimum": 0,
+          "title": "Height Pixels",
+          "type": "integer"
+        },
+        "dpi": {
+          "exclusiveMinimum": 0,
+          "title": "Dpi",
+          "type": "integer"
+        },
+        "page_to_pixel": {
+          "maxItems": 6,
+          "minItems": 6,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Page To Pixel",
+          "type": "array"
+        },
+        "clip": {
+          "$ref": "#/$defs/BBox"
+        }
+      },
+      "required": [
+        "artifact",
+        "width_pixels",
+        "height_pixels",
+        "dpi",
+        "page_to_pixel",
+        "clip"
+      ],
+      "title": "RasterRef",
+      "type": "object"
+    },
+    "SourceCellLink": {
+      "additionalProperties": false,
+      "properties": {
+        "source_cell_id": {
+          "title": "Source Cell Id",
+          "type": "string"
+        },
+        "reconstructed_cell_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Reconstructed Cell Id"
+        },
+        "relation": {
+          "enum": [
+            "exact",
+            "overlap",
+            "unresolved"
+          ],
+          "title": "Relation",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_cell_id",
+        "reconstructed_cell_id",
+        "relation"
+      ],
+      "title": "SourceCellLink",
+      "type": "object"
+    },
+    "SourceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "minLength": 1,
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page_number": {
+          "exclusiveMinimum": 0,
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BBox"
+        },
+        "block_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Block Id"
+        },
+        "span_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Span Id"
+        },
+        "cell_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cell Id"
+        }
+      },
+      "required": [
+        "document_id",
+        "page_number",
+        "bbox"
+      ],
+      "title": "SourceRef",
+      "type": "object"
+    },
+    "StructuralFeature": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "multi_level_columns",
+            "hierarchical_rows",
+            "merged_cells",
+            "side_by_side_panels",
+            "continued_across_pages",
+            "irregular_grid"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "disposition": {
+          "enum": [
+            "observed",
+            "candidate",
+            "unknown"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        },
+        "evidence_cell_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Cell Ids",
+          "type": "array"
+        },
+        "rule": {
+          "title": "Rule",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "disposition",
+        "evidence_cell_ids",
+        "rule"
+      ],
+      "title": "StructuralFeature",
+      "type": "object"
+    },
+    "StructuredTableIR": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "structured-table-ir/2.0",
+          "default": "structured-table-ir/2.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "analyzer_version": {
+          "const": "semantic-geometry/0.1.0",
+          "default": "semantic-geometry/0.1.0",
+          "title": "Analyzer Version",
+          "type": "string"
+        },
+        "table_id": {
+          "title": "Table Id",
+          "type": "string"
+        },
+        "document_id": {
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "analysis_run_id": {
+          "format": "uuid",
+          "title": "Analysis Run Id",
+          "type": "string"
+        },
+        "physical_ir_sha256": {
+          "title": "Physical Ir Sha256",
+          "type": "string"
+        },
+        "physical_schema_version": {
+          "const": "physical-table-ir/2.1",
+          "default": "physical-table-ir/2.1",
+          "title": "Physical Schema Version",
+          "type": "string"
+        },
+        "physical_boundaries": {
+          "items": {
+            "$ref": "#/$defs/Boundary"
+          },
+          "title": "Physical Boundaries",
+          "type": "array"
+        },
+        "physical_unresolved_boundaries": {
+          "items": {
+            "$ref": "#/$defs/Boundary"
+          },
+          "title": "Physical Unresolved Boundaries",
+          "type": "array"
+        },
+        "panels": {
+          "items": {
+            "$ref": "#/$defs/Panel"
+          },
+          "title": "Panels",
+          "type": "array"
+        },
+        "features": {
+          "items": {
+            "$ref": "#/$defs/StructuralFeature"
+          },
+          "title": "Features",
+          "type": "array"
+        },
+        "row_tree": {
+          "items": {
+            "$ref": "#/$defs/HierarchyNode"
+          },
+          "title": "Row Tree",
+          "type": "array"
+        },
+        "column_tree": {
+          "items": {
+            "$ref": "#/$defs/HierarchyNode"
+          },
+          "title": "Column Tree",
+          "type": "array"
+        },
+        "cell_roles": {
+          "items": {
+            "$ref": "#/$defs/CellRole"
+          },
+          "title": "Cell Roles",
+          "type": "array"
+        },
+        "cell_mappings": {
+          "items": {
+            "$ref": "#/$defs/CellPath"
+          },
+          "title": "Cell Mappings",
+          "type": "array"
+        },
+        "ambiguities": {
+          "items": {
+            "$ref": "#/$defs/Ambiguity"
+          },
+          "title": "Ambiguities",
+          "type": "array"
+        },
+        "issues": {
+          "items": {
+            "$ref": "#/$defs/Issue"
+          },
+          "title": "Issues",
+          "type": "array"
+        },
+        "analysis_state": {
+          "enum": [
+            "candidate",
+            "partial",
+            "review_required",
+            "invalid"
+          ],
+          "title": "Analysis State",
+          "type": "string"
+        },
+        "independent_human_review": {
+          "const": "pending",
+          "default": "pending",
+          "title": "Independent Human Review",
+          "type": "string"
+        }
+      },
+      "required": [
+        "table_id",
+        "document_id",
+        "page_number",
+        "analysis_run_id",
+        "physical_ir_sha256",
+        "physical_boundaries",
+        "physical_unresolved_boundaries",
+        "panels",
+        "features",
+        "row_tree",
+        "column_tree",
+        "cell_roles",
+        "cell_mappings",
+        "ambiguities",
+        "issues",
+        "analysis_state"
+      ],
+      "title": "StructuredTableIR",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "description": "Future resolver input only. No execution or patch application in Phase 2-B.",
+  "properties": {
+    "schema_version": {
+      "const": "vision-structure-request/1.0",
+      "default": "vision-structure-request/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "physical": {
+      "$ref": "#/$defs/PhysicalTableIR"
+    },
+    "structured": {
+      "$ref": "#/$defs/StructuredTableIR"
+    },
+    "ambiguities": {
+      "items": {
+        "$ref": "#/$defs/Ambiguity"
+      },
+      "title": "Ambiguities",
+      "type": "array"
+    },
+    "allowed_cell_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Allowed Cell Ids",
+      "type": "array"
+    },
+    "allowed_node_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Allowed Node Ids",
+      "type": "array"
+    },
+    "allowed_operations": {
+      "default": [
+        "propose_parent",
+        "propose_role",
+        "abstain"
+      ],
+      "items": {
+        "enum": [
+          "propose_parent",
+          "propose_role",
+          "abstain"
+        ],
+        "type": "string"
+      },
+      "title": "Allowed Operations",
+      "type": "array"
+    },
+    "max_calls": {
+      "const": 0,
+      "default": 0,
+      "title": "Max Calls",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "physical",
+    "structured",
+    "ambiguities",
+    "allowed_cell_ids",
+    "allowed_node_ids"
+  ],
+  "title": "VisionStructureRequest",
+  "type": "object"
+}

@@ -1,4 +1,7 @@
-# Preserve the exported source bytes and synthetic binary assets on every OS.
+# Preserve exact source bytes: parser-freeze SHA256 checks must survive checkout.
+# Do not let a machine's core.autocrlf rewrite the frozen parser baseline.
 * -text
+# CR is part of a Windows line ending, not trailing content whitespace.
+* whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 *.pdf binary
 *.png binary

@@ -1,0 +1,86 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "text-structure-context/1.0",
+      "default": "text-structure-context/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "request_id": {
+      "title": "Request Id",
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "llm_only",
+        "hybrid"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "registry_hash": {
+      "title": "Registry Hash",
+      "type": "string"
+    },
+    "context_digest": {
+      "title": "Context Digest",
+      "type": "string"
+    },
+    "nodes": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Nodes",
+      "type": "array"
+    },
+    "tables": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Tables",
+      "type": "array"
+    },
+    "target_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Target Ids",
+      "type": "array"
+    },
+    "current_parents": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Current Parents",
+      "type": "object"
+    },
+    "limitations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Limitations",
+      "type": "array"
+    },
+    "protocol": {
+      "title": "Protocol",
+      "type": "string"
+    }
+  },
+  "required": [
+    "request_id",
+    "mode",
+    "registry_hash",
+    "context_digest",
+    "nodes",
+    "tables",
+    "target_ids",
+    "current_parents",
+    "limitations",
+    "protocol"
+  ],
+  "title": "TextContextRequest",
+  "type": "object"
+}

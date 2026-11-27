@@ -1,0 +1,559 @@
+{
+  "$defs": {
+    "BBox": {
+      "additionalProperties": false,
+      "description": "Unrotated visible page, PDF points, top-left origin (72 pt/in).",
+      "properties": {
+        "x0": {
+          "title": "X0",
+          "type": "number"
+        },
+        "y0": {
+          "title": "Y0",
+          "type": "number"
+        },
+        "x1": {
+          "title": "X1",
+          "type": "number"
+        },
+        "y1": {
+          "title": "Y1",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "title": "BBox",
+      "type": "object"
+    },
+    "NumberMarker": {
+      "additionalProperties": false,
+      "properties": {
+        "family": {
+          "title": "Family",
+          "type": "string"
+        },
+        "token": {
+          "title": "Token",
+          "type": "string"
+        },
+        "ordinal": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ordinal"
+        }
+      },
+      "required": [
+        "family",
+        "token"
+      ],
+      "title": "NumberMarker",
+      "type": "object"
+    },
+    "RelationCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate_id": {
+          "title": "Candidate Id",
+          "type": "string"
+        },
+        "parent_id": {
+          "title": "Parent Id",
+          "type": "string"
+        },
+        "child_id": {
+          "title": "Child Id",
+          "type": "string"
+        },
+        "relation_type": {
+          "enum": [
+            "parent_child",
+            "alternative_label",
+            "annotation",
+            "continuation",
+            "related_adjustment"
+          ],
+          "title": "Relation Type",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "methods": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Methods",
+          "type": "array"
+        },
+        "conflicts": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Conflicts",
+          "type": "array"
+        },
+        "relative_depth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Relative Depth"
+        }
+      },
+      "required": [
+        "candidate_id",
+        "parent_id",
+        "child_id",
+        "relation_type",
+        "evidence_ids",
+        "methods"
+      ],
+      "title": "RelationCandidate",
+      "type": "object"
+    },
+    "SemanticFeature": {
+      "additionalProperties": false,
+      "properties": {
+        "node_id": {
+          "title": "Node Id",
+          "type": "string"
+        },
+        "source_node_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Node Id"
+        },
+        "source_cell_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Cell Ids",
+          "type": "array"
+        },
+        "source_refs": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "text_raw": {
+          "title": "Text Raw",
+          "type": "string"
+        },
+        "axis": {
+          "enum": [
+            "row",
+            "column",
+            "document"
+          ],
+          "title": "Axis",
+          "type": "string"
+        },
+        "table_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Table Id"
+        },
+        "section_id": {
+          "title": "Section Id",
+          "type": "string"
+        },
+        "panel_id": {
+          "title": "Panel Id",
+          "type": "string"
+        },
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "order": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Order",
+          "type": "array"
+        },
+        "row_range": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row Range"
+        },
+        "column_range": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Column Range"
+        },
+        "physical_parent_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Physical Parent Id"
+        },
+        "physical_evidence": {
+          "enum": [
+            "observed",
+            "inferred",
+            "unresolved"
+          ],
+          "title": "Physical Evidence",
+          "type": "string"
+        },
+        "number": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/NumberMarker"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "indent": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Indent"
+        },
+        "fonts": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Fonts",
+          "type": "array"
+        },
+        "font_sizes": {
+          "default": [],
+          "items": {
+            "type": "number"
+          },
+          "title": "Font Sizes",
+          "type": "array"
+        },
+        "font_flags": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Font Flags",
+          "type": "array"
+        },
+        "bold": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bold"
+        },
+        "background_color": {
+          "default": null,
+          "title": "Background Color",
+          "type": "null"
+        },
+        "role_candidates": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Role Candidates",
+          "type": "array"
+        },
+        "repeated_node_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Repeated Node Ids",
+          "type": "array"
+        },
+        "page_edge": {
+          "default": "interior",
+          "enum": [
+            "start",
+            "end",
+            "interior"
+          ],
+          "title": "Page Edge",
+          "type": "string"
+        },
+        "value_cell_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Value Cell Ids",
+          "type": "array"
+        },
+        "alignment_evidence": {
+          "default": "unknown",
+          "title": "Alignment Evidence",
+          "type": "string"
+        }
+      },
+      "required": [
+        "node_id",
+        "source_node_id",
+        "source_cell_ids",
+        "source_refs",
+        "text_raw",
+        "axis",
+        "table_id",
+        "section_id",
+        "panel_id",
+        "page_number",
+        "order",
+        "physical_evidence"
+      ],
+      "title": "SemanticFeature",
+      "type": "object"
+    },
+    "SourceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "minLength": 1,
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page_number": {
+          "exclusiveMinimum": 0,
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BBox"
+        },
+        "block_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Block Id"
+        },
+        "span_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Span Id"
+        },
+        "cell_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cell Id"
+        }
+      },
+      "required": [
+        "document_id",
+        "page_number",
+        "bbox"
+      ],
+      "title": "SourceRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "request_id": {
+      "title": "Request Id",
+      "type": "string"
+    },
+    "document_id": {
+      "title": "Document Id",
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "llm_only",
+        "hybrid"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "input_hashes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Input Hashes",
+      "type": "object"
+    },
+    "nodes": {
+      "items": {
+        "$ref": "#/$defs/SemanticFeature"
+      },
+      "title": "Nodes",
+      "type": "array"
+    },
+    "candidates": {
+      "items": {
+        "$ref": "#/$defs/RelationCandidate"
+      },
+      "title": "Candidates",
+      "type": "array"
+    },
+    "section_context": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Section Context",
+      "type": "array"
+    },
+    "continuation_candidates": {
+      "items": {
+        "$ref": "#/$defs/RelationCandidate"
+      },
+      "title": "Continuation Candidates",
+      "type": "array"
+    },
+    "target_node_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Target Node Ids",
+      "type": "array"
+    },
+    "allowed_node_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Allowed Node Ids",
+      "type": "array"
+    },
+    "allowed_evidence_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Allowed Evidence Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "request_id",
+    "document_id",
+    "mode",
+    "input_hashes",
+    "nodes",
+    "candidates",
+    "section_context",
+    "continuation_candidates",
+    "target_node_ids",
+    "allowed_node_ids",
+    "allowed_evidence_ids"
+  ],
+  "title": "ResolverRequest",
+  "type": "object"
+}

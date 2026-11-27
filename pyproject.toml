@@ -5,32 +5,38 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "nh-document-understanding"
 version = "0.2.0"
-description = "Evidence-preserving PDF IR with pluggable extraction and future template-aware understanding"
+description = "Evidence-preserving generic PDF parsing and table structure candidates"
+readme = "README.md"
+license = {text = "AGPL-3.0-or-later"}
 requires-python = ">=3.11"
 dependencies = [
   "pydantic>=2.9,<3", "PyMuPDF>=1.24.11,<2", "fastapi>=0.115,<1",
-  "uvicorn>=0.30,<1",
+  "uvicorn>=0.30,<1", "Pillow>=12,<13", "langgraph==1.2.16",
 ]
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10", "httpx>=0.27,<1", "ruff>=0.8,<1"]
-postgres = ["SQLAlchemy>=2.0,<3", "alembic>=1.13,<2", "psycopg[binary]>=3.2,<4"]
+postgres = ["SQLAlchemy>=2.0,<3", "alembic>=1.13,<2", "psycopg[binary]>=3.2,<4", "psycopg-pool>=3.2,<4"]
 llm = ["openai>=1.50,<3"]
-graph = ["langgraph==1.2.16", "langfuse==5.0.4", "langchain-core==1.6.13"]
+ocr = ["rapidocr>=3.10,<4", "onnxruntime>=1.20,<2"]
+graph = ["langfuse==5.0.4", "langchain-core==1.6.13"]
 
 [project.scripts]
 nh-doc = "doc_understanding.cli:main"
+nh-review = "doc_understanding.web.app:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools.package-data]
-"doc_understanding.rag_eval" = ["review_template.html"]
-"doc_understanding.human_review" = ["review.html", "simple.html"]
-"doc_understanding.semantic_description" = ["review.html"]
-"doc_understanding.staging" = ["schema.sql"]
-"doc_understanding.metric_mapping" = ["review.html"]
-"doc_understanding.document_rag" = ["schema.sql"]
+"doc_understanding.web" = ["static/*.html", "static/*.css", "static/*.js",
+                           "static/search/*.html", "static/search/css/*.css", "static/search/js/*.js"]
+"doc_understanding.review.human" = ["review.html", "simple.html"]
+"doc_understanding.runtime" = ["job_queue.sql"]
+"doc_understanding.review.semantic_description" = ["review.html"]
+"doc_understanding.storage.staging" = ["schema.sql"]
+"doc_understanding.rag" = ["schema.sql"]
+"doc_understanding.rag.embedding" = ["schema.sql"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
@@ -44,4 +50,3 @@ line-length = 100
 
 [tool.ruff.lint]
 select = ["E4", "E7", "E9", "F"]
-

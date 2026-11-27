@@ -1,11 +1,7 @@
 import pytest
 from pydantic import ValidationError
-from doc_understanding.table_understanding.semantic import (
-    SemanticTableAnalyzer,
-    validate_hierarchy,
-    vision_request,
-)
-from doc_understanding.table_understanding.semantic_models import VisionStructureProposal
+from doc_understanding.parser.structure.analyzer import SemanticTableAnalyzer, validate_hierarchy, vision_request
+from doc_understanding.parser.structure.models import VisionStructureProposal
 from tests.semantic_fixtures import compound
 
 
@@ -114,9 +110,9 @@ def test_resolver_contract_no_call_no_generated_values():
 @pytest.mark.parametrize("kind", ["laboratory", "warehouse", "survey"])
 def test_synthetic_pdf_end_to_end(kind, tmp_path):
     from doc_understanding.domain.contracts import ExtractionRequest
-    from doc_understanding.extraction.pymupdf_adapter import PyMuPDFExtractor
-    from doc_understanding.orchestrator.workflow import extract_ir
-    from doc_understanding.table_understanding.physical_grid import PhysicalGridReconstructor
+    from doc_understanding.parser.extraction.pymupdf_adapter import PyMuPDFExtractor
+    from doc_understanding.parser.orchestration.workflow import extract_ir
+    from doc_understanding.parser.physical.physical_grid import PhysicalGridReconstructor
     from tests.semantic_fixtures import fixture_pdf
 
     ir = extract_ir(
@@ -147,7 +143,7 @@ def test_flat_layout_is_hypothesis_not_certified():
 
 def test_parallel_panels_detected_without_cross_mapping():
     from doc_understanding.domain.models import BBox
-    from doc_understanding.table_understanding.physical_models import GridBand
+    from doc_understanding.parser.physical.physical_models import GridBand
 
     table = compound()[0]
     right = []
@@ -205,7 +201,7 @@ def test_parent_outside_span_rejected():
 
 
 def test_future_proposal_unknown_ids_rejected():
-    from doc_understanding.table_understanding.semantic import validate_proposal
+    from doc_understanding.parser.structure.analyzer import validate_proposal
 
     table = compound()[0]
     request = vision_request(table, SemanticTableAnalyzer().analyze(table))
@@ -224,7 +220,7 @@ def test_future_proposal_unknown_ids_rejected():
 
 
 def test_physical_boundary_status_is_preserved_and_propagated():
-    from doc_understanding.table_understanding.physical_models import Boundary
+    from doc_understanding.parser.physical.physical_models import Boundary
 
     table = compound()[0]
     boundary = Boundary(

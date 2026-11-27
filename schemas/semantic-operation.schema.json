@@ -1,0 +1,64 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "semantic-operation/1.0",
+      "default": "semantic-operation/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "registry_hash": {
+      "title": "Registry Hash",
+      "type": "string"
+    },
+    "operation": {
+      "enum": [
+        "ADD",
+        "REPLACE",
+        "ABSTAIN"
+      ],
+      "title": "Operation",
+      "type": "string"
+    },
+    "child": {
+      "title": "Child",
+      "type": "string"
+    },
+    "parent": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Parent"
+    },
+    "expected_parent": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Expected Parent"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "registry_hash",
+    "operation",
+    "child",
+    "reason"
+  ],
+  "title": "Operation",
+  "type": "object"
+}

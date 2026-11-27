@@ -1,0 +1,1712 @@
+{
+  "legacy": {
+    "analyst": {
+      "prompt_sha256": "8d5ddfae796a3a8d7a10857a458881803a3749e6cbbde1df63a9b740723da935",
+      "schema": {
+        "$defs": {
+          "Citation": {
+            "additionalProperties": false,
+            "properties": {
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_id",
+              "quote"
+            ],
+            "title": "Citation",
+            "type": "object"
+          },
+          "Issue": {
+            "additionalProperties": false,
+            "properties": {
+              "issue_id": {
+                "title": "Issue Id",
+                "type": "string"
+              },
+              "stage": {
+                "enum": [
+                  "physical",
+                  "parent_link",
+                  "axis_role",
+                  "context",
+                  "display",
+                  "unknown"
+                ],
+                "title": "Stage",
+                "type": "string"
+              },
+              "target_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Target Ids",
+                "type": "array"
+              },
+              "observation": {
+                "title": "Observation",
+                "type": "string"
+              },
+              "proposal": {
+                "title": "Proposal",
+                "type": "string"
+              },
+              "relation": {
+                "enum": [
+                  "row_header",
+                  "column_header",
+                  "parent_table",
+                  "continuation",
+                  "context",
+                  "role",
+                  "none"
+                ],
+                "title": "Relation",
+                "type": "string"
+              },
+              "source_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Source Id"
+              },
+              "target_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Target Id"
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                },
+                "title": "Citations",
+                "type": "array"
+              },
+              "certainty": {
+                "enum": [
+                  "supported_candidate",
+                  "insufficient_evidence"
+                ],
+                "title": "Certainty",
+                "type": "string"
+              }
+            },
+            "required": [
+              "issue_id",
+              "stage",
+              "target_ids",
+              "observation",
+              "proposal",
+              "relation",
+              "source_id",
+              "target_id",
+              "citations",
+              "certainty"
+            ],
+            "title": "Issue",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "issues": {
+            "items": {
+              "$ref": "#/$defs/Issue"
+            },
+            "maxItems": 12,
+            "title": "Issues",
+            "type": "array"
+          },
+          "missing_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "summary",
+          "issues",
+          "missing_evidence"
+        ],
+        "title": "Analysis",
+        "type": "object"
+      }
+    },
+    "judge": {
+      "prompt_sha256": "59f5c49b8265eddcb9755c1be1e2545534f29f199b7df7365d949992310e5930",
+      "schema": {
+        "$defs": {
+          "Assessment": {
+            "additionalProperties": false,
+            "properties": {
+              "issue_id": {
+                "title": "Issue Id",
+                "type": "string"
+              },
+              "verdict": {
+                "enum": [
+                  "agree",
+                  "disagree",
+                  "insufficient_evidence"
+                ],
+                "title": "Verdict",
+                "type": "string"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                },
+                "title": "Citations",
+                "type": "array"
+              }
+            },
+            "required": [
+              "issue_id",
+              "verdict",
+              "reason",
+              "citations"
+            ],
+            "title": "Assessment",
+            "type": "object"
+          },
+          "Citation": {
+            "additionalProperties": false,
+            "properties": {
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_id",
+              "quote"
+            ],
+            "title": "Citation",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "assessments": {
+            "items": {
+              "$ref": "#/$defs/Assessment"
+            },
+            "maxItems": 12,
+            "title": "Assessments",
+            "type": "array"
+          },
+          "additional_concerns": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Additional Concerns",
+            "type": "array"
+          },
+          "missing_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "summary",
+          "assessments",
+          "additional_concerns",
+          "missing_evidence"
+        ],
+        "title": "Judgement",
+        "type": "object"
+      }
+    }
+  },
+  "evidence": {
+    "source_review": {
+      "prompt_sha256": "65693f7973e50ee771227df2792b1860f4774ea44794f720a0c228dbf5ad13a5",
+      "schema": {
+        "$defs": {
+          "Citation": {
+            "additionalProperties": false,
+            "properties": {
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_id",
+              "quote"
+            ],
+            "title": "Citation",
+            "type": "object"
+          },
+          "SourceRelation": {
+            "additionalProperties": false,
+            "properties": {
+              "relation": {
+                "enum": [
+                  "parent_table",
+                  "row_header",
+                  "column_header",
+                  "continuation",
+                  "context",
+                  "role"
+                ],
+                "title": "Relation",
+                "type": "string"
+              },
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "target_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Target Id"
+              },
+              "interpretation": {
+                "title": "Interpretation",
+                "type": "string"
+              },
+              "certainty": {
+                "enum": [
+                  "supported_candidate",
+                  "insufficient_evidence"
+                ],
+                "title": "Certainty",
+                "type": "string"
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                },
+                "title": "Citations",
+                "type": "array"
+              }
+            },
+            "required": [
+              "relation",
+              "source_id",
+              "target_id",
+              "interpretation",
+              "certainty",
+              "citations"
+            ],
+            "title": "SourceRelation",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "relations": {
+            "items": {
+              "$ref": "#/$defs/SourceRelation"
+            },
+            "maxItems": 16,
+            "title": "Relations",
+            "type": "array"
+          },
+          "missing_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "summary",
+          "relations",
+          "missing_evidence"
+        ],
+        "title": "SourceReview",
+        "type": "object"
+      }
+    },
+    "analyst_v2": {
+      "prompt_sha256": "f3a1c592cac87fd73962bf1128390ef6f9963ffc32d92d9572496a33f89aa6c0",
+      "schema": {
+        "$defs": {
+          "Citation": {
+            "additionalProperties": false,
+            "properties": {
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_id",
+              "quote"
+            ],
+            "title": "Citation",
+            "type": "object"
+          },
+          "Issue": {
+            "additionalProperties": false,
+            "properties": {
+              "issue_id": {
+                "title": "Issue Id",
+                "type": "string"
+              },
+              "stage": {
+                "enum": [
+                  "physical",
+                  "parent_link",
+                  "axis_role",
+                  "context",
+                  "display",
+                  "unknown"
+                ],
+                "title": "Stage",
+                "type": "string"
+              },
+              "target_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Target Ids",
+                "type": "array"
+              },
+              "observation": {
+                "title": "Observation",
+                "type": "string"
+              },
+              "proposal": {
+                "title": "Proposal",
+                "type": "string"
+              },
+              "relation": {
+                "enum": [
+                  "row_header",
+                  "column_header",
+                  "parent_table",
+                  "continuation",
+                  "context",
+                  "role",
+                  "none"
+                ],
+                "title": "Relation",
+                "type": "string"
+              },
+              "source_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Source Id"
+              },
+              "target_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Target Id"
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                },
+                "title": "Citations",
+                "type": "array"
+              },
+              "certainty": {
+                "enum": [
+                  "supported_candidate",
+                  "insufficient_evidence"
+                ],
+                "title": "Certainty",
+                "type": "string"
+              },
+              "claim": {
+                "enum": [
+                  "missing",
+                  "incorrect",
+                  "uncertain"
+                ],
+                "title": "Claim",
+                "type": "string"
+              }
+            },
+            "required": [
+              "issue_id",
+              "stage",
+              "target_ids",
+              "observation",
+              "proposal",
+              "relation",
+              "source_id",
+              "target_id",
+              "citations",
+              "certainty",
+              "claim"
+            ],
+            "title": "Issue",
+            "type": "object"
+          },
+          "Request": {
+            "additionalProperties": false,
+            "properties": {
+              "tool": {
+                "enum": [
+                  "read_source",
+                  "lookup_relation",
+                  "page_context"
+                ],
+                "title": "Tool",
+                "type": "string"
+              },
+              "source_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Source Id"
+              },
+              "target_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Target Id"
+              },
+              "relation": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "parent_table",
+                      "row_header",
+                      "column_header",
+                      "continuation"
+                    ],
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Relation"
+              },
+              "page": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Page"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              }
+            },
+            "required": [
+              "tool",
+              "source_id",
+              "target_id",
+              "relation",
+              "page",
+              "reason"
+            ],
+            "title": "Request",
+            "type": "object"
+          },
+          "StoredClaim": {
+            "additionalProperties": false,
+            "properties": {
+              "relation": {
+                "enum": [
+                  "parent_table",
+                  "row_header",
+                  "column_header",
+                  "continuation"
+                ],
+                "title": "Relation",
+                "type": "string"
+              },
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "target_id": {
+                "title": "Target Id",
+                "type": "string"
+              },
+              "stored_status": {
+                "enum": [
+                  "present",
+                  "not_found_in_snapshot",
+                  "unknown"
+                ],
+                "title": "Stored Status",
+                "type": "string"
+              }
+            },
+            "required": [
+              "relation",
+              "source_id",
+              "target_id",
+              "stored_status"
+            ],
+            "title": "StoredClaim",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "issues": {
+            "items": {
+              "$ref": "#/$defs/Issue"
+            },
+            "maxItems": 12,
+            "title": "Issues",
+            "type": "array"
+          },
+          "missing_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Evidence",
+            "type": "array"
+          },
+          "requests": {
+            "items": {
+              "$ref": "#/$defs/Request"
+            },
+            "maxItems": 2,
+            "title": "Requests",
+            "type": "array"
+          },
+          "stored_claims": {
+            "items": {
+              "$ref": "#/$defs/StoredClaim"
+            },
+            "maxItems": 16,
+            "title": "Stored Claims",
+            "type": "array"
+          }
+        },
+        "required": [
+          "summary",
+          "issues",
+          "missing_evidence",
+          "requests",
+          "stored_claims"
+        ],
+        "title": "Analysis",
+        "type": "object"
+      }
+    },
+    "reanalysis": {
+      "prompt_sha256": "f3a1c592cac87fd73962bf1128390ef6f9963ffc32d92d9572496a33f89aa6c0",
+      "schema": {
+        "$defs": {
+          "Citation": {
+            "additionalProperties": false,
+            "properties": {
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_id",
+              "quote"
+            ],
+            "title": "Citation",
+            "type": "object"
+          },
+          "Issue": {
+            "additionalProperties": false,
+            "properties": {
+              "issue_id": {
+                "title": "Issue Id",
+                "type": "string"
+              },
+              "stage": {
+                "enum": [
+                  "physical",
+                  "parent_link",
+                  "axis_role",
+                  "context",
+                  "display",
+                  "unknown"
+                ],
+                "title": "Stage",
+                "type": "string"
+              },
+              "target_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Target Ids",
+                "type": "array"
+              },
+              "observation": {
+                "title": "Observation",
+                "type": "string"
+              },
+              "proposal": {
+                "title": "Proposal",
+                "type": "string"
+              },
+              "relation": {
+                "enum": [
+                  "row_header",
+                  "column_header",
+                  "parent_table",
+                  "continuation",
+                  "context",
+                  "role",
+                  "none"
+                ],
+                "title": "Relation",
+                "type": "string"
+              },
+              "source_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Source Id"
+              },
+              "target_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Target Id"
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                },
+                "title": "Citations",
+                "type": "array"
+              },
+              "certainty": {
+                "enum": [
+                  "supported_candidate",
+                  "insufficient_evidence"
+                ],
+                "title": "Certainty",
+                "type": "string"
+              },
+              "claim": {
+                "enum": [
+                  "missing",
+                  "incorrect",
+                  "uncertain"
+                ],
+                "title": "Claim",
+                "type": "string"
+              }
+            },
+            "required": [
+              "issue_id",
+              "stage",
+              "target_ids",
+              "observation",
+              "proposal",
+              "relation",
+              "source_id",
+              "target_id",
+              "citations",
+              "certainty",
+              "claim"
+            ],
+            "title": "Issue",
+            "type": "object"
+          },
+          "Request": {
+            "additionalProperties": false,
+            "properties": {
+              "tool": {
+                "enum": [
+                  "read_source",
+                  "lookup_relation",
+                  "page_context"
+                ],
+                "title": "Tool",
+                "type": "string"
+              },
+              "source_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Source Id"
+              },
+              "target_id": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Target Id"
+              },
+              "relation": {
+                "anyOf": [
+                  {
+                    "enum": [
+                      "parent_table",
+                      "row_header",
+                      "column_header",
+                      "continuation"
+                    ],
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Relation"
+              },
+              "page": {
+                "anyOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "title": "Page"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              }
+            },
+            "required": [
+              "tool",
+              "source_id",
+              "target_id",
+              "relation",
+              "page",
+              "reason"
+            ],
+            "title": "Request",
+            "type": "object"
+          },
+          "StoredClaim": {
+            "additionalProperties": false,
+            "properties": {
+              "relation": {
+                "enum": [
+                  "parent_table",
+                  "row_header",
+                  "column_header",
+                  "continuation"
+                ],
+                "title": "Relation",
+                "type": "string"
+              },
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "target_id": {
+                "title": "Target Id",
+                "type": "string"
+              },
+              "stored_status": {
+                "enum": [
+                  "present",
+                  "not_found_in_snapshot",
+                  "unknown"
+                ],
+                "title": "Stored Status",
+                "type": "string"
+              }
+            },
+            "required": [
+              "relation",
+              "source_id",
+              "target_id",
+              "stored_status"
+            ],
+            "title": "StoredClaim",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "issues": {
+            "items": {
+              "$ref": "#/$defs/Issue"
+            },
+            "maxItems": 12,
+            "title": "Issues",
+            "type": "array"
+          },
+          "missing_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Evidence",
+            "type": "array"
+          },
+          "requests": {
+            "items": {
+              "$ref": "#/$defs/Request"
+            },
+            "maxItems": 2,
+            "title": "Requests",
+            "type": "array"
+          },
+          "stored_claims": {
+            "items": {
+              "$ref": "#/$defs/StoredClaim"
+            },
+            "maxItems": 16,
+            "title": "Stored Claims",
+            "type": "array"
+          }
+        },
+        "required": [
+          "summary",
+          "issues",
+          "missing_evidence",
+          "requests",
+          "stored_claims"
+        ],
+        "title": "Analysis",
+        "type": "object"
+      }
+    },
+    "judge_v2": {
+      "prompt_sha256": "761137096c14b79c46093cb65a031b1e7bd65e4a87bbee820c47c786724a6f5f",
+      "schema": {
+        "$defs": {
+          "Assessment": {
+            "additionalProperties": false,
+            "properties": {
+              "issue_id": {
+                "title": "Issue Id",
+                "type": "string"
+              },
+              "verdict": {
+                "enum": [
+                  "agree",
+                  "disagree",
+                  "insufficient_evidence"
+                ],
+                "title": "Verdict",
+                "type": "string"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                },
+                "title": "Citations",
+                "type": "array"
+              }
+            },
+            "required": [
+              "issue_id",
+              "verdict",
+              "reason",
+              "citations"
+            ],
+            "title": "Assessment",
+            "type": "object"
+          },
+          "Citation": {
+            "additionalProperties": false,
+            "properties": {
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_id",
+              "quote"
+            ],
+            "title": "Citation",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "assessments": {
+            "items": {
+              "$ref": "#/$defs/Assessment"
+            },
+            "maxItems": 12,
+            "title": "Assessments",
+            "type": "array"
+          },
+          "additional_concerns": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Additional Concerns",
+            "type": "array"
+          },
+          "missing_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "summary",
+          "assessments",
+          "additional_concerns",
+          "missing_evidence"
+        ],
+        "title": "Judgement",
+        "type": "object"
+      }
+    }
+  },
+  "table": {
+    "classify_roles": {
+      "prompt_sha256": "5f9cd5d38670a2b1eb3982b2338ebf1ec7a90d1accf0301880a54591e0e19379",
+      "schema": {
+        "$defs": {
+          "Citation": {
+            "additionalProperties": false,
+            "properties": {
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_id",
+              "quote"
+            ],
+            "title": "Citation",
+            "type": "object"
+          },
+          "Role": {
+            "additionalProperties": false,
+            "properties": {
+              "cell_id": {
+                "title": "Cell Id",
+                "type": "string"
+              },
+              "role": {
+                "enum": [
+                  "value",
+                  "header",
+                  "description",
+                  "blank",
+                  "unknown"
+                ],
+                "title": "Role",
+                "type": "string"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                },
+                "title": "Citations",
+                "type": "array"
+              }
+            },
+            "required": [
+              "cell_id",
+              "role",
+              "reason",
+              "citations"
+            ],
+            "title": "Role",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "targets": {
+            "items": {
+              "$ref": "#/$defs/Role"
+            },
+            "maxItems": 12,
+            "title": "Targets",
+            "type": "array"
+          },
+          "missing_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "summary",
+          "targets",
+          "missing_evidence"
+        ],
+        "title": "Roles",
+        "type": "object"
+      }
+    },
+    "infer_relations": {
+      "prompt_sha256": "54f1cbca7a3a7d250a1de942a506cc5197d7618a35c63500ac47fd47cecf16e9",
+      "schema": {
+        "$defs": {
+          "Axis": {
+            "additionalProperties": false,
+            "properties": {
+              "status": {
+                "enum": [
+                  "explicit",
+                  "contextual_candidate",
+                  "no_header",
+                  "unknown"
+                ],
+                "title": "Status",
+                "type": "string"
+              },
+              "header_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 8,
+                "title": "Header Ids",
+                "type": "array"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                },
+                "title": "Citations",
+                "type": "array"
+              }
+            },
+            "required": [
+              "status",
+              "header_ids",
+              "reason",
+              "citations"
+            ],
+            "title": "Axis",
+            "type": "object"
+          },
+          "Citation": {
+            "additionalProperties": false,
+            "properties": {
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_id",
+              "quote"
+            ],
+            "title": "Citation",
+            "type": "object"
+          },
+          "TargetRelations": {
+            "additionalProperties": false,
+            "properties": {
+              "cell_id": {
+                "title": "Cell Id",
+                "type": "string"
+              },
+              "target_quote": {
+                "title": "Target Quote",
+                "type": "string"
+              },
+              "row_axis": {
+                "$ref": "#/$defs/Axis"
+              },
+              "column_axis": {
+                "$ref": "#/$defs/Axis"
+              },
+              "context_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Context Ids",
+                "type": "array"
+              }
+            },
+            "required": [
+              "cell_id",
+              "target_quote",
+              "row_axis",
+              "column_axis",
+              "context_ids"
+            ],
+            "title": "TargetRelations",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "targets": {
+            "items": {
+              "$ref": "#/$defs/TargetRelations"
+            },
+            "maxItems": 12,
+            "title": "Targets",
+            "type": "array"
+          },
+          "missing_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "summary",
+          "targets",
+          "missing_evidence"
+        ],
+        "title": "Relations",
+        "type": "object"
+      }
+    },
+    "judge_relations": {
+      "prompt_sha256": "a795e28c97620bd9403de3b390d6460a72f94b65a641a8a64c05c8e748d2aeb3",
+      "schema": {
+        "$defs": {
+          "Citation": {
+            "additionalProperties": false,
+            "properties": {
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_id",
+              "quote"
+            ],
+            "title": "Citation",
+            "type": "object"
+          },
+          "Coverage": {
+            "additionalProperties": false,
+            "properties": {
+              "cell_id": {
+                "title": "Cell Id",
+                "type": "string"
+              },
+              "axis": {
+                "enum": [
+                  "row",
+                  "column"
+                ],
+                "title": "Axis",
+                "type": "string"
+              },
+              "header_id": {
+                "title": "Header Id",
+                "type": "string"
+              },
+              "requirement": {
+                "enum": [
+                  "required",
+                  "not_required",
+                  "insufficient_evidence"
+                ],
+                "title": "Requirement",
+                "type": "string"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                },
+                "title": "Citations",
+                "type": "array"
+              }
+            },
+            "required": [
+              "cell_id",
+              "axis",
+              "header_id",
+              "requirement",
+              "reason",
+              "citations"
+            ],
+            "title": "Coverage",
+            "type": "object"
+          },
+          "Decision": {
+            "additionalProperties": false,
+            "properties": {
+              "cell_id": {
+                "title": "Cell Id",
+                "type": "string"
+              },
+              "axis": {
+                "enum": [
+                  "row",
+                  "column"
+                ],
+                "title": "Axis",
+                "type": "string"
+              },
+              "verdict": {
+                "enum": [
+                  "supported",
+                  "contradicted",
+                  "insufficient_evidence",
+                  "not_applicable"
+                ],
+                "title": "Verdict",
+                "type": "string"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                },
+                "title": "Citations",
+                "type": "array"
+              }
+            },
+            "required": [
+              "cell_id",
+              "axis",
+              "verdict",
+              "reason",
+              "citations"
+            ],
+            "title": "Decision",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "decisions": {
+            "items": {
+              "$ref": "#/$defs/Decision"
+            },
+            "maxItems": 24,
+            "title": "Decisions",
+            "type": "array"
+          },
+          "missing_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Evidence",
+            "type": "array"
+          },
+          "coverage": {
+            "items": {
+              "$ref": "#/$defs/Coverage"
+            },
+            "maxItems": 160,
+            "title": "Coverage",
+            "type": "array"
+          }
+        },
+        "required": [
+          "summary",
+          "decisions",
+          "missing_evidence",
+          "coverage"
+        ],
+        "title": "Judgment",
+        "type": "object"
+      }
+    }
+  },
+  "axis": {
+    "interpret_axes": {
+      "prompt_sha256": "4cf090273c2166b3abbd9927ef26aa21deb4872e08a35aa20a8f7a95916c247d",
+      "schema": {
+        "$defs": {
+          "Axis": {
+            "additionalProperties": false,
+            "properties": {
+              "status": {
+                "enum": [
+                  "explicit",
+                  "contextual_candidate",
+                  "no_header",
+                  "unknown"
+                ],
+                "title": "Status",
+                "type": "string"
+              },
+              "header_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "maxItems": 8,
+                "title": "Header Ids",
+                "type": "array"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                },
+                "title": "Citations",
+                "type": "array"
+              }
+            },
+            "required": [
+              "status",
+              "header_ids",
+              "reason",
+              "citations"
+            ],
+            "title": "Axis",
+            "type": "object"
+          },
+          "Citation": {
+            "additionalProperties": false,
+            "properties": {
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_id",
+              "quote"
+            ],
+            "title": "Citation",
+            "type": "object"
+          },
+          "Target": {
+            "additionalProperties": false,
+            "properties": {
+              "cell_id": {
+                "title": "Cell Id",
+                "type": "string"
+              },
+              "role": {
+                "enum": [
+                  "value",
+                  "header",
+                  "description",
+                  "blank",
+                  "unknown"
+                ],
+                "title": "Role",
+                "type": "string"
+              },
+              "row_axis": {
+                "$ref": "#/$defs/Axis"
+              },
+              "column_axis": {
+                "$ref": "#/$defs/Axis"
+              },
+              "context_ids": {
+                "items": {
+                  "type": "string"
+                },
+                "title": "Context Ids",
+                "type": "array"
+              }
+            },
+            "required": [
+              "cell_id",
+              "role",
+              "row_axis",
+              "column_axis",
+              "context_ids"
+            ],
+            "title": "Target",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "targets": {
+            "items": {
+              "$ref": "#/$defs/Target"
+            },
+            "maxItems": 12,
+            "title": "Targets",
+            "type": "array"
+          },
+          "missing_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "summary",
+          "targets",
+          "missing_evidence"
+        ],
+        "title": "Interpretation",
+        "type": "object"
+      }
+    },
+    "judge_axes": {
+      "prompt_sha256": "b5941f49bb07936ca05ca432a3d78b0fe4c3527d58050ac54277a7e1f1b648a3",
+      "schema": {
+        "$defs": {
+          "Citation": {
+            "additionalProperties": false,
+            "properties": {
+              "source_id": {
+                "title": "Source Id",
+                "type": "string"
+              },
+              "quote": {
+                "title": "Quote",
+                "type": "string"
+              }
+            },
+            "required": [
+              "source_id",
+              "quote"
+            ],
+            "title": "Citation",
+            "type": "object"
+          },
+          "Decision": {
+            "additionalProperties": false,
+            "properties": {
+              "cell_id": {
+                "title": "Cell Id",
+                "type": "string"
+              },
+              "axis": {
+                "enum": [
+                  "row",
+                  "column"
+                ],
+                "title": "Axis",
+                "type": "string"
+              },
+              "verdict": {
+                "enum": [
+                  "supported",
+                  "contradicted",
+                  "insufficient_evidence",
+                  "not_applicable"
+                ],
+                "title": "Verdict",
+                "type": "string"
+              },
+              "reason": {
+                "title": "Reason",
+                "type": "string"
+              },
+              "citations": {
+                "items": {
+                  "$ref": "#/$defs/Citation"
+                },
+                "title": "Citations",
+                "type": "array"
+              }
+            },
+            "required": [
+              "cell_id",
+              "axis",
+              "verdict",
+              "reason",
+              "citations"
+            ],
+            "title": "Decision",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "summary": {
+            "title": "Summary",
+            "type": "string"
+          },
+          "decisions": {
+            "items": {
+              "$ref": "#/$defs/Decision"
+            },
+            "maxItems": 24,
+            "title": "Decisions",
+            "type": "array"
+          },
+          "missing_evidence": {
+            "items": {
+              "type": "string"
+            },
+            "title": "Missing Evidence",
+            "type": "array"
+          }
+        },
+        "required": [
+          "summary",
+          "decisions",
+          "missing_evidence"
+        ],
+        "title": "Judgment",
+        "type": "object"
+      }
+    }
+  }
+}

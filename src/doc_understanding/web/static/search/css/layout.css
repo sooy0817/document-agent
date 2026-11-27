@@ -1,0 +1,13 @@
+/* 역할: 화면 뼈대(머리, 탭). */
+/* 머리 */
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:var(--s5);height:60px;padding:0 var(--s5);background:var(--surface);border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:baseline;gap:var(--s3);min-width:0}
+.brand .muted{white-space:nowrap}
+.tabs{display:flex;gap:var(--s1);height:100%;margin-left:var(--s4)}
+.tab{position:relative;display:inline-flex;align-items:center;gap:6px;height:100%;padding:0 var(--s3);border:0;background:none;color:var(--muted);font-weight:600;cursor:pointer}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected=true]{color:var(--ink)}
+.tab[aria-selected=true]::after{content:"";position:absolute;left:var(--s3);right:var(--s3);bottom:-1px;height:2px;background:var(--accent)}
+.tab .count{font-size:12px;font-weight:600;color:var(--muted)}
+.top .spacer{flex:1}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--warn);display:inline-block}

@@ -1,0 +1,29 @@
+/* 역할: 검색·답변 화면의 디자인 기준(색·글꼴·간격·모서리)과 구성 요소 모양.
+   규칙: 강조색은 하나(--accent)만 쓴다. 모서리는 조작 요소 8px, 면(패널·팝업) 12px, 알약 모양은 상태 표시에만.
+   노란색(--mark)은 인용 근거 표시 전용이다. 색은 변수로만 쓴다(구성 요소에 색 값을 직접 적지 않는다). */
+:root{
+  --bg:#f8fafc;--surface:#ffffff;--sunken:#f1f5f9;
+  --ink:#0f172a;--ink-2:#334155;--muted:#475569;
+  --line:#e2e8f0;--line-strong:#cbd5e1;
+  --accent:#1e3a8a;--accent-hover:#172f73;--on-accent:#ffffff;--accent-soft:#eaf0fa;
+  --mark:#fde68a;--mark-soft:#fef9e3;--mark-line:#b45309;
+  --second:#0f766e;--second-soft:rgba(15,118,110,.18);
+  --ok:#166534;--ok-soft:#ecfdf3;--warn:#92400e;--warn-soft:#fffbeb;--bad:#b91c1c;--bad-soft:#fef2f2;
+  --shadow:0 1px 2px rgba(15,23,42,.06),0 8px 24px rgba(15,23,42,.08);
+  --r-control:8px;--r-surface:12px;
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;
+  --sans:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"Segoe UI","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --mono:"JetBrains Mono",Consolas,monospace;
+  --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:light dark;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#0b1220;--surface:#111a2b;--sunken:#0e1626;
+  --ink:#e6ebf3;--ink-2:#c5cddb;--muted:#9aa7ba;
+  --line:#243044;--line-strong:#35435a;
+  --accent:#9db9f5;--accent-hover:#b6cbf8;--on-accent:#0b1220;--accent-soft:#18243a;
+  --mark:#7a5b06;--mark-soft:#2c2410;--mark-line:#f5c451;
+  --second:#5eead4;--second-soft:rgba(94,234,212,.2);
+  --ok:#86efac;--ok-soft:#10261a;--warn:#fcd34d;--warn-soft:#2a2110;--bad:#fca5a5;--bad-soft:#2d1517;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.45);
+}}

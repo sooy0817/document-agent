@@ -1,0 +1,13 @@
+[
+  {
+    "id": "krihs_reports", "organization": "국토연구원", "domain": "real_estate",
+    "url": "https://kremap.krihs.re.kr/menu6/SystemIntro?kind=84",
+    "host": "kremap.krihs.re.kr", "path": "/menu6/reportview",
+    "rights_markers": ["국토연구원이 창작한", "공공누리", "출처표시"]
+  },
+  {
+    "id": "bok_stability", "organization": "한국은행", "domain": "finance",
+    "url": "https://www.bok.or.kr/portal/bbs/P0000593/list.do?menuNo=200068",
+    "host": "www.bok.or.kr", "path": "/portal/bbs/p0000593/view.do"
+  }
+]

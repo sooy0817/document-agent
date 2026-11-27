@@ -1,0 +1,33 @@
+#review-queue-panel{margin-top:16px;border-top:1px solid #d4ded9;padding-top:14px}
+#review-queue-panel summary{cursor:pointer;font-weight:650}
+#review-queue-list{max-height:440px;overflow:auto;margin-top:12px}
+.queue-card{border:1px solid #d4ded9;border-radius:8px;padding:12px;margin:10px 0;background:#fff}
+.queue-card strong{display:block;overflow-wrap:anywhere}
+.queue-card p{margin:7px 0;font-size:13px;line-height:1.5}
+.queue-note{white-space:pre-wrap;overflow-wrap:anywhere}
+.queue-state{display:inline-block;padding:3px 7px;border-radius:4px;background:#edf1ef;color:#33483e;font-weight:650}
+.queue-state[data-status=running]{background:#e5f1fb;color:#194d75}
+.queue-state[data-status=failed]{background:#fcece8;color:#8b3221}
+#review-queue-panel button,#review-queue-detail button{min-height:40px}
+#review-queue-detail{width:min(820px,92vw);max-height:88vh;border:1px solid #c5d0cb;border-radius:12px;padding:22px;color:#24352d}
+#review-queue-detail::backdrop{background:rgba(25,40,33,.3)}
+#review-queue-detail header{display:flex;align-items:center;justify-content:space-between;gap:20px}
+#review-queue-detail pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f4f6f5;padding:12px;max-height:300px;overflow:auto;font-size:12px}
+#review-queue-detail h3{margin-top:20px}
+.queue-findings li{margin-bottom:14px}
+.queue-findings strong{font-size:13px}
+@media(max-width:600px){#review-queue-detail{padding:14px}#review-queue-list{max-height:320px}}
+#review-attention{margin-top:20px;border-top:2px solid #26756b;padding-top:8px}
+#review-alerts{max-height:350px;overflow:auto}
+#review-attention button{min-height:40px}
+#review-queue-detail{width:min(1120px,94vw)}
+.decision-compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.decision-source{max-height:520px;overflow:auto}
+.decision-source img{width:100%}
+#decision-review table{width:100%;border-collapse:collapse;font-size:13px}
+#decision-review td,#decision-review th{padding:8px;border-bottom:1px solid #d4ded9;text-align:left;vertical-align:top}
+#decision-review small{display:block;overflow-wrap:anywhere;font-size:10px;color:#52635d;margin-top:5px}
+#review-decision-form{border-top:1px solid #d4ded9;margin-top:20px;padding-top:12px}
+#review-decision-form label{display:block;margin:10px 0}
+#review-decision-form textarea,#review-decision-form select{display:block;width:100%;box-sizing:border-box;margin-top:5px;padding:9px;border:1px solid #b7c7bf;border-radius:5px;font:inherit}
+@media(max-width:800px){.decision-compare{grid-template-columns:1fr}}

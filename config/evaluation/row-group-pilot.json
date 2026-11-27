@@ -1,0 +1,106 @@
+[
+  {
+    "document_id": "sha256:ddc9ca7a99e830ee71d39c8c73287135a305f860baaa37cc9687a44d6c16b54b",
+    "family": "공시 연도별 손익",
+    "split": "dev",
+    "table": "p0003/physical000",
+    "positions": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        3,
+        1
+      ],
+      [
+        4,
+        1
+      ],
+      [
+        19,
+        1
+      ]
+    ]
+  },
+  {
+    "document_id": "sha256:b8f16bca06d760e9ca73872ac40be692a2a6e720793af4fbcd2dd2993bdf7ef7",
+    "family": "퇴직예금 상품 조건",
+    "split": "dev",
+    "table": "p0001/physical000",
+    "positions": [
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        1
+      ]
+    ]
+  },
+  {
+    "document_id": "sha256:b8f16bca06d760e9ca73872ac40be692a2a6e720793af4fbcd2dd2993bdf7ef7",
+    "family": "퇴직예금 상품 조건",
+    "split": "dev",
+    "table": "p0001/physical002",
+    "positions": [
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  {
+    "document_id": "sha256:6ba06221fba466b86d4f81c637e386d192946e8c96fc819dd7cfa1d7fb1e0559",
+    "family": "지수연동예금 수익구조",
+    "split": "holdout",
+    "table": "p0002/physical000",
+    "positions": [
+      [
+        1,
+        2
+      ],
+      [
+        2,
+        1
+      ],
+      [
+        6,
+        3
+      ],
+      [
+        7,
+        3
+      ],
+      [
+        13,
+        3
+      ]
+    ]
+  },
+  {
+    "document_id": "sha256:93589dbad1ae5f35ff2cf8b904a7ab1ae156706b97294e277ae2d967fcfae773",
+    "family": "접근성 예시 병합표",
+    "split": "holdout",
+    "table": "p0002/physical001",
+    "positions": [
+      [
+        2,
+        3
+      ],
+      [
+        3,
+        3
+      ],
+      [
+        4,
+        3
+      ]
+    ]
+  }
+]

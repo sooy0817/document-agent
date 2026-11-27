@@ -1,0 +1,71 @@
+{
+  "$defs": {
+    "SemanticPatch": {
+      "additionalProperties": false,
+      "properties": {
+        "parent_id": {
+          "title": "Parent Id",
+          "type": "string"
+        },
+        "child_id": {
+          "title": "Child Id",
+          "type": "string"
+        },
+        "relation_type": {
+          "enum": [
+            "parent_child",
+            "alternative_label",
+            "annotation",
+            "continuation",
+            "related_adjustment"
+          ],
+          "title": "Relation Type",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "parent_id",
+        "child_id",
+        "relation_type",
+        "evidence_ids",
+        "reason"
+      ],
+      "title": "SemanticPatch",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "patches": {
+      "items": {
+        "$ref": "#/$defs/SemanticPatch"
+      },
+      "title": "Patches",
+      "type": "array"
+    },
+    "abstain_node_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Abstain Node Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "patches",
+    "abstain_node_ids"
+  ],
+  "title": "SemanticPatchProposal",
+  "type": "object"
+}

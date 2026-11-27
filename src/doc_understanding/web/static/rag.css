@@ -1,0 +1,14 @@
+/* 문서 선택 → 검색 준비 → 검색 항목 확인 → 질문을 한 영역에서 이어 준다. */
+.rag-panel{margin:20px 0;padding:24px;border:1px solid var(--line);border-radius:10px;background:white}
+.rag-heading{display:flex;gap:16px;justify-content:space-between;align-items:center}.rag-heading h2{margin:0;font-size:20px}.rag-heading p{font-size:13px;margin-top:4px}
+.rag-panel details{border-top:1px solid var(--line);margin-top:18px;padding-top:12px}.rag-panel summary{cursor:pointer;font-weight:600;padding:8px 0}
+.rag-settings{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:12px 0}.rag-settings label{font-size:12px;color:var(--muted)}
+.rag-settings input,.rag-settings select,.rag-question textarea{display:block;width:100%;padding:9px;border:1px solid var(--line);border-radius:5px;color:var(--ink);background:white;font:inherit;margin:5px 0 0}
+.rag-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}.rag-consent{font-size:13px;display:block;margin:14px 0}.rag-consent input{margin-right:8px}
+.rag-status{padding:12px 16px;background:var(--tint);border-radius:6px;white-space:pre-line;font-size:13px}.rag-panel .error{margin:12px 0;border-radius:6px}
+.rag-question{margin-top:18px}.rag-question>label{font-weight:600}.rag-question textarea{min-height:85px;resize:vertical}.rag-panel input:focus-visible,.rag-panel textarea:focus-visible{outline:3px solid #c18c43;outline-offset:2px}
+.rag-entry{border:1px solid var(--line);border-radius:6px;margin:12px 0;padding:14px}.rag-entry header{height:auto;padding:0;border:0;gap:12px;flex-wrap:wrap;background:none;font-size:13px}.rag-entry pre{max-height:260px;margin-bottom:0;white-space:pre-wrap}.rag-entry .hint{margin:8px 0 0}.rag-answer{white-space:pre-wrap;padding:16px;background:#f5f8f4;border-radius:6px;margin:14px 0;font-size:14px}.rag-panel progress{width:100%;height:12px;accent-color:var(--green)}
+.rag-filters{display:flex;gap:12px;flex-wrap:wrap;align-items:end}.rag-filters label{font-size:12px}.rag-filters select,.rag-filters input{width:150px;margin:4px 0 0}.rag-next{display:flex;align-items:center;gap:12px;justify-content:center}.rag-evidence{white-space:pre-wrap;font-size:13px}.rag-panel fieldset{border:0;margin:0;padding:0;min-width:0}.rag-panel fieldset:disabled{opacity:.65}.rag-panel [hidden]{display:none!important}
+.monitor-embed .rag-panel{display:none!important}
+@media(max-width:760px){.rag-settings{grid-template-columns:1fr 1fr}.rag-heading{display:block}.rag-panel{padding:16px}.rag-filters select,.rag-filters input{width:120px}}
+@media(max-width:430px){.rag-settings{grid-template-columns:1fr}}

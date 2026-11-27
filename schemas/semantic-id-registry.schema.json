@@ -1,0 +1,431 @@
+{
+  "$defs": {
+    "BBox": {
+      "additionalProperties": false,
+      "description": "Unrotated visible page, PDF points, top-left origin (72 pt/in).",
+      "properties": {
+        "x0": {
+          "title": "X0",
+          "type": "number"
+        },
+        "y0": {
+          "title": "Y0",
+          "type": "number"
+        },
+        "x1": {
+          "title": "X1",
+          "type": "number"
+        },
+        "y1": {
+          "title": "Y1",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "title": "BBox",
+      "type": "object"
+    },
+    "NumberMarker": {
+      "additionalProperties": false,
+      "properties": {
+        "family": {
+          "title": "Family",
+          "type": "string"
+        },
+        "token": {
+          "title": "Token",
+          "type": "string"
+        },
+        "ordinal": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ordinal"
+        }
+      },
+      "required": [
+        "family",
+        "token"
+      ],
+      "title": "NumberMarker",
+      "type": "object"
+    },
+    "SemanticFeature": {
+      "additionalProperties": false,
+      "properties": {
+        "node_id": {
+          "title": "Node Id",
+          "type": "string"
+        },
+        "source_node_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Node Id"
+        },
+        "source_cell_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Cell Ids",
+          "type": "array"
+        },
+        "source_refs": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "text_raw": {
+          "title": "Text Raw",
+          "type": "string"
+        },
+        "axis": {
+          "enum": [
+            "row",
+            "column",
+            "document"
+          ],
+          "title": "Axis",
+          "type": "string"
+        },
+        "table_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Table Id"
+        },
+        "section_id": {
+          "title": "Section Id",
+          "type": "string"
+        },
+        "panel_id": {
+          "title": "Panel Id",
+          "type": "string"
+        },
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "order": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Order",
+          "type": "array"
+        },
+        "row_range": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row Range"
+        },
+        "column_range": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Column Range"
+        },
+        "physical_parent_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Physical Parent Id"
+        },
+        "physical_evidence": {
+          "enum": [
+            "observed",
+            "inferred",
+            "unresolved"
+          ],
+          "title": "Physical Evidence",
+          "type": "string"
+        },
+        "number": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/NumberMarker"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "indent": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Indent"
+        },
+        "fonts": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Fonts",
+          "type": "array"
+        },
+        "font_sizes": {
+          "default": [],
+          "items": {
+            "type": "number"
+          },
+          "title": "Font Sizes",
+          "type": "array"
+        },
+        "font_flags": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Font Flags",
+          "type": "array"
+        },
+        "bold": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bold"
+        },
+        "background_color": {
+          "default": null,
+          "title": "Background Color",
+          "type": "null"
+        },
+        "role_candidates": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Role Candidates",
+          "type": "array"
+        },
+        "repeated_node_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Repeated Node Ids",
+          "type": "array"
+        },
+        "page_edge": {
+          "default": "interior",
+          "enum": [
+            "start",
+            "end",
+            "interior"
+          ],
+          "title": "Page Edge",
+          "type": "string"
+        },
+        "value_cell_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Value Cell Ids",
+          "type": "array"
+        },
+        "alignment_evidence": {
+          "default": "unknown",
+          "title": "Alignment Evidence",
+          "type": "string"
+        }
+      },
+      "required": [
+        "node_id",
+        "source_node_id",
+        "source_cell_ids",
+        "source_refs",
+        "text_raw",
+        "axis",
+        "table_id",
+        "section_id",
+        "panel_id",
+        "page_number",
+        "order",
+        "physical_evidence"
+      ],
+      "title": "SemanticFeature",
+      "type": "object"
+    },
+    "SourceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "minLength": 1,
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page_number": {
+          "exclusiveMinimum": 0,
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BBox"
+        },
+        "block_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Block Id"
+        },
+        "span_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Span Id"
+        },
+        "cell_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cell Id"
+        }
+      },
+      "required": [
+        "document_id",
+        "page_number",
+        "bbox"
+      ],
+      "title": "SourceRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "semantic-id-registry/1.0",
+      "default": "semantic-id-registry/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "features": {
+      "items": {
+        "$ref": "#/$defs/SemanticFeature"
+      },
+      "title": "Features",
+      "type": "array"
+    },
+    "aliases": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Aliases",
+      "type": "object"
+    },
+    "fingerprint": {
+      "title": "Fingerprint",
+      "type": "string"
+    }
+  },
+  "required": [
+    "features",
+    "aliases",
+    "fingerprint"
+  ],
+  "title": "Registry",
+  "type": "object"
+}

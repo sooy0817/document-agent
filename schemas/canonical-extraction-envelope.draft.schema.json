@@ -1,0 +1,175 @@
+{
+  "$defs": {
+    "StoredArtifact": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact_id": {
+          "title": "Artifact Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "DocumentIR",
+            "PhysicalTableIR",
+            "StructuredTableIR",
+            "SemanticOverlay",
+            "PatchProposal",
+            "SemanticRevision",
+            "AggregationSidecar",
+            "Coverage",
+            "Trace"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "schema_version": {
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "original_uri": {
+          "title": "Original Uri",
+          "type": "string"
+        },
+        "raw_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Raw Sha256",
+          "type": "string"
+        },
+        "payload": {
+          "additionalProperties": true,
+          "title": "Payload",
+          "type": "object"
+        },
+        "validation_status": {
+          "enum": [
+            "not_evaluated",
+            "partial",
+            "review_required",
+            "invalid",
+            "extraction_valid"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "upstream_artifact_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Upstream Artifact Ids",
+          "type": "array"
+        },
+        "source_page_numbers": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Source Page Numbers",
+          "type": "array"
+        },
+        "source_node_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Node Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "artifact_id",
+        "kind",
+        "schema_version",
+        "original_uri",
+        "raw_sha256",
+        "payload",
+        "validation_status"
+      ],
+      "title": "StoredArtifact",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "canonical-extraction-envelope/0.1-draft",
+      "default": "canonical-extraction-envelope/0.1-draft",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "source_document_id": {
+      "title": "Source Document Id",
+      "type": "string"
+    },
+    "source_version_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Source Version Sha256",
+      "type": "string"
+    },
+    "source_uri": {
+      "title": "Source Uri",
+      "type": "string"
+    },
+    "parsing_run_id": {
+      "title": "Parsing Run Id",
+      "type": "string"
+    },
+    "parsing_run_status": {
+      "enum": [
+        "failed",
+        "partial",
+        "completed"
+      ],
+      "title": "Parsing Run Status",
+      "type": "string"
+    },
+    "configuration": {
+      "additionalProperties": true,
+      "title": "Configuration",
+      "type": "object"
+    },
+    "artifacts": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/StoredArtifact"
+      },
+      "title": "Artifacts",
+      "type": "array"
+    },
+    "failures": {
+      "default": [],
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "Failures",
+      "type": "array"
+    },
+    "financial_facts": {
+      "default": [],
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "maxItems": 0,
+      "title": "Financial Facts",
+      "type": "array"
+    },
+    "fact_publication_allowed": {
+      "const": false,
+      "default": false,
+      "title": "Fact Publication Allowed",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "source_document_id",
+    "source_version_sha256",
+    "source_uri",
+    "parsing_run_id",
+    "parsing_run_status",
+    "configuration"
+  ],
+  "title": "ExtractionEnvelope",
+  "type": "object"
+}

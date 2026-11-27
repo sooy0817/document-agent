@@ -5,13 +5,10 @@ from typing import Literal, Protocol
 from uuid import UUID
 
 from doc_understanding.domain.models import ArtifactRef, DocumentIR, EvidenceModel, Issue, SourceRef
-from doc_understanding.table_understanding.contracts import (
-    CellMapping, ContextLink, HierarchyNode, StructuredTableIR,
-)
-from doc_understanding.table_understanding.physical_models import PhysicalTableIR
-from doc_understanding.table_understanding.semantic_models import (
-    CellPath, HierarchyNode as GeometryNode, StructuredTableIR as GeometryTable,
-)
+from doc_understanding.parser.contracts import CellMapping, ContextLink, HierarchyNode, StructuredTableIR
+from doc_understanding.parser.physical.physical_models import PhysicalTableIR
+from doc_understanding.parser.relations.logical_tables import LogicalTableLink
+from doc_understanding.parser.structure.models import CellPath, HierarchyNode as GeometryNode, StructuredTableIR as GeometryTable
 
 
 class Section(EvidenceModel):
@@ -122,6 +119,7 @@ class CanonicalDocument(EvidenceModel):
     fact_publication_allowed: Literal[False] = False
     source_artifact_refs: tuple[ArtifactRef, ...] = ()
     source_uri: str | None = None  # caller acquisition metadata, never inferred from prose
+    logical_table_links: tuple[LogicalTableLink, ...] = ()  # additive, unapproved source-ID paths
 
 
 class FinancialFactCandidate(EvidenceModel):

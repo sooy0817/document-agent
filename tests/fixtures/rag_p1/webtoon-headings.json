@@ -1,0 +1,109 @@
+{
+  "sections": [
+    {
+      "parent_id": null,
+      "title_raw": "  2) 지원제외 대상(신청접수 마감일 기준)",
+      "section_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0006/line0/section",
+      "content_ids": [
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0006/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0008/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0009/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0010/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0011/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0012/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0013/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0014/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0015/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0016/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0017/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0007/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0018/line0",
+        "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0019/line0"
+      ],
+      "reading_order": 33,
+      "evidence_state": "inferred",
+      "source_references": [
+        {
+          "bbox": {
+            "x0": 61.64658737182617,
+            "x1": 306.67730712890625,
+            "y0": 143.10438537597656,
+            "y1": 156.64903259277344
+          },
+          "cell_id": null,
+          "span_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0006/l0000s0000",
+          "block_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0006",
+          "document_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757",
+          "page_number": 2
+        }
+      ]
+    }
+  ],
+  "contents": [
+    {
+      "kind": "paragraph",
+      "table_id": null,
+      "text_raw": "  2) 지원제외 대상(신청접수 마감일 기준)",
+      "content_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0006/line0",
+      "section_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0006/line0/section",
+      "reading_order": 33,
+      "evidence_state": "inferred",
+      "source_references": [
+        {
+          "bbox": {
+            "x0": 61.64658737182617,
+            "x1": 306.67730712890625,
+            "y0": 143.10438537597656,
+            "y1": 156.64903259277344
+          },
+          "cell_id": null,
+          "span_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0006/l0000s0000",
+          "block_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0006",
+          "document_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757",
+          "page_number": 2
+        }
+      ],
+      "context_content_ids": [],
+      "duplicate_of_table_ids": []
+    },
+    {
+      "kind": "paragraph",
+      "table_id": null,
+      "text_raw": "· 친·인척을 어시스턴트로 고용하는 경우",
+      "content_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0017/line0",
+      "section_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0006/line0/section",
+      "reading_order": 43,
+      "evidence_state": "inferred",
+      "source_references": [
+        {
+          "bbox": {
+            "x0": 80.71625518798828,
+            "x1": 98.58676147460938,
+            "y0": 351.78277587890625,
+            "y1": 364.3673400878906
+          },
+          "cell_id": null,
+          "span_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0017/l0000s0000",
+          "block_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0017",
+          "document_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757",
+          "page_number": 2
+        },
+        {
+          "bbox": {
+            "x0": 98.34669494628906,
+            "x1": 286.2641906738281,
+            "y0": 352.65460205078125,
+            "y1": 364.6415100097656
+          },
+          "cell_id": null,
+          "span_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0017/l0000s0001",
+          "block_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757/p0002/b0017",
+          "document_id": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757",
+          "page_number": 2
+        }
+      ],
+      "context_content_ids": [],
+      "duplicate_of_table_ids": []
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "item_v1": {
+    "id": "c-01",
+    "type": "body",
+    "question": "How large are private credit funds' assets under management today according to the BIS article?",
+    "gold": [
+      {
+        "doc": "biscredit",
+        "page": 1,
+        "text": "$0.2 billion in the early 2000s to over $2,500 billion today",
+        "row_label": null,
+        "equivalent_locations": [],
+        "conditional_terms": [],
+        "value_aliases": []
+      }
+    ],
+    "expected": [
+      "2,500 billion"
+    ],
+    "expected_equivalents": {},
+    "forbidden": [],
+    "answerable": true,
+    "ambiguous": false,
+    "alternative_gold": [],
+    "clarification_terms": [],
+    "require_selected_evidence": false,
+    "note": null
+  },
+  "item_v2": {
+    "id": "c-01",
+    "type": "body",
+    "question": "How large are private credit funds' assets under management today according to the BIS article?",
+    "gold": [
+      {
+        "doc": "biscredit",
+        "page": 1,
+        "text": "$0.2 billion in the early 2000s to over $2,500 billion today",
+        "row_label": null,
+        "equivalent_locations": [
+          {
+            "doc": "biscredit",
+            "page": 4,
+            "text": "private credit funds exceed $2.5 trillion globally.",
+            "row_label": null
+          }
+        ],
+        "conditional_terms": [],
+        "value_aliases": []
+      }
+    ],
+    "expected": [
+      "2,500 billion"
+    ],
+    "expected_equivalents": {
+      "2,500 billion": [
+        "$2.5 trillion"
+      ]
+    },
+    "forbidden": [],
+    "answerable": true,
+    "ambiguous": false,
+    "alternative_gold": [],
+    "clarification_terms": [],
+    "require_selected_evidence": true,
+    "note": null
+  },
+  "documents": {
+    "hana": "sha256:fc93d782e306e629b535606ae566f1bc10c93b65212368b33e5d867dad46393e",
+    "seodaejeon": "sha256:a17503050e523e124037c7250d017d4b7d29aec99e4e14de248ca7bcae5a04a8",
+    "bea": "sha256:2b71f6fda09716091b51990078e422aad847fbcc0d958d40cdce2a827856c9cc",
+    "tuta": "sha256:a29f3e9d4320432d665875c28b6ca1457f9716b77a20a5c824d6fc9e20aca27d",
+    "biscredit": "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046",
+    "wollong": "sha256:73153adcec06b018c0e8b88feee04f7746910a458811d33050ced6e2c7c128f0",
+    "gangdong": "sha256:4e251561e61e01ecd45f71507719bf4f3a0e47c79135444689e30b5bcbbb8145"
+  },
+  "original_resolved": {
+    "gold": [
+      "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046/p0001/b0007/line1"
+    ],
+    "gold_groups": [
+      [
+        "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046/p0001/b0007/line1"
+      ]
+    ],
+    "alternative": [],
+    "alternative_groups": [],
+    "unresolved": [],
+    "unresolved_gold": [],
+    "unresolved_alternative": []
+  },
+  "source_excerpts": {
+    "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046": {
+      "physical_tables": [],
+      "contents": [
+        {
+          "content_id": "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046/p0001/b0007/line1",
+          "text_raw": "$0.2 billion in the early 2000s to over $2,500 billion today. As private credit’s footprint ",
+          "source_references": [
+            {
+              "page_number": 1
+            }
+          ]
+        },
+        {
+          "content_id": "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046/p0004/b0001/line5",
+          "text_raw": "private credit funds exceed $2.5 trillion globally. In the United States, they ",
+          "source_references": [
+            {
+              "page_number": 4
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "source_file_sha256": {
+    "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046": "863f39a45a02b6265122c887f7837053accac19e39a51b5fe5f9642f506b9346"
+  },
+  "run": {
+    "question": "How large are private credit funds' assets under management today according to the BIS article?",
+    "evidence": [
+      {
+        "evidence_id": "E1",
+        "page": 4,
+        "notes": [],
+        "source": {
+          "bbox": {
+            "x0": 76.55996704101562,
+            "x1": 450.5355224609375,
+            "y0": 137.5440216064453,
+            "y1": 154.668212890625
+          },
+          "cell_id": null,
+          "span_id": "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046/p0004/b0001/l0005s0000",
+          "block_id": "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046/p0004/b0001",
+          "document_id": "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046",
+          "page_number": 4
+        },
+        "cell_id": null,
+        "row_path": [],
+        "table_id": null,
+        "span_refs": [
+          "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046/p0004/b0001/l0005s0000"
+        ],
+        "value_raw": "private credit funds exceed $2.5 trillion globally. In the United States, they ",
+        "content_id": "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046/p0004/b0001/line5",
+        "source_uri": "https://www.bis.org/publications/global-drivers-private-credit_0.pdf",
+        "value_kind": "body",
+        "column_path": [],
+        "document_id": "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046",
+        "source_name": "biscredit.pdf",
+        "unit_context": [],
+        "document_label": "biscredit.pdf | The global drivers of private credit1 | BIS Quarterly Review, March 2025 13",
+        "semantic_status": "unvalidated_candidate",
+        "source_media_type": "application/pdf",
+        "source_references": [
+          {
+            "bbox": {
+              "x0": 76.55996704101562,
+              "x1": 450.5355224609375,
+              "y0": 137.5440216064453,
+              "y1": 154.668212890625
+            },
+            "cell_id": null,
+            "span_id": "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046/p0004/b0001/l0005s0000",
+            "block_id": "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046/p0004/b0001",
+            "document_id": "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046",
+            "page_number": 4
+          }
+        ],
+        "run_id": "13354676-557b-4cd6-a69c-49b5d801ef4d"
+      }
+    ],
+    "result": {
+      "selection": {
+        "evidence_ids": [
+          "E1"
+        ],
+        "values_raw": [
+          "private credit funds exceed $2.5 trillion globally."
+        ],
+        "abstained": false
+      },
+      "answer_text": "According to the BIS article, private credit funds exceed $2.5 trillion globally in assets under management."
+    }
+  }
+}

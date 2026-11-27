@@ -1,0 +1,3322 @@
+{
+  "format": "tabledoc/0.5",
+  "document": {
+    "document_id": "sha256:ff94828cd03e17e2fdfb53248f829d5b75949ba6c38986050934e79577d2b5d1",
+    "pages": 1,
+    "tables": 1,
+    "validation_status": "review_required",
+    "facts_published": false
+  },
+  "sections": [],
+  "pages": [
+    {
+      "page_no": 1,
+      "text_source": "native",
+      "items": [
+        {
+          "position": 1,
+          "kind": "paragraph",
+          "content_id": 1,
+          "text": "가상 예금 금리 안내",
+          "bbox": [
+            42.0,
+            60.0,
+            84.0,
+            85.2
+          ]
+        },
+        {
+          "position": 2,
+          "kind": "paragraph",
+          "content_id": 2,
+          "text": "합성 예시입니다. 실제 금융기관·상품·금리가 아닙니다.",
+          "bbox": [
+            42.0,
+            96.0,
+            62.0,
+            108.0
+          ]
+        },
+        {
+          "position": 3,
+          "kind": "paragraph",
+          "content_id": 3,
+          "text": "단위: 연 %, 세전. 기준: 각 연도 말.",
+          "bbox": [
+            42.0,
+            161.0,
+            60.0,
+            171.8
+          ]
+        },
+        {
+          "position": 4,
+          "kind": "table",
+          "table_id": 1,
+          "context": [
+            1,
+            2,
+            3,
+            78,
+            79
+          ]
+        },
+        {
+          "position": 5,
+          "kind": "paragraph",
+          "content_id": 5,
+          "text": "2024년",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            276.0,
+            198.2,
+            298.2,
+            212.0
+          ]
+        },
+        {
+          "position": 6,
+          "kind": "paragraph",
+          "content_id": 6,
+          "text": "2025년",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            460.0,
+            198.2,
+            482.2,
+            212.0
+          ]
+        },
+        {
+          "position": 7,
+          "kind": "paragraph",
+          "content_id": 7,
+          "text": "구분",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            48.0,
+            223.0,
+            68.0,
+            235.0
+          ]
+        },
+        {
+          "position": 8,
+          "kind": "paragraph",
+          "content_id": 8,
+          "text": "개인",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            236.0,
+            223.0,
+            256.0,
+            235.0
+          ]
+        },
+        {
+          "position": 9,
+          "kind": "paragraph",
+          "content_id": 9,
+          "text": "법인",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            328.0,
+            223.0,
+            348.0,
+            235.0
+          ]
+        },
+        {
+          "position": 10,
+          "kind": "paragraph",
+          "content_id": 10,
+          "text": "개인",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            420.0,
+            223.0,
+            440.0,
+            235.0
+          ]
+        },
+        {
+          "position": 11,
+          "kind": "paragraph",
+          "content_id": 11,
+          "text": "법인",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            512.0,
+            223.0,
+            532.0,
+            235.0
+          ]
+        },
+        {
+          "position": 12,
+          "kind": "paragraph",
+          "content_id": 12,
+          "text": "기본",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            214.0,
+            248.0,
+            232.0,
+            258.8
+          ]
+        },
+        {
+          "position": 13,
+          "kind": "paragraph",
+          "content_id": 13,
+          "text": "우대",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            260.0,
+            248.0,
+            278.0,
+            258.8
+          ]
+        },
+        {
+          "position": 14,
+          "kind": "paragraph",
+          "content_id": 14,
+          "text": "기본",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            306.0,
+            248.0,
+            324.0,
+            258.8
+          ]
+        },
+        {
+          "position": 15,
+          "kind": "paragraph",
+          "content_id": 15,
+          "text": "우대",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            352.0,
+            248.0,
+            370.0,
+            258.8
+          ]
+        },
+        {
+          "position": 16,
+          "kind": "paragraph",
+          "content_id": 16,
+          "text": "기본",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            398.0,
+            248.0,
+            416.0,
+            258.8
+          ]
+        },
+        {
+          "position": 17,
+          "kind": "paragraph",
+          "content_id": 17,
+          "text": "우대",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            444.0,
+            248.0,
+            462.0,
+            258.8
+          ]
+        },
+        {
+          "position": 18,
+          "kind": "paragraph",
+          "content_id": 18,
+          "text": "기본",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            490.0,
+            248.0,
+            508.0,
+            258.8
+          ]
+        },
+        {
+          "position": 19,
+          "kind": "paragraph",
+          "content_id": 19,
+          "text": "우대",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            536.0,
+            248.0,
+            554.0,
+            258.8
+          ]
+        },
+        {
+          "position": 20,
+          "kind": "paragraph",
+          "content_id": 20,
+          "text": "6개월",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            158.0,
+            274.3,
+            163.0,
+            286.7
+          ]
+        },
+        {
+          "position": 21,
+          "kind": "paragraph",
+          "content_id": 21,
+          "text": "2.10",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            216.0,
+            274.3,
+            233.5,
+            286.7
+          ]
+        },
+        {
+          "position": 22,
+          "kind": "paragraph",
+          "content_id": 22,
+          "text": "0.20",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            262.0,
+            274.3,
+            279.5,
+            286.7
+          ]
+        },
+        {
+          "position": 23,
+          "kind": "paragraph",
+          "content_id": 23,
+          "text": "1.90",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            308.0,
+            274.3,
+            325.5,
+            286.7
+          ]
+        },
+        {
+          "position": 24,
+          "kind": "paragraph",
+          "content_id": 24,
+          "text": "2.40",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            400.0,
+            274.3,
+            417.5,
+            286.7
+          ]
+        },
+        {
+          "position": 25,
+          "kind": "paragraph",
+          "content_id": 25,
+          "text": "0.30",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            446.0,
+            274.3,
+            463.5,
+            286.7
+          ]
+        },
+        {
+          "position": 26,
+          "kind": "paragraph",
+          "content_id": 26,
+          "text": "2.20",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            492.0,
+            274.3,
+            509.5,
+            286.7
+          ]
+        },
+        {
+          "position": 27,
+          "kind": "paragraph",
+          "content_id": 27,
+          "text": "12개월",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            158.0,
+            304.3,
+            168.0,
+            316.7
+          ]
+        },
+        {
+          "position": 28,
+          "kind": "paragraph",
+          "content_id": 28,
+          "text": "2.50",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            216.0,
+            304.3,
+            233.5,
+            316.7
+          ]
+        },
+        {
+          "position": 29,
+          "kind": "paragraph",
+          "content_id": 29,
+          "text": "0.30",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            262.0,
+            304.3,
+            279.5,
+            316.7
+          ]
+        },
+        {
+          "position": 30,
+          "kind": "paragraph",
+          "content_id": 30,
+          "text": "2.30",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            308.0,
+            304.3,
+            325.5,
+            316.7
+          ]
+        },
+        {
+          "position": 31,
+          "kind": "paragraph",
+          "content_id": 31,
+          "text": "0.10",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            354.0,
+            304.3,
+            371.5,
+            316.7
+          ]
+        },
+        {
+          "position": 32,
+          "kind": "paragraph",
+          "content_id": 32,
+          "text": "2.80",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            400.0,
+            304.3,
+            417.5,
+            316.7
+          ]
+        },
+        {
+          "position": 33,
+          "kind": "paragraph",
+          "content_id": 33,
+          "text": "0.40",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            446.0,
+            304.3,
+            463.5,
+            316.7
+          ]
+        },
+        {
+          "position": 34,
+          "kind": "paragraph",
+          "content_id": 34,
+          "text": "2.60",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            492.0,
+            304.3,
+            509.5,
+            316.7
+          ]
+        },
+        {
+          "position": 35,
+          "kind": "paragraph",
+          "content_id": 35,
+          "text": "0.10",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            538.0,
+            304.3,
+            555.5,
+            316.7
+          ]
+        },
+        {
+          "position": 36,
+          "kind": "paragraph",
+          "content_id": 36,
+          "text": "정기예금",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            96.0,
+            305.5,
+            130.0,
+            315.7
+          ]
+        },
+        {
+          "position": 37,
+          "kind": "paragraph",
+          "content_id": 37,
+          "text": "예금",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            48.0,
+            334.0,
+            68.0,
+            346.0
+          ]
+        },
+        {
+          "position": 38,
+          "kind": "paragraph",
+          "content_id": 38,
+          "text": "24개월",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            158.0,
+            334.3,
+            168.0,
+            346.7
+          ]
+        },
+        {
+          "position": 39,
+          "kind": "paragraph",
+          "content_id": 39,
+          "text": "2.70",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            216.0,
+            334.3,
+            233.5,
+            346.7
+          ]
+        },
+        {
+          "position": 40,
+          "kind": "paragraph",
+          "content_id": 40,
+          "text": "0.30",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            262.0,
+            334.3,
+            279.5,
+            346.7
+          ]
+        },
+        {
+          "position": 41,
+          "kind": "paragraph",
+          "content_id": 41,
+          "text": "2.50",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            308.0,
+            334.3,
+            325.5,
+            346.7
+          ]
+        },
+        {
+          "position": 42,
+          "kind": "paragraph",
+          "content_id": 42,
+          "text": "0.10",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            354.0,
+            334.3,
+            371.5,
+            346.7
+          ]
+        },
+        {
+          "position": 43,
+          "kind": "paragraph",
+          "content_id": 43,
+          "text": "3.00",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            400.0,
+            334.3,
+            417.5,
+            346.7
+          ]
+        },
+        {
+          "position": 44,
+          "kind": "paragraph",
+          "content_id": 44,
+          "text": "0.40",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            446.0,
+            334.3,
+            463.5,
+            346.7
+          ]
+        },
+        {
+          "position": 45,
+          "kind": "paragraph",
+          "content_id": 45,
+          "text": "2.80",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            492.0,
+            334.3,
+            509.5,
+            346.7
+          ]
+        },
+        {
+          "position": 46,
+          "kind": "paragraph",
+          "content_id": 46,
+          "text": "0.20",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            538.0,
+            334.3,
+            555.5,
+            346.7
+          ]
+        },
+        {
+          "position": 47,
+          "kind": "paragraph",
+          "content_id": 47,
+          "text": "12개월",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            158.0,
+            364.3,
+            168.0,
+            376.7
+          ]
+        },
+        {
+          "position": 48,
+          "kind": "paragraph",
+          "content_id": 48,
+          "text": "2.30",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            216.0,
+            364.3,
+            233.5,
+            376.7
+          ]
+        },
+        {
+          "position": 49,
+          "kind": "paragraph",
+          "content_id": 49,
+          "text": "2.10",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            308.0,
+            364.3,
+            325.5,
+            376.7
+          ]
+        },
+        {
+          "position": 50,
+          "kind": "paragraph",
+          "content_id": 50,
+          "text": "2.60",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            400.0,
+            364.3,
+            417.5,
+            376.7
+          ]
+        },
+        {
+          "position": 51,
+          "kind": "paragraph",
+          "content_id": 51,
+          "text": "0.00",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            446.0,
+            364.3,
+            463.5,
+            376.7
+          ]
+        },
+        {
+          "position": 52,
+          "kind": "paragraph",
+          "content_id": 52,
+          "text": "2.40",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            492.0,
+            364.3,
+            509.5,
+            376.7
+          ]
+        },
+        {
+          "position": 53,
+          "kind": "paragraph",
+          "content_id": 53,
+          "text": "자유적립예금",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            96.0,
+            380.5,
+            147.0,
+            390.7
+          ]
+        },
+        {
+          "position": 54,
+          "kind": "paragraph",
+          "content_id": 54,
+          "text": "24개월",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            158.0,
+            394.3,
+            168.0,
+            406.7
+          ]
+        },
+        {
+          "position": 55,
+          "kind": "paragraph",
+          "content_id": 55,
+          "text": "2.50",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            216.0,
+            394.3,
+            233.5,
+            406.7
+          ]
+        },
+        {
+          "position": 56,
+          "kind": "paragraph",
+          "content_id": 56,
+          "text": "2.30",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            308.0,
+            394.3,
+            325.5,
+            406.7
+          ]
+        },
+        {
+          "position": 57,
+          "kind": "paragraph",
+          "content_id": 57,
+          "text": "2.80",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            400.0,
+            394.3,
+            417.5,
+            406.7
+          ]
+        },
+        {
+          "position": 58,
+          "kind": "paragraph",
+          "content_id": 58,
+          "text": "0.10",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            446.0,
+            394.3,
+            463.5,
+            406.7
+          ]
+        },
+        {
+          "position": 59,
+          "kind": "paragraph",
+          "content_id": 59,
+          "text": "2.60",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            492.0,
+            394.3,
+            509.5,
+            406.7
+          ]
+        },
+        {
+          "position": 60,
+          "kind": "paragraph",
+          "content_id": 60,
+          "text": "12개월",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            158.0,
+            424.3,
+            168.0,
+            436.7
+          ]
+        },
+        {
+          "position": 61,
+          "kind": "paragraph",
+          "content_id": 61,
+          "text": "2.70",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            216.0,
+            424.3,
+            233.5,
+            436.7
+          ]
+        },
+        {
+          "position": 62,
+          "kind": "paragraph",
+          "content_id": 62,
+          "text": "0.20",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            262.0,
+            424.3,
+            279.5,
+            436.7
+          ]
+        },
+        {
+          "position": 63,
+          "kind": "paragraph",
+          "content_id": 63,
+          "text": "3.00",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            400.0,
+            424.3,
+            417.5,
+            436.7
+          ]
+        },
+        {
+          "position": 64,
+          "kind": "paragraph",
+          "content_id": 64,
+          "text": "0.30",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            446.0,
+            424.3,
+            463.5,
+            436.7
+          ]
+        },
+        {
+          "position": 65,
+          "kind": "paragraph",
+          "content_id": 65,
+          "text": "정기적금",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            96.0,
+            440.5,
+            130.0,
+            450.7
+          ]
+        },
+        {
+          "position": 66,
+          "kind": "paragraph",
+          "content_id": 66,
+          "text": "적금",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            48.0,
+            454.0,
+            68.0,
+            466.0
+          ]
+        },
+        {
+          "position": 67,
+          "kind": "paragraph",
+          "content_id": 67,
+          "text": "24개월",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            158.0,
+            454.3,
+            168.0,
+            466.7
+          ]
+        },
+        {
+          "position": 68,
+          "kind": "paragraph",
+          "content_id": 68,
+          "text": "3.00",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            216.0,
+            454.3,
+            233.5,
+            466.7
+          ]
+        },
+        {
+          "position": 69,
+          "kind": "paragraph",
+          "content_id": 69,
+          "text": "0.30",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            262.0,
+            454.3,
+            279.5,
+            466.7
+          ]
+        },
+        {
+          "position": 70,
+          "kind": "paragraph",
+          "content_id": 70,
+          "text": "3.20",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            400.0,
+            454.3,
+            417.5,
+            466.7
+          ]
+        },
+        {
+          "position": 71,
+          "kind": "paragraph",
+          "content_id": 71,
+          "text": "0.40",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            446.0,
+            454.3,
+            463.5,
+            466.7
+          ]
+        },
+        {
+          "position": 72,
+          "kind": "paragraph",
+          "content_id": 72,
+          "text": "24개월",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            158.0,
+            484.3,
+            168.0,
+            496.7
+          ]
+        },
+        {
+          "position": 73,
+          "kind": "paragraph",
+          "content_id": 73,
+          "text": "3.50",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            216.0,
+            484.3,
+            233.5,
+            496.7
+          ]
+        },
+        {
+          "position": 74,
+          "kind": "paragraph",
+          "content_id": 74,
+          "text": "0.50",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            262.0,
+            484.3,
+            279.5,
+            496.7
+          ]
+        },
+        {
+          "position": 75,
+          "kind": "paragraph",
+          "content_id": 75,
+          "text": "3.80",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            400.0,
+            484.3,
+            417.5,
+            496.7
+          ]
+        },
+        {
+          "position": 76,
+          "kind": "paragraph",
+          "content_id": 76,
+          "text": "0.70",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            446.0,
+            484.3,
+            463.5,
+            496.7
+          ]
+        },
+        {
+          "position": 77,
+          "kind": "paragraph",
+          "content_id": 77,
+          "text": "청년적금",
+          "inside_tables": [
+            1
+          ],
+          "bbox": [
+            96.0,
+            485.5,
+            130.0,
+            495.7
+          ]
+        },
+        {
+          "position": 78,
+          "kind": "paragraph",
+          "content_id": 78,
+          "text": "빈칸은 해당 없음(가입 대상이 아니거나 우대금리 없음), 0.00은 우대금리가 0이라는 표기입니다.",
+          "bbox": [
+            42.0,
+            522.0,
+            69.0,
+            532.8
+          ]
+        },
+        {
+          "position": 79,
+          "kind": "paragraph",
+          "content_id": 79,
+          "text": "가상 자료. 파서 결과는 후보이며 승인된 금융 정보가 아닙니다.",
+          "bbox": [
+            42.0,
+            743.0,
+            60.0,
+            753.8
+          ]
+        }
+      ]
+    }
+  ],
+  "tables": [
+    {
+      "table_id": 1,
+      "ref": "p0001/physical000",
+      "page_no": 1,
+      "bbox": [
+        42.0,
+        193.0,
+        570.0,
+        505.0
+      ],
+      "rows": 11,
+      "columns": 11,
+      "state": "partial",
+      "panels": [
+        {
+          "panel_no": 0,
+          "first_col": 0,
+          "last_col": 11,
+          "header_rows": 3,
+          "label_columns": 3
+        }
+      ],
+      "row_nodes": [
+        {
+          "node_id": 1,
+          "parent": 2,
+          "panel_no": 0,
+          "label_raw": "6개월",
+          "label": "6개월",
+          "cell_id": 18,
+          "state": "inferred"
+        },
+        {
+          "node_id": 2,
+          "parent": 3,
+          "panel_no": 0,
+          "label_raw": "정기예금",
+          "label": "정기예금",
+          "cell_id": 17,
+          "state": "inferred"
+        },
+        {
+          "node_id": 3,
+          "parent": null,
+          "panel_no": 0,
+          "label_raw": "예금",
+          "label": "예금",
+          "cell_id": 16,
+          "state": "inferred"
+        },
+        {
+          "node_id": 4,
+          "parent": 2,
+          "panel_no": 0,
+          "label_raw": "12개월",
+          "label": "12개월",
+          "cell_id": 27,
+          "state": "inferred"
+        },
+        {
+          "node_id": 5,
+          "parent": 2,
+          "panel_no": 0,
+          "label_raw": "24개월",
+          "label": "24개월",
+          "cell_id": 36,
+          "state": "inferred"
+        },
+        {
+          "node_id": 6,
+          "parent": 7,
+          "panel_no": 0,
+          "label_raw": "12개월",
+          "label": "12개월",
+          "cell_id": 46,
+          "state": "inferred"
+        },
+        {
+          "node_id": 7,
+          "parent": 3,
+          "panel_no": 0,
+          "label_raw": "자유적립예금",
+          "label": "자유적립예금",
+          "cell_id": 45,
+          "state": "inferred"
+        },
+        {
+          "node_id": 8,
+          "parent": 7,
+          "panel_no": 0,
+          "label_raw": "24개월",
+          "label": "24개월",
+          "cell_id": 55,
+          "state": "inferred"
+        },
+        {
+          "node_id": 9,
+          "parent": 10,
+          "panel_no": 0,
+          "label_raw": "12개월",
+          "label": "12개월",
+          "cell_id": 66,
+          "state": "inferred"
+        },
+        {
+          "node_id": 10,
+          "parent": 11,
+          "panel_no": 0,
+          "label_raw": "정기적금",
+          "label": "정기적금",
+          "cell_id": 65,
+          "state": "inferred"
+        },
+        {
+          "node_id": 11,
+          "parent": null,
+          "panel_no": 0,
+          "label_raw": "적금",
+          "label": "적금",
+          "cell_id": 64,
+          "state": "inferred"
+        },
+        {
+          "node_id": 12,
+          "parent": 10,
+          "panel_no": 0,
+          "label_raw": "24개월",
+          "label": "24개월",
+          "cell_id": 75,
+          "state": "inferred"
+        },
+        {
+          "node_id": 13,
+          "parent": 11,
+          "panel_no": 0,
+          "label_raw": "청년적금",
+          "label": "청년적금",
+          "cell_id": 84,
+          "state": "inferred"
+        },
+        {
+          "node_id": 14,
+          "parent": 13,
+          "panel_no": 0,
+          "label_raw": "24개월",
+          "label": "24개월",
+          "cell_id": 85,
+          "state": "inferred"
+        }
+      ],
+      "column_nodes": [
+        {
+          "node_id": 15,
+          "parent": null,
+          "panel_no": 0,
+          "label_raw": "2024년",
+          "label": "2024년",
+          "cell_id": 2,
+          "state": "inferred"
+        },
+        {
+          "node_id": 16,
+          "parent": null,
+          "panel_no": 0,
+          "label_raw": "2025년",
+          "label": "2025년",
+          "cell_id": 3,
+          "state": "inferred"
+        },
+        {
+          "node_id": 17,
+          "parent": 15,
+          "panel_no": 0,
+          "label_raw": "개인",
+          "label": "개인",
+          "cell_id": 4,
+          "state": "inferred"
+        },
+        {
+          "node_id": 18,
+          "parent": 15,
+          "panel_no": 0,
+          "label_raw": "법인",
+          "label": "법인",
+          "cell_id": 5,
+          "state": "inferred"
+        },
+        {
+          "node_id": 19,
+          "parent": 16,
+          "panel_no": 0,
+          "label_raw": "개인",
+          "label": "개인",
+          "cell_id": 6,
+          "state": "inferred"
+        },
+        {
+          "node_id": 20,
+          "parent": 16,
+          "panel_no": 0,
+          "label_raw": "법인",
+          "label": "법인",
+          "cell_id": 7,
+          "state": "inferred"
+        },
+        {
+          "node_id": 21,
+          "parent": 17,
+          "panel_no": 0,
+          "label_raw": "기본",
+          "label": "기본",
+          "cell_id": 8,
+          "state": "inferred"
+        },
+        {
+          "node_id": 22,
+          "parent": 17,
+          "panel_no": 0,
+          "label_raw": "우대",
+          "label": "우대",
+          "cell_id": 9,
+          "state": "inferred"
+        },
+        {
+          "node_id": 23,
+          "parent": 18,
+          "panel_no": 0,
+          "label_raw": "기본",
+          "label": "기본",
+          "cell_id": 10,
+          "state": "inferred"
+        },
+        {
+          "node_id": 24,
+          "parent": 18,
+          "panel_no": 0,
+          "label_raw": "우대",
+          "label": "우대",
+          "cell_id": 11,
+          "state": "inferred"
+        },
+        {
+          "node_id": 25,
+          "parent": 19,
+          "panel_no": 0,
+          "label_raw": "기본",
+          "label": "기본",
+          "cell_id": 12,
+          "state": "inferred"
+        },
+        {
+          "node_id": 26,
+          "parent": 19,
+          "panel_no": 0,
+          "label_raw": "우대",
+          "label": "우대",
+          "cell_id": 13,
+          "state": "inferred"
+        },
+        {
+          "node_id": 27,
+          "parent": 20,
+          "panel_no": 0,
+          "label_raw": "기본",
+          "label": "기본",
+          "cell_id": 14,
+          "state": "inferred"
+        },
+        {
+          "node_id": 28,
+          "parent": 20,
+          "panel_no": 0,
+          "label_raw": "우대",
+          "label": "우대",
+          "cell_id": 15,
+          "state": "inferred"
+        }
+      ],
+      "paths": [
+        {
+          "cell_id": 19,
+          "row_node": 1,
+          "column_node": 21,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 20,
+          "row_node": 1,
+          "column_node": 22,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 21,
+          "row_node": 1,
+          "column_node": 23,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 22,
+          "row_node": 1,
+          "column_node": 24,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 23,
+          "row_node": 1,
+          "column_node": 25,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 24,
+          "row_node": 1,
+          "column_node": 26,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 25,
+          "row_node": 1,
+          "column_node": 27,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 26,
+          "row_node": 1,
+          "column_node": 28,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 28,
+          "row_node": 4,
+          "column_node": 21,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 29,
+          "row_node": 4,
+          "column_node": 22,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 30,
+          "row_node": 4,
+          "column_node": 23,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 31,
+          "row_node": 4,
+          "column_node": 24,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 32,
+          "row_node": 4,
+          "column_node": 25,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 33,
+          "row_node": 4,
+          "column_node": 26,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 34,
+          "row_node": 4,
+          "column_node": 27,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 35,
+          "row_node": 4,
+          "column_node": 28,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 37,
+          "row_node": 5,
+          "column_node": 21,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 38,
+          "row_node": 5,
+          "column_node": 22,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 39,
+          "row_node": 5,
+          "column_node": 23,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 40,
+          "row_node": 5,
+          "column_node": 24,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 41,
+          "row_node": 5,
+          "column_node": 25,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 42,
+          "row_node": 5,
+          "column_node": 26,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 43,
+          "row_node": 5,
+          "column_node": 27,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 44,
+          "row_node": 5,
+          "column_node": 28,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 47,
+          "row_node": 6,
+          "column_node": 21,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 48,
+          "row_node": 6,
+          "column_node": 22,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 49,
+          "row_node": 6,
+          "column_node": 23,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 50,
+          "row_node": 6,
+          "column_node": 24,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 51,
+          "row_node": 6,
+          "column_node": 25,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 52,
+          "row_node": 6,
+          "column_node": 26,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 53,
+          "row_node": 6,
+          "column_node": 27,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 54,
+          "row_node": 6,
+          "column_node": 28,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 56,
+          "row_node": 8,
+          "column_node": 21,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 57,
+          "row_node": 8,
+          "column_node": 22,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 58,
+          "row_node": 8,
+          "column_node": 23,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 59,
+          "row_node": 8,
+          "column_node": 24,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 60,
+          "row_node": 8,
+          "column_node": 25,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 61,
+          "row_node": 8,
+          "column_node": 26,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 62,
+          "row_node": 8,
+          "column_node": 27,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 63,
+          "row_node": 8,
+          "column_node": 28,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 67,
+          "row_node": 9,
+          "column_node": 21,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 68,
+          "row_node": 9,
+          "column_node": 22,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 69,
+          "row_node": 9,
+          "column_node": 23,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 70,
+          "row_node": 9,
+          "column_node": 24,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 71,
+          "row_node": 9,
+          "column_node": 25,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 72,
+          "row_node": 9,
+          "column_node": 26,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 73,
+          "row_node": 9,
+          "column_node": 27,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 74,
+          "row_node": 9,
+          "column_node": 28,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 76,
+          "row_node": 12,
+          "column_node": 21,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 77,
+          "row_node": 12,
+          "column_node": 22,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 78,
+          "row_node": 12,
+          "column_node": 23,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 79,
+          "row_node": 12,
+          "column_node": 24,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 80,
+          "row_node": 12,
+          "column_node": 25,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 81,
+          "row_node": 12,
+          "column_node": 26,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 82,
+          "row_node": 12,
+          "column_node": 27,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 83,
+          "row_node": 12,
+          "column_node": 28,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 86,
+          "row_node": 14,
+          "column_node": 21,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 87,
+          "row_node": 14,
+          "column_node": 22,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 88,
+          "row_node": 14,
+          "column_node": 23,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 89,
+          "row_node": 14,
+          "column_node": 24,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 90,
+          "row_node": 14,
+          "column_node": 25,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 91,
+          "row_node": 14,
+          "column_node": 26,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 92,
+          "row_node": 14,
+          "column_node": 27,
+          "state": "inferred"
+        },
+        {
+          "cell_id": 93,
+          "row_node": 14,
+          "column_node": 28,
+          "state": "inferred"
+        }
+      ],
+      "open_questions": [
+        {
+          "code": "LAYOUT_HYPOTHESIS",
+          "reason": "Header/stub inferred from top-left occupancy and leading body merges; semantic roles need review."
+        }
+      ],
+      "grid": [
+        {
+          "cell_id": 1,
+          "row": 0,
+          "col": 0,
+          "rowspan": 3,
+          "colspan": 3,
+          "role": "corner",
+          "text": "구분",
+          "bbox": [
+            42.0,
+            193.0,
+            202.0,
+            265.0
+          ]
+        },
+        {
+          "cell_id": 2,
+          "row": 0,
+          "col": 3,
+          "rowspan": 1,
+          "colspan": 4,
+          "role": "column_header",
+          "text": "2024년",
+          "bbox": [
+            202.0,
+            193.0,
+            386.0,
+            217.0
+          ],
+          "node": 15
+        },
+        {
+          "cell_id": 3,
+          "row": 0,
+          "col": 7,
+          "rowspan": 1,
+          "colspan": 4,
+          "role": "column_header",
+          "text": "2025년",
+          "bbox": [
+            386.0,
+            193.0,
+            570.0,
+            217.0
+          ],
+          "node": 16
+        },
+        {
+          "cell_id": 4,
+          "row": 1,
+          "col": 3,
+          "rowspan": 1,
+          "colspan": 2,
+          "role": "column_header",
+          "text": "개인",
+          "bbox": [
+            202.0,
+            217.0,
+            294.0,
+            241.0
+          ],
+          "node": 17
+        },
+        {
+          "cell_id": 5,
+          "row": 1,
+          "col": 5,
+          "rowspan": 1,
+          "colspan": 2,
+          "role": "column_header",
+          "text": "법인",
+          "bbox": [
+            294.0,
+            217.0,
+            386.0,
+            241.0
+          ],
+          "node": 18
+        },
+        {
+          "cell_id": 6,
+          "row": 1,
+          "col": 7,
+          "rowspan": 1,
+          "colspan": 2,
+          "role": "column_header",
+          "text": "개인",
+          "bbox": [
+            386.0,
+            217.0,
+            478.0,
+            241.0
+          ],
+          "node": 19
+        },
+        {
+          "cell_id": 7,
+          "row": 1,
+          "col": 9,
+          "rowspan": 1,
+          "colspan": 2,
+          "role": "column_header",
+          "text": "법인",
+          "bbox": [
+            478.0,
+            217.0,
+            570.0,
+            241.0
+          ],
+          "node": 20
+        },
+        {
+          "cell_id": 8,
+          "row": 2,
+          "col": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "column_header",
+          "text": "기본",
+          "bbox": [
+            202.0,
+            241.0,
+            248.0,
+            265.0
+          ],
+          "node": 21
+        },
+        {
+          "cell_id": 9,
+          "row": 2,
+          "col": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "column_header",
+          "text": "우대",
+          "bbox": [
+            248.0,
+            241.0,
+            294.0,
+            265.0
+          ],
+          "node": 22
+        },
+        {
+          "cell_id": 10,
+          "row": 2,
+          "col": 5,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "column_header",
+          "text": "기본",
+          "bbox": [
+            294.0,
+            241.0,
+            340.0,
+            265.0
+          ],
+          "node": 23
+        },
+        {
+          "cell_id": 11,
+          "row": 2,
+          "col": 6,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "column_header",
+          "text": "우대",
+          "bbox": [
+            340.0,
+            241.0,
+            386.0,
+            265.0
+          ],
+          "node": 24
+        },
+        {
+          "cell_id": 12,
+          "row": 2,
+          "col": 7,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "column_header",
+          "text": "기본",
+          "bbox": [
+            386.0,
+            241.0,
+            432.0,
+            265.0
+          ],
+          "node": 25
+        },
+        {
+          "cell_id": 13,
+          "row": 2,
+          "col": 8,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "column_header",
+          "text": "우대",
+          "bbox": [
+            432.0,
+            241.0,
+            478.0,
+            265.0
+          ],
+          "node": 26
+        },
+        {
+          "cell_id": 14,
+          "row": 2,
+          "col": 9,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "column_header",
+          "text": "기본",
+          "bbox": [
+            478.0,
+            241.0,
+            524.0,
+            265.0
+          ],
+          "node": 27
+        },
+        {
+          "cell_id": 15,
+          "row": 2,
+          "col": 10,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "column_header",
+          "text": "우대",
+          "bbox": [
+            524.0,
+            241.0,
+            570.0,
+            265.0
+          ],
+          "node": 28
+        },
+        {
+          "cell_id": 16,
+          "row": 3,
+          "col": 0,
+          "rowspan": 5,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "예금",
+          "bbox": [
+            42.0,
+            265.0,
+            92.0,
+            415.0
+          ],
+          "node": 3
+        },
+        {
+          "cell_id": 17,
+          "row": 3,
+          "col": 1,
+          "rowspan": 3,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "정기예금",
+          "bbox": [
+            92.0,
+            265.0,
+            152.0,
+            355.0
+          ],
+          "node": 2
+        },
+        {
+          "cell_id": 18,
+          "row": 3,
+          "col": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "6개월",
+          "bbox": [
+            152.0,
+            265.0,
+            202.0,
+            295.0
+          ],
+          "node": 1
+        },
+        {
+          "cell_id": 19,
+          "row": 3,
+          "col": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.10",
+          "bbox": [
+            202.0,
+            265.0,
+            248.0,
+            295.0
+          ]
+        },
+        {
+          "cell_id": 20,
+          "row": 3,
+          "col": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.20",
+          "bbox": [
+            248.0,
+            265.0,
+            294.0,
+            295.0
+          ]
+        },
+        {
+          "cell_id": 21,
+          "row": 3,
+          "col": 5,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "1.90",
+          "bbox": [
+            294.0,
+            265.0,
+            340.0,
+            295.0
+          ]
+        },
+        {
+          "cell_id": 22,
+          "row": 3,
+          "col": 6,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            340.0,
+            265.0,
+            386.0,
+            295.0
+          ]
+        },
+        {
+          "cell_id": 23,
+          "row": 3,
+          "col": 7,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.40",
+          "bbox": [
+            386.0,
+            265.0,
+            432.0,
+            295.0
+          ]
+        },
+        {
+          "cell_id": 24,
+          "row": 3,
+          "col": 8,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.30",
+          "bbox": [
+            432.0,
+            265.0,
+            478.0,
+            295.0
+          ]
+        },
+        {
+          "cell_id": 25,
+          "row": 3,
+          "col": 9,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.20",
+          "bbox": [
+            478.0,
+            265.0,
+            524.0,
+            295.0
+          ]
+        },
+        {
+          "cell_id": 26,
+          "row": 3,
+          "col": 10,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            524.0,
+            265.0,
+            570.0,
+            295.0
+          ]
+        },
+        {
+          "cell_id": 27,
+          "row": 4,
+          "col": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "12개월",
+          "bbox": [
+            152.0,
+            295.0,
+            202.0,
+            325.0
+          ],
+          "node": 4
+        },
+        {
+          "cell_id": 28,
+          "row": 4,
+          "col": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.50",
+          "bbox": [
+            202.0,
+            295.0,
+            248.0,
+            325.0
+          ]
+        },
+        {
+          "cell_id": 29,
+          "row": 4,
+          "col": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.30",
+          "bbox": [
+            248.0,
+            295.0,
+            294.0,
+            325.0
+          ]
+        },
+        {
+          "cell_id": 30,
+          "row": 4,
+          "col": 5,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.30",
+          "bbox": [
+            294.0,
+            295.0,
+            340.0,
+            325.0
+          ]
+        },
+        {
+          "cell_id": 31,
+          "row": 4,
+          "col": 6,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.10",
+          "bbox": [
+            340.0,
+            295.0,
+            386.0,
+            325.0
+          ]
+        },
+        {
+          "cell_id": 32,
+          "row": 4,
+          "col": 7,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.80",
+          "bbox": [
+            386.0,
+            295.0,
+            432.0,
+            325.0
+          ]
+        },
+        {
+          "cell_id": 33,
+          "row": 4,
+          "col": 8,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.40",
+          "bbox": [
+            432.0,
+            295.0,
+            478.0,
+            325.0
+          ]
+        },
+        {
+          "cell_id": 34,
+          "row": 4,
+          "col": 9,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.60",
+          "bbox": [
+            478.0,
+            295.0,
+            524.0,
+            325.0
+          ]
+        },
+        {
+          "cell_id": 35,
+          "row": 4,
+          "col": 10,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.10",
+          "bbox": [
+            524.0,
+            295.0,
+            570.0,
+            325.0
+          ]
+        },
+        {
+          "cell_id": 36,
+          "row": 5,
+          "col": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "24개월",
+          "bbox": [
+            152.0,
+            325.0,
+            202.0,
+            355.0
+          ],
+          "node": 5
+        },
+        {
+          "cell_id": 37,
+          "row": 5,
+          "col": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.70",
+          "bbox": [
+            202.0,
+            325.0,
+            248.0,
+            355.0
+          ]
+        },
+        {
+          "cell_id": 38,
+          "row": 5,
+          "col": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.30",
+          "bbox": [
+            248.0,
+            325.0,
+            294.0,
+            355.0
+          ]
+        },
+        {
+          "cell_id": 39,
+          "row": 5,
+          "col": 5,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.50",
+          "bbox": [
+            294.0,
+            325.0,
+            340.0,
+            355.0
+          ]
+        },
+        {
+          "cell_id": 40,
+          "row": 5,
+          "col": 6,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.10",
+          "bbox": [
+            340.0,
+            325.0,
+            386.0,
+            355.0
+          ]
+        },
+        {
+          "cell_id": 41,
+          "row": 5,
+          "col": 7,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "3.00",
+          "bbox": [
+            386.0,
+            325.0,
+            432.0,
+            355.0
+          ]
+        },
+        {
+          "cell_id": 42,
+          "row": 5,
+          "col": 8,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.40",
+          "bbox": [
+            432.0,
+            325.0,
+            478.0,
+            355.0
+          ]
+        },
+        {
+          "cell_id": 43,
+          "row": 5,
+          "col": 9,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.80",
+          "bbox": [
+            478.0,
+            325.0,
+            524.0,
+            355.0
+          ]
+        },
+        {
+          "cell_id": 44,
+          "row": 5,
+          "col": 10,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.20",
+          "bbox": [
+            524.0,
+            325.0,
+            570.0,
+            355.0
+          ]
+        },
+        {
+          "cell_id": 45,
+          "row": 6,
+          "col": 1,
+          "rowspan": 2,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "자유적립예금",
+          "bbox": [
+            92.0,
+            355.0,
+            152.0,
+            415.0
+          ],
+          "node": 7
+        },
+        {
+          "cell_id": 46,
+          "row": 6,
+          "col": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "12개월",
+          "bbox": [
+            152.0,
+            355.0,
+            202.0,
+            385.0
+          ],
+          "node": 6
+        },
+        {
+          "cell_id": 47,
+          "row": 6,
+          "col": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.30",
+          "bbox": [
+            202.0,
+            355.0,
+            248.0,
+            385.0
+          ]
+        },
+        {
+          "cell_id": 48,
+          "row": 6,
+          "col": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            248.0,
+            355.0,
+            294.0,
+            385.0
+          ]
+        },
+        {
+          "cell_id": 49,
+          "row": 6,
+          "col": 5,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.10",
+          "bbox": [
+            294.0,
+            355.0,
+            340.0,
+            385.0
+          ]
+        },
+        {
+          "cell_id": 50,
+          "row": 6,
+          "col": 6,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            340.0,
+            355.0,
+            386.0,
+            385.0
+          ]
+        },
+        {
+          "cell_id": 51,
+          "row": 6,
+          "col": 7,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.60",
+          "bbox": [
+            386.0,
+            355.0,
+            432.0,
+            385.0
+          ]
+        },
+        {
+          "cell_id": 52,
+          "row": 6,
+          "col": 8,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.00",
+          "bbox": [
+            432.0,
+            355.0,
+            478.0,
+            385.0
+          ]
+        },
+        {
+          "cell_id": 53,
+          "row": 6,
+          "col": 9,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.40",
+          "bbox": [
+            478.0,
+            355.0,
+            524.0,
+            385.0
+          ]
+        },
+        {
+          "cell_id": 54,
+          "row": 6,
+          "col": 10,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            524.0,
+            355.0,
+            570.0,
+            385.0
+          ]
+        },
+        {
+          "cell_id": 55,
+          "row": 7,
+          "col": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "24개월",
+          "bbox": [
+            152.0,
+            385.0,
+            202.0,
+            415.0
+          ],
+          "node": 8
+        },
+        {
+          "cell_id": 56,
+          "row": 7,
+          "col": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.50",
+          "bbox": [
+            202.0,
+            385.0,
+            248.0,
+            415.0
+          ]
+        },
+        {
+          "cell_id": 57,
+          "row": 7,
+          "col": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            248.0,
+            385.0,
+            294.0,
+            415.0
+          ]
+        },
+        {
+          "cell_id": 58,
+          "row": 7,
+          "col": 5,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.30",
+          "bbox": [
+            294.0,
+            385.0,
+            340.0,
+            415.0
+          ]
+        },
+        {
+          "cell_id": 59,
+          "row": 7,
+          "col": 6,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            340.0,
+            385.0,
+            386.0,
+            415.0
+          ]
+        },
+        {
+          "cell_id": 60,
+          "row": 7,
+          "col": 7,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.80",
+          "bbox": [
+            386.0,
+            385.0,
+            432.0,
+            415.0
+          ]
+        },
+        {
+          "cell_id": 61,
+          "row": 7,
+          "col": 8,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.10",
+          "bbox": [
+            432.0,
+            385.0,
+            478.0,
+            415.0
+          ]
+        },
+        {
+          "cell_id": 62,
+          "row": 7,
+          "col": 9,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.60",
+          "bbox": [
+            478.0,
+            385.0,
+            524.0,
+            415.0
+          ]
+        },
+        {
+          "cell_id": 63,
+          "row": 7,
+          "col": 10,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            524.0,
+            385.0,
+            570.0,
+            415.0
+          ]
+        },
+        {
+          "cell_id": 64,
+          "row": 8,
+          "col": 0,
+          "rowspan": 3,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "적금",
+          "bbox": [
+            42.0,
+            415.0,
+            92.0,
+            505.0
+          ],
+          "node": 11
+        },
+        {
+          "cell_id": 65,
+          "row": 8,
+          "col": 1,
+          "rowspan": 2,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "정기적금",
+          "bbox": [
+            92.0,
+            415.0,
+            152.0,
+            475.0
+          ],
+          "node": 10
+        },
+        {
+          "cell_id": 66,
+          "row": 8,
+          "col": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "12개월",
+          "bbox": [
+            152.0,
+            415.0,
+            202.0,
+            445.0
+          ],
+          "node": 9
+        },
+        {
+          "cell_id": 67,
+          "row": 8,
+          "col": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "2.70",
+          "bbox": [
+            202.0,
+            415.0,
+            248.0,
+            445.0
+          ]
+        },
+        {
+          "cell_id": 68,
+          "row": 8,
+          "col": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.20",
+          "bbox": [
+            248.0,
+            415.0,
+            294.0,
+            445.0
+          ]
+        },
+        {
+          "cell_id": 69,
+          "row": 8,
+          "col": 5,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            294.0,
+            415.0,
+            340.0,
+            445.0
+          ]
+        },
+        {
+          "cell_id": 70,
+          "row": 8,
+          "col": 6,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            340.0,
+            415.0,
+            386.0,
+            445.0
+          ]
+        },
+        {
+          "cell_id": 71,
+          "row": 8,
+          "col": 7,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "3.00",
+          "bbox": [
+            386.0,
+            415.0,
+            432.0,
+            445.0
+          ]
+        },
+        {
+          "cell_id": 72,
+          "row": 8,
+          "col": 8,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.30",
+          "bbox": [
+            432.0,
+            415.0,
+            478.0,
+            445.0
+          ]
+        },
+        {
+          "cell_id": 73,
+          "row": 8,
+          "col": 9,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            478.0,
+            415.0,
+            524.0,
+            445.0
+          ]
+        },
+        {
+          "cell_id": 74,
+          "row": 8,
+          "col": 10,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            524.0,
+            415.0,
+            570.0,
+            445.0
+          ]
+        },
+        {
+          "cell_id": 75,
+          "row": 9,
+          "col": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "24개월",
+          "bbox": [
+            152.0,
+            445.0,
+            202.0,
+            475.0
+          ],
+          "node": 12
+        },
+        {
+          "cell_id": 76,
+          "row": 9,
+          "col": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "3.00",
+          "bbox": [
+            202.0,
+            445.0,
+            248.0,
+            475.0
+          ]
+        },
+        {
+          "cell_id": 77,
+          "row": 9,
+          "col": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.30",
+          "bbox": [
+            248.0,
+            445.0,
+            294.0,
+            475.0
+          ]
+        },
+        {
+          "cell_id": 78,
+          "row": 9,
+          "col": 5,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            294.0,
+            445.0,
+            340.0,
+            475.0
+          ]
+        },
+        {
+          "cell_id": 79,
+          "row": 9,
+          "col": 6,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            340.0,
+            445.0,
+            386.0,
+            475.0
+          ]
+        },
+        {
+          "cell_id": 80,
+          "row": 9,
+          "col": 7,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "3.20",
+          "bbox": [
+            386.0,
+            445.0,
+            432.0,
+            475.0
+          ]
+        },
+        {
+          "cell_id": 81,
+          "row": 9,
+          "col": 8,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.40",
+          "bbox": [
+            432.0,
+            445.0,
+            478.0,
+            475.0
+          ]
+        },
+        {
+          "cell_id": 82,
+          "row": 9,
+          "col": 9,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            478.0,
+            445.0,
+            524.0,
+            475.0
+          ]
+        },
+        {
+          "cell_id": 83,
+          "row": 9,
+          "col": 10,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            524.0,
+            445.0,
+            570.0,
+            475.0
+          ]
+        },
+        {
+          "cell_id": 84,
+          "row": 10,
+          "col": 1,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "청년적금",
+          "bbox": [
+            92.0,
+            475.0,
+            152.0,
+            505.0
+          ],
+          "node": 13
+        },
+        {
+          "cell_id": 85,
+          "row": 10,
+          "col": 2,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "row_label",
+          "text": "24개월",
+          "bbox": [
+            152.0,
+            475.0,
+            202.0,
+            505.0
+          ],
+          "node": 14
+        },
+        {
+          "cell_id": 86,
+          "row": 10,
+          "col": 3,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "3.50",
+          "bbox": [
+            202.0,
+            475.0,
+            248.0,
+            505.0
+          ]
+        },
+        {
+          "cell_id": 87,
+          "row": 10,
+          "col": 4,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.50",
+          "bbox": [
+            248.0,
+            475.0,
+            294.0,
+            505.0
+          ]
+        },
+        {
+          "cell_id": 88,
+          "row": 10,
+          "col": 5,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            294.0,
+            475.0,
+            340.0,
+            505.0
+          ]
+        },
+        {
+          "cell_id": 89,
+          "row": 10,
+          "col": 6,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            340.0,
+            475.0,
+            386.0,
+            505.0
+          ]
+        },
+        {
+          "cell_id": 90,
+          "row": 10,
+          "col": 7,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "3.80",
+          "bbox": [
+            386.0,
+            475.0,
+            432.0,
+            505.0
+          ]
+        },
+        {
+          "cell_id": 91,
+          "row": 10,
+          "col": 8,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "0.70",
+          "bbox": [
+            432.0,
+            475.0,
+            478.0,
+            505.0
+          ]
+        },
+        {
+          "cell_id": 92,
+          "row": 10,
+          "col": 9,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            478.0,
+            475.0,
+            524.0,
+            505.0
+          ]
+        },
+        {
+          "cell_id": 93,
+          "row": 10,
+          "col": 10,
+          "rowspan": 1,
+          "colspan": 1,
+          "role": "value",
+          "text": "",
+          "bbox": [
+            524.0,
+            475.0,
+            570.0,
+            505.0
+          ]
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "scope": "table",
+      "relation": "caption",
+      "content_id": 1,
+      "state": "ambiguous",
+      "table_id": 1
+    },
+    {
+      "scope": "table",
+      "relation": "caption",
+      "content_id": 2,
+      "state": "ambiguous",
+      "table_id": 1
+    },
+    {
+      "scope": "table",
+      "relation": "unit",
+      "content_id": 3,
+      "state": "ambiguous",
+      "table_id": 1
+    },
+    {
+      "scope": "table",
+      "relation": "caption",
+      "content_id": 78,
+      "state": "ambiguous",
+      "table_id": 1
+    },
+    {
+      "scope": "table",
+      "relation": "caption",
+      "content_id": 79,
+      "state": "ambiguous",
+      "table_id": 1
+    }
+  ],
+  "table_links": []
+}
