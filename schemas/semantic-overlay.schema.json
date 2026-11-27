@@ -1,0 +1,982 @@
+{
+  "$defs": {
+    "BBox": {
+      "additionalProperties": false,
+      "description": "Unrotated visible page, PDF points, top-left origin (72 pt/in).",
+      "properties": {
+        "x0": {
+          "title": "X0",
+          "type": "number"
+        },
+        "y0": {
+          "title": "Y0",
+          "type": "number"
+        },
+        "x1": {
+          "title": "X1",
+          "type": "number"
+        },
+        "y1": {
+          "title": "Y1",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "title": "BBox",
+      "type": "object"
+    },
+    "CallRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "request_id": {
+          "title": "Request Id",
+          "type": "string"
+        },
+        "provider": {
+          "title": "Provider",
+          "type": "string"
+        },
+        "model_id": {
+          "title": "Model Id",
+          "type": "string"
+        },
+        "status": {
+          "title": "Status",
+          "type": "string"
+        },
+        "attempts": {
+          "title": "Attempts",
+          "type": "integer"
+        },
+        "elapsed_seconds": {
+          "title": "Elapsed Seconds",
+          "type": "number"
+        },
+        "input_tokens": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Input Tokens"
+        },
+        "output_tokens": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Output Tokens"
+        },
+        "input_token_upper_bound": {
+          "title": "Input Token Upper Bound",
+          "type": "integer"
+        },
+        "estimated_cost_usd": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Estimated Cost Usd"
+        },
+        "request_sha256": {
+          "title": "Request Sha256",
+          "type": "string"
+        },
+        "error_code": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Error Code"
+        }
+      },
+      "required": [
+        "request_id",
+        "provider",
+        "model_id",
+        "status",
+        "attempts",
+        "elapsed_seconds",
+        "input_tokens",
+        "output_tokens",
+        "input_token_upper_bound",
+        "estimated_cost_usd",
+        "request_sha256"
+      ],
+      "title": "CallRecord",
+      "type": "object"
+    },
+    "CellSnapshot": {
+      "additionalProperties": false,
+      "properties": {
+        "cell_id": {
+          "title": "Cell Id",
+          "type": "string"
+        },
+        "text_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Text Raw"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BBox"
+        },
+        "physical_status": {
+          "title": "Physical Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cell_id",
+        "text_raw",
+        "bbox",
+        "physical_status"
+      ],
+      "title": "CellSnapshot",
+      "type": "object"
+    },
+    "NumberMarker": {
+      "additionalProperties": false,
+      "properties": {
+        "family": {
+          "title": "Family",
+          "type": "string"
+        },
+        "token": {
+          "title": "Token",
+          "type": "string"
+        },
+        "ordinal": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Ordinal"
+        }
+      },
+      "required": [
+        "family",
+        "token"
+      ],
+      "title": "NumberMarker",
+      "type": "object"
+    },
+    "PatchDecision": {
+      "additionalProperties": false,
+      "properties": {
+        "proposal": {
+          "$ref": "#/$defs/SemanticPatch"
+        },
+        "validation_status": {
+          "enum": [
+            "proposed",
+            "accepted",
+            "rejected",
+            "review_required"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "reasons": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        },
+        "resolution_method": {
+          "enum": [
+            "rule",
+            "mock",
+            "text_llm"
+          ],
+          "title": "Resolution Method",
+          "type": "string"
+        }
+      },
+      "required": [
+        "proposal",
+        "validation_status",
+        "reasons",
+        "resolution_method"
+      ],
+      "title": "PatchDecision",
+      "type": "object"
+    },
+    "RelationCandidate": {
+      "additionalProperties": false,
+      "properties": {
+        "candidate_id": {
+          "title": "Candidate Id",
+          "type": "string"
+        },
+        "parent_id": {
+          "title": "Parent Id",
+          "type": "string"
+        },
+        "child_id": {
+          "title": "Child Id",
+          "type": "string"
+        },
+        "relation_type": {
+          "enum": [
+            "parent_child",
+            "alternative_label",
+            "annotation",
+            "continuation",
+            "related_adjustment"
+          ],
+          "title": "Relation Type",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "methods": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Methods",
+          "type": "array"
+        },
+        "conflicts": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Conflicts",
+          "type": "array"
+        },
+        "relative_depth": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Relative Depth"
+        }
+      },
+      "required": [
+        "candidate_id",
+        "parent_id",
+        "child_id",
+        "relation_type",
+        "evidence_ids",
+        "methods"
+      ],
+      "title": "RelationCandidate",
+      "type": "object"
+    },
+    "SemanticFeature": {
+      "additionalProperties": false,
+      "properties": {
+        "node_id": {
+          "title": "Node Id",
+          "type": "string"
+        },
+        "source_node_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Node Id"
+        },
+        "source_cell_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Cell Ids",
+          "type": "array"
+        },
+        "source_refs": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "title": "Source Refs",
+          "type": "array"
+        },
+        "text_raw": {
+          "title": "Text Raw",
+          "type": "string"
+        },
+        "axis": {
+          "enum": [
+            "row",
+            "column",
+            "document"
+          ],
+          "title": "Axis",
+          "type": "string"
+        },
+        "table_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Table Id"
+        },
+        "section_id": {
+          "title": "Section Id",
+          "type": "string"
+        },
+        "panel_id": {
+          "title": "Panel Id",
+          "type": "string"
+        },
+        "page_number": {
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "order": {
+          "maxItems": 3,
+          "minItems": 3,
+          "prefixItems": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            },
+            {
+              "type": "integer"
+            }
+          ],
+          "title": "Order",
+          "type": "array"
+        },
+        "row_range": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row Range"
+        },
+        "column_range": {
+          "anyOf": [
+            {
+              "maxItems": 2,
+              "minItems": 2,
+              "prefixItems": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "integer"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Column Range"
+        },
+        "physical_parent_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Physical Parent Id"
+        },
+        "physical_evidence": {
+          "enum": [
+            "observed",
+            "inferred",
+            "unresolved"
+          ],
+          "title": "Physical Evidence",
+          "type": "string"
+        },
+        "number": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/NumberMarker"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "indent": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Indent"
+        },
+        "fonts": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Fonts",
+          "type": "array"
+        },
+        "font_sizes": {
+          "default": [],
+          "items": {
+            "type": "number"
+          },
+          "title": "Font Sizes",
+          "type": "array"
+        },
+        "font_flags": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Font Flags",
+          "type": "array"
+        },
+        "bold": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bold"
+        },
+        "background_color": {
+          "default": null,
+          "title": "Background Color",
+          "type": "null"
+        },
+        "role_candidates": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Role Candidates",
+          "type": "array"
+        },
+        "repeated_node_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Repeated Node Ids",
+          "type": "array"
+        },
+        "page_edge": {
+          "default": "interior",
+          "enum": [
+            "start",
+            "end",
+            "interior"
+          ],
+          "title": "Page Edge",
+          "type": "string"
+        },
+        "value_cell_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Value Cell Ids",
+          "type": "array"
+        },
+        "alignment_evidence": {
+          "default": "unknown",
+          "title": "Alignment Evidence",
+          "type": "string"
+        }
+      },
+      "required": [
+        "node_id",
+        "source_node_id",
+        "source_cell_ids",
+        "source_refs",
+        "text_raw",
+        "axis",
+        "table_id",
+        "section_id",
+        "panel_id",
+        "page_number",
+        "order",
+        "physical_evidence"
+      ],
+      "title": "SemanticFeature",
+      "type": "object"
+    },
+    "SemanticNode": {
+      "additionalProperties": false,
+      "properties": {
+        "semantic_node_id": {
+          "title": "Semantic Node Id",
+          "type": "string"
+        },
+        "source_node_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Source Node Id"
+        },
+        "source_cell_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Cell Ids",
+          "type": "array"
+        },
+        "physical_parent_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Physical Parent Id"
+        },
+        "semantic_parent_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Semantic Parent Id"
+        },
+        "relation_type": {
+          "anyOf": [
+            {
+              "enum": [
+                "parent_child",
+                "alternative_label",
+                "annotation",
+                "continuation",
+                "related_adjustment"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Relation Type"
+        },
+        "hierarchy_path": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Hierarchy Path",
+          "type": "array"
+        },
+        "semantic_role": {
+          "title": "Semantic Role",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "title": "Evidence",
+          "type": "array"
+        },
+        "resolution_method": {
+          "title": "Resolution Method",
+          "type": "string"
+        },
+        "validation_status": {
+          "enum": [
+            "proposed",
+            "accepted",
+            "rejected",
+            "review_required"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "unresolved_reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Unresolved Reason"
+        },
+        "model_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Model Id"
+        },
+        "run_id": {
+          "format": "uuid",
+          "title": "Run Id",
+          "type": "string"
+        },
+        "candidate_parent_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Candidate Parent Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "semantic_node_id",
+        "source_node_id",
+        "source_cell_ids",
+        "physical_parent_id",
+        "semantic_parent_id",
+        "relation_type",
+        "hierarchy_path",
+        "semantic_role",
+        "evidence",
+        "resolution_method",
+        "validation_status",
+        "unresolved_reason",
+        "model_id",
+        "run_id"
+      ],
+      "title": "SemanticNode",
+      "type": "object"
+    },
+    "SemanticPatch": {
+      "additionalProperties": false,
+      "properties": {
+        "parent_id": {
+          "title": "Parent Id",
+          "type": "string"
+        },
+        "child_id": {
+          "title": "Child Id",
+          "type": "string"
+        },
+        "relation_type": {
+          "enum": [
+            "parent_child",
+            "alternative_label",
+            "annotation",
+            "continuation",
+            "related_adjustment"
+          ],
+          "title": "Relation Type",
+          "type": "string"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "parent_id",
+        "child_id",
+        "relation_type",
+        "evidence_ids",
+        "reason"
+      ],
+      "title": "SemanticPatch",
+      "type": "object"
+    },
+    "SourceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "minLength": 1,
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page_number": {
+          "exclusiveMinimum": 0,
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BBox"
+        },
+        "block_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Block Id"
+        },
+        "span_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Span Id"
+        },
+        "cell_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cell Id"
+        }
+      },
+      "required": [
+        "document_id",
+        "page_number",
+        "bbox"
+      ],
+      "title": "SourceRef",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "semantic-overlay/1.0",
+      "default": "semantic-overlay/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "document_id": {
+      "title": "Document Id",
+      "type": "string"
+    },
+    "accounting_scope": {
+      "title": "Accounting Scope",
+      "type": "string"
+    },
+    "scope_provenance": {
+      "title": "Scope Provenance",
+      "type": "string"
+    },
+    "run_id": {
+      "format": "uuid",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "mode": {
+      "enum": [
+        "rule_only",
+        "llm_only",
+        "hybrid"
+      ],
+      "title": "Mode",
+      "type": "string"
+    },
+    "model_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Model Id"
+    },
+    "input_hashes": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Input Hashes",
+      "type": "object"
+    },
+    "features": {
+      "items": {
+        "$ref": "#/$defs/SemanticFeature"
+      },
+      "title": "Features",
+      "type": "array"
+    },
+    "candidates": {
+      "items": {
+        "$ref": "#/$defs/RelationCandidate"
+      },
+      "title": "Candidates",
+      "type": "array"
+    },
+    "decisions": {
+      "items": {
+        "$ref": "#/$defs/PatchDecision"
+      },
+      "title": "Decisions",
+      "type": "array"
+    },
+    "table_nodes": {
+      "items": {
+        "$ref": "#/$defs/SemanticNode"
+      },
+      "title": "Table Nodes",
+      "type": "array"
+    },
+    "document_nodes": {
+      "items": {
+        "$ref": "#/$defs/SemanticNode"
+      },
+      "title": "Document Nodes",
+      "type": "array"
+    },
+    "source_cells": {
+      "items": {
+        "$ref": "#/$defs/CellSnapshot"
+      },
+      "title": "Source Cells",
+      "type": "array"
+    },
+    "calls": {
+      "items": {
+        "$ref": "#/$defs/CallRecord"
+      },
+      "title": "Calls",
+      "type": "array"
+    },
+    "escalations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Escalations",
+      "type": "array"
+    },
+    "status": {
+      "enum": [
+        "provisional",
+        "requires_ocr_or_vision"
+      ],
+      "title": "Status",
+      "type": "string"
+    },
+    "independently_reviewed": {
+      "const": false,
+      "default": false,
+      "title": "Independently Reviewed",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "document_id",
+    "accounting_scope",
+    "scope_provenance",
+    "run_id",
+    "mode",
+    "model_id",
+    "input_hashes",
+    "features",
+    "candidates",
+    "decisions",
+    "table_nodes",
+    "document_nodes",
+    "source_cells",
+    "calls",
+    "escalations",
+    "status"
+  ],
+  "title": "SemanticOverlay",
+  "type": "object"
+}

@@ -1,0 +1,40 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "semantic-coverage/1.0",
+      "default": "semantic-coverage/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "node_states": {
+      "additionalProperties": {
+        "enum": [
+          "explicit_abstention_prior_preserved",
+          "explicit_abstention",
+          "root_candidate_review_required",
+          "invalid_root_evidence",
+          "root_parent_conflict",
+          "parent_candidate_review_required",
+          "rejected_proposal_unresolved",
+          "silent_omission",
+          "auxiliary_only_hierarchy_unresolved"
+        ],
+        "type": "string"
+      },
+      "title": "Node States",
+      "type": "object"
+    },
+    "independently_validated_roots": {
+      "const": false,
+      "default": false,
+      "title": "Independently Validated Roots",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "node_states"
+  ],
+  "title": "CoverageReport",
+  "type": "object"
+}

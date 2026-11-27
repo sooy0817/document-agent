@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>셀 매핑 검토</title>
+<style>
+:root{--paper:#faf9f6;--ink:#24323e;--muted:#66727c;--line:#dedfd9;--green:#166c5a;--tint:#e9f2ed;--warn:#8a5a00;--warnbg:#fbf1dd;--bad:#a33a2b;--badbg:#f7e3df;--violet:#5b4a9e;--violetbg:#ece8f7;--head:#eef1f4;--white:#fff;--mono:Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.5 system-ui,-apple-system,"Segoe UI","Malgun Gothic",sans-serif}
+header{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 20px;border-bottom:1px solid var(--line);background:var(--white)}
+header a{color:var(--green);margin-left:14px}
+h1{font-size:17px;margin:0}h2{font-size:15px;margin:0 0 8px}h3{font-size:13px;margin:14px 0 6px;color:var(--muted)}
+main{display:grid;grid-template-columns:230px minmax(0,1fr) 360px;gap:12px;padding:12px 14px;max-width:2200px;margin:0 auto;align-items:start}
+.panes{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:start}
+.pane-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 6px;font-size:13px;color:var(--muted)}
+.pane-head select{width:auto;padding:2px 6px;font-size:12px}
+.page-wrap{overflow:auto;height:calc(100vh - 250px);border:1px solid var(--line);border-radius:6px;background:var(--paper)}
+#side{position:sticky;top:10px;height:calc(100vh - 90px);display:flex;flex-direction:column;padding:0}
+#cell{overflow:auto;padding:14px 14px 0;flex:1;min-height:0}
+.actions{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:10px 14px;border-top:1px solid var(--line);background:var(--white);border-radius:0 0 10px 10px}
+.actions .primary{min-width:110px}
+section{background:var(--white);border:1px solid var(--line);border-radius:10px;padding:14px;min-width:0}
+.hint{color:var(--muted);font-size:12px;margin:4px 0}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0}
+.metric{background:var(--paper);border-radius:6px;padding:6px 8px}.metric b{display:block;font-size:16px;font-variant-numeric:tabular-nums}.metric span{font-size:11px;color:var(--muted)}
+.list{max-height:calc(100vh - 330px);overflow:auto;margin-top:8px}
+#nav{position:sticky;top:10px}
+.doc-name{font-size:12px;font-weight:700;color:var(--muted);margin:10px 0 4px;text-transform:uppercase}
+.tbl{display:block;width:100%;text-align:left;border:1px solid var(--line);border-radius:6px;background:var(--white);padding:6px 8px;margin:4px 0;cursor:pointer;font:inherit;color:inherit}
+.tbl.active{border-color:var(--green);box-shadow:0 0 0 1px var(--green)}
+.tbl .t{display:flex;justify-content:space-between;gap:6px;font-weight:600;font-size:13px}
+.badge{display:inline-block;font-size:11px;padding:0 6px;border-radius:9px;background:var(--tint);color:var(--green);margin:2px 3px 0 0;font-weight:500;white-space:nowrap}
+.badge.warn{background:var(--warnbg);color:var(--warn)}.badge.bad{background:var(--badbg);color:var(--bad)}.badge.gray{background:var(--head);color:var(--muted)}
+.filters{display:flex;gap:4px;flex-wrap:wrap}.filters button{padding:3px 8px;font-size:12px}.filters button.on{background:var(--ink);color:var(--white);border-color:var(--ink)}
+button{font:inherit;padding:6px 12px;border-radius:6px;border:1px solid var(--line);background:var(--white);color:var(--ink);cursor:pointer}
+button.primary{background:var(--green);color:var(--white);border-color:var(--green)}
+button.on{background:var(--ink);color:var(--white);border-color:var(--ink)}
+button:disabled{opacity:.5;cursor:not-allowed}
+select,input[type=text],textarea{font:inherit;padding:5px 7px;border:1px solid var(--line);border-radius:5px;background:var(--white);color:var(--ink);width:100%}
+textarea{min-height:54px;resize:vertical}
+.legend{display:flex;flex-wrap:wrap;gap:10px;font-size:12px;color:var(--muted);margin:6px 0 10px}.legend i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-2px;margin-right:4px;border:1px solid var(--line)}
+.grid-wrap{overflow:auto;max-height:calc(100vh - 210px);border:1px solid var(--line);border-radius:6px}
+table.grid{border-collapse:collapse;font-size:12px;min-width:100%}
+table.grid td{border:1px solid #c9ccc4;padding:4px 6px;vertical-align:top;max-width:260px;min-width:44px;cursor:pointer;position:relative;background:var(--white)}
+table.grid td:hover{outline:2px solid var(--ink);outline-offset:-2px}
+table.grid td.sel{outline:3px solid var(--ink);outline-offset:-3px}
+table.grid td.addable{box-shadow:inset 0 0 0 2px var(--violet)}
+table.grid td.s-label{background:var(--head)}table.grid td.s-ok{background:var(--tint)}table.grid td.s-wrong{background:var(--badbg)}table.grid td.s-withheld{background:var(--warnbg)}
+table.grid td.s-container{background:#e6f0f8}table.grid td.s-dup{background:var(--badbg)}table.grid td.s-miss{background:var(--violetbg)}table.grid td.s-ignore{background:#f6f6f3;color:#9aa1a7}table.grid td.s-false{background:var(--badbg)}table.grid td.s-ctx{background:#f3f6f2}
+td .tx{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;white-space:pre-wrap;word-break:break-all}
+td .rc{position:absolute;right:2px;top:0;font:10px var(--mono);color:#9aa1a7}
+td .ok{position:absolute;left:2px;bottom:0;font-size:10px;color:var(--green)}td .ok.claude{color:#5b7a99;font-weight:700}
+dl{display:grid;grid-template-columns:96px 1fr;gap:4px 8px;margin:6px 0;font-size:13px}dt{color:var(--muted)}dd{margin:0;word-break:break-all}
+.path{display:flex;flex-wrap:wrap;gap:4px;align-items:center;min-height:28px;padding:3px;border:1px dashed var(--line);border-radius:5px}
+.chip{display:inline-flex;align-items:center;gap:4px;background:var(--head);border-radius:12px;padding:1px 4px 1px 8px;font-size:12px}
+.chip button{border:0;background:none;padding:0 4px;cursor:pointer;color:var(--muted)}
+.sep{color:var(--muted)}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:6px 0}
+.status{padding:7px 9px;border-radius:6px;font-size:13px;margin:6px 0}
+.status.ok{background:var(--tint);color:var(--green)}.status.wrong{background:var(--badbg);color:var(--bad)}.status.withheld{background:var(--warnbg);color:var(--warn)}.status.miss{background:var(--violetbg);color:var(--violet)}.status.neutral{background:var(--paper)}
+.reasons{margin:4px 0;padding-left:18px;font-size:12.5px}
+.sheet{position:relative;width:100%}.sheet img{width:100%;display:block}
+.source-frame{width:100%;height:calc(100% - 34px);border:0;background:#fff}
+.highlight{position:absolute;border:2px solid var(--bad);background:rgba(163,58,43,.12);display:none;pointer-events:none}
+.error{color:var(--bad);background:var(--badbg);padding:8px 10px;border-radius:6px;margin:8px 0}
+.dirty{color:var(--warn);font-size:12px}
+.items{margin:6px 0;padding:0;list-style:none;font-size:12.5px}.items li{border-left:3px solid var(--line);padding:3px 8px;margin:3px 0}.items li.tbl-item{border-left-color:var(--green);background:var(--tint)}
+.crumb{display:inline-flex;flex-wrap:wrap;gap:4px;align-items:center}.crumb button{padding:1px 8px;font-size:12px}
+.fail-kind{font-size:12px;font-weight:700;margin:8px 0 2px}.fail{display:block;width:100%;text-align:left;font-size:12px;padding:3px 6px;margin:2px 0;border:1px solid var(--line);border-radius:5px;background:var(--white);cursor:pointer;color:inherit}
+.fail small{color:var(--muted)}
+.full{white-space:pre-wrap;max-height:160px;overflow:auto;background:var(--paper);padding:6px;border-radius:5px;font-size:12.5px}
+@media(max-width:1400px){main{grid-template-columns:200px minmax(0,1fr) 330px}}
+@media(max-width:1150px){main{grid-template-columns:minmax(0,1fr) 330px}#nav{grid-column:1/-1;position:static}.list{max-height:240px}}
+@media(max-width:900px){.panes{grid-template-columns:1fr}}
+@media(max-width:760px){main{grid-template-columns:1fr;padding:10px 16px}#side{position:static;max-height:none}}
+</style>
+<script>window.token="__TOKEN__";</script>
+</head>
+<body>
+<header>
+  <h1>셀 매핑 검토</h1>
+  <nav><a href="/ask">문서 코퍼스 질문</a><a href="/">문서 업로드·검토</a></nav>
+</header>
+<main>
+  <section id="nav">
+    <h2 id="set-name">매핑 테스트셋</h2>
+    <select id="set-picker" aria-label="테스트셋 고르기" style="margin-bottom:6px"></select>
+    <p class="hint" id="set-state"></p>
+    <div class="metrics" id="metrics"></div>
+    <div class="filters" id="filters">
+      <button data-f="all" class="on">전체</button><button data-f="fail">실패 있음</button><button data-f="todo">검토 남음</button>
+    </div>
+    <details id="failures-box" style="margin-top:8px">
+      <summary>실패 모아 보기 <span id="failures-count"></span></summary>
+      <p class="hint">현재 분석 결과가 기대값과 다른 셀입니다. 누르면 그 셀로 갑니다.</p>
+      <div id="failures" style="max-height:40vh;overflow:auto"></div>
+    </details>
+    <div class="list" id="tables"></div>
+  </section>
+  <section id="center">
+    <div class="row" style="justify-content:space-between">
+      <h2 id="table-title" style="margin:0">표를 고르세요</h2>
+      <div class="row" style="margin:0">
+        <button id="mark-all" disabled>표 전체 확인 표시</button>
+      </div>
+    </div>
+    <p class="hint" id="table-meta"></p>
+    <div class="legend">
+      <span><i style="background:var(--head)"></i>라벨·머리글</span>
+      <span><i style="background:var(--tint)"></i>근거 사용 · 경로 맞음</span>
+      <span><i style="background:var(--badbg)"></i>근거 사용 · 경로 틀림</span>
+      <span><i style="background:var(--warnbg)"></i>경로 맞지만 근거에서 빠짐</span>
+      <span><i style="background:var(--violetbg)"></i>값인데 경로 없음·틀림 · 근거에서 빠짐</span>
+      <span><i style="background:#e6f0f8"></i>내용을 담는 칸</span>
+      <span><i style="background:#f6f6f3"></i>채점 제외</span>
+      <span>✓ 사람 확인 · C Claude 확인</span>
+    </div>
+    <div id="error" class="error" hidden></div>
+    <div class="panes">
+      <div>
+        <div class="pane-head"><span>추출한 표</span></div>
+        <div class="grid-wrap" id="grid"><p class="hint" style="padding:10px">왼쪽 목록에서 표를 고르세요. 셀을 누르면 행·열 의미 경로와 근거 사용 여부가 오른쪽에 나옵니다.</p></div>
+      </div>
+      <div>
+        <div class="pane-head"><span id="page-title">원본 쪽</span>
+          <select id="zoom" aria-label="원본 확대"><option value="100">폭 맞춤</option><option value="150" selected>150%</option><option value="200">200%</option><option value="300">300%</option></select></div>
+        <div class="page-wrap" id="page"><p class="hint" style="padding:10px">표를 고르면 원본 쪽이 여기에 나옵니다.</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="side">
+    <div id="cell"><h2>선택한 셀</h2><p class="hint">셀을 누르세요.</p></div>
+    <div class="actions">
+      <span class="dirty" id="dirty">변경 없음</span>
+      <button id="save" class="primary" disabled title="Ctrl+S">저장</button>
+    </div>
+  </section>
+</main>
+<script src="/mapping.js?v=8"></script>
+</body>
+</html>

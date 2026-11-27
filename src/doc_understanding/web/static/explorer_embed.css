@@ -1,0 +1,8 @@
+html.monitor-embed body{background:#fff}
+.monitor-embed body>header,.monitor-embed .intro,.monitor-embed #about,.monitor-embed .sidebar,.monitor-embed footer,.monitor-embed #review-attention,.monitor-embed #review-queue-panel,.monitor-embed #review-agent-controls{display:none!important}
+.monitor-embed main{max-width:none;padding:0}
+.monitor-embed .workspace{grid-template-columns:minmax(0,1fr);border:0;border-radius:0;box-shadow:none}
+.monitor-embed .viewer,.monitor-embed .result{height:650px;max-height:650px}
+.monitor-embed #review-panel{display:none!important}
+.monitor-embed .pane-head{padding:7px 10px;height:auto;min-height:54px;flex-wrap:wrap;gap:4px}
+@media(min-width:620px){.monitor-embed .panes{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.monitor-embed .pane+.pane{border-left:1px solid var(--line);border-top:0}}

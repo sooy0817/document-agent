@@ -6,19 +6,19 @@ from pathlib import Path
 
 from doc_understanding.domain.contracts import ExtractionRequest
 from doc_understanding.domain.models import BBox
-from doc_understanding.extraction.physical_evidence_adapter import raster_evidence
-from doc_understanding.extraction.pymupdf_adapter import PyMuPDFExtractor
-from doc_understanding.orchestrator.workflow import extract_ir
-from doc_understanding.table_understanding.physical_grid import PhysicalGridReconstructor
-from doc_understanding.table_understanding.physical_validator import PhysicalStructureValidator
-from doc_understanding.table_understanding.row_alignment import CellToRowAlignment
+from doc_understanding.parser.extraction.physical_evidence_adapter import raster_evidence
+from doc_understanding.parser.extraction.pymupdf_adapter import PyMuPDFExtractor
+from doc_understanding.parser.orchestration.workflow import extract_ir
+from doc_understanding.parser.physical.physical_grid import PhysicalGridReconstructor
+from doc_understanding.parser.physical.physical_validator import PhysicalStructureValidator
+from doc_understanding.parser.physical.row_alignment import CellToRowAlignment
 from tests.physical_fixtures import fixture_pdf
 
 
 class PhysicalGridTests(unittest.TestCase):
     def test_open_outer_edges_preserve_full_region_and_require_review(self):
-        from doc_understanding.table_understanding.line_detector import LineDetector
-        from doc_understanding.table_understanding.physical_models import GridPolicy
+        from doc_understanding.parser.physical.line_detector import LineDetector
+        from doc_understanding.parser.physical.physical_models import GridPolicy
 
         _, ir, _ = self.analyze()
         page = ir.pages[0]
@@ -177,7 +177,7 @@ class PhysicalGridTests(unittest.TestCase):
         self.assertTrue(any(i.code == "CELL_BOUNDARY_CONFLICT" for i in checked.validation_issues))
 
     def test_evaluator_emits_json_overlay_and_partitioned_counts(self):
-        from doc_understanding.eval.physical import evaluate_pdf
+        from doc_understanding.parser.physical.runner import evaluate_pdf
         import json
 
         with tempfile.TemporaryDirectory() as directory:

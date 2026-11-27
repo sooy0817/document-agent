@@ -1,0 +1,1296 @@
+{
+  "$defs": {
+    "Cell": {
+      "additionalProperties": false,
+      "description": "표의 칸 하나. 머리글·라벨·값·빈칸을 모두 담는다.",
+      "properties": {
+        "cell_id": {
+          "title": "Cell Id",
+          "type": "integer"
+        },
+        "row": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Row"
+        },
+        "col": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Col"
+        },
+        "rowspan": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Rowspan"
+        },
+        "colspan": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Colspan"
+        },
+        "role": {
+          "enum": [
+            "corner",
+            "row_label",
+            "column_header",
+            "value",
+            "unknown"
+          ],
+          "title": "Role",
+          "type": "string"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Text"
+        },
+        "bbox": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Bbox",
+          "type": "array"
+        },
+        "status": {
+          "anyOf": [
+            {
+              "enum": [
+                "inferred",
+                "unresolved"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "격자 복원이 확실하지 않을 때만 있다",
+          "title": "Status"
+        },
+        "node": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "이 칸이 머리글·라벨이면 그 노드",
+          "title": "Node"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        }
+      },
+      "required": [
+        "cell_id",
+        "row",
+        "col",
+        "rowspan",
+        "colspan",
+        "role",
+        "text",
+        "bbox"
+      ],
+      "title": "Cell",
+      "type": "object"
+    },
+    "DocumentInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "description": "원본 내용 해시로 만든 문서 식별자. 출력 전체에서 여기에만 있다",
+          "title": "Document Id",
+          "type": "string"
+        },
+        "pages": {
+          "title": "Pages",
+          "type": "integer"
+        },
+        "tables": {
+          "title": "Tables",
+          "type": "integer"
+        },
+        "validation_status": {
+          "enum": [
+            "not_validated",
+            "partial",
+            "review_required",
+            "validated"
+          ],
+          "title": "Validation Status",
+          "type": "string"
+        },
+        "facts_published": {
+          "const": false,
+          "default": false,
+          "title": "Facts Published",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "document_id",
+        "pages",
+        "tables",
+        "validation_status"
+      ],
+      "title": "DocumentInfo",
+      "type": "object"
+    },
+    "Item": {
+      "additionalProperties": false,
+      "description": "쪽 안의 읽는 순서 한 줄. 본문이면 글자를, 표면 표 번호를 가진다.",
+      "properties": {
+        "position": {
+          "minimum": 1,
+          "title": "Position",
+          "type": "integer"
+        },
+        "kind": {
+          "enum": [
+            "paragraph",
+            "note",
+            "rule",
+            "image",
+            "unknown",
+            "table"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "content_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Content Id"
+        },
+        "table_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Table Id"
+        },
+        "text": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text"
+        },
+        "bbox": {
+          "anyOf": [
+            {
+              "maxItems": 4,
+              "minItems": 4,
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Bbox"
+        },
+        "section_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "이 항목이 속한 섹션. 정하지 못했으면 없다",
+          "title": "Section Id"
+        },
+        "section_title": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "이 줄이 섹션의 제목이면 true",
+          "title": "Section Title"
+        },
+        "context": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "표 항목에만: 이 표를 설명한다고 본 본문 줄(content_id)",
+          "title": "Context"
+        },
+        "inside_tables": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "integer"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "표 안의 글자를 다시 뽑은 줄이면 그 표들. 본문으로 읽지 않는다",
+          "title": "Inside Tables"
+        },
+        "confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "cell_assignment": {
+          "anyOf": [
+            {
+              "const": "ambiguous",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "OCR 줄이 표의 두 칸에 걸치거나 경계에 놓여 칸을 정하지 못했을 때만 있다. 글자는 어느 칸에도 넣지 않았다",
+          "title": "Cell Assignment"
+        }
+      },
+      "required": [
+        "position",
+        "kind"
+      ],
+      "title": "Item",
+      "type": "object"
+    },
+    "Link": {
+      "additionalProperties": false,
+      "description": "본문 한 줄과 표(또는 표의 행·열)의 관계.",
+      "properties": {
+        "relation": {
+          "enum": [
+            "note",
+            "caption",
+            "unit",
+            "formula"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "scope": {
+          "enum": [
+            "page",
+            "section",
+            "table",
+            "row",
+            "column",
+            "cell",
+            "unknown"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "content_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Content Id"
+        },
+        "state": {
+          "enum": [
+            "resolved",
+            "ambiguous",
+            "unresolved"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "table_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Table Id"
+        },
+        "node": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Node"
+        },
+        "target_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Target Ref"
+        }
+      },
+      "required": [
+        "relation",
+        "scope",
+        "content_id",
+        "state"
+      ],
+      "title": "Link",
+      "type": "object"
+    },
+    "LinkPath": {
+      "additionalProperties": false,
+      "description": "이어지는 표(`to_table`)의 값 칸 하나가 빌려 쓰는 머리글의 출처. 바깥에서 안쪽 순서다.",
+      "properties": {
+        "cell_id": {
+          "description": "`to_table`에서 이 연결이 값으로 해석하는 칸. 그 표의 격자에서는 값이 아닌 역할일 수 있으므로 연결의 `state`를 함께 읽는다(`candidate`면 채택되지 않은 해석이다)",
+          "title": "Cell Id",
+          "type": "integer"
+        },
+        "row": {
+          "default": [],
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Row",
+          "type": "array"
+        },
+        "column": {
+          "default": [],
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Column",
+          "type": "array"
+        },
+        "row_candidates": {
+          "default": [],
+          "description": "행 라벨 후보가 여럿이라 정하지 못했을 때의 후보",
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Row Candidates",
+          "type": "array"
+        },
+        "state": {
+          "enum": [
+            "inferred",
+            "unresolved"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "reasons": {
+          "anyOf": [
+            {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "연결의 `reasons`와 다를 때만 있다",
+          "title": "Reasons"
+        }
+      },
+      "required": [
+        "cell_id",
+        "state"
+      ],
+      "title": "LinkPath",
+      "type": "object"
+    },
+    "Node": {
+      "additionalProperties": false,
+      "description": "머리글 트리의 노드. 부모를 가리킨다.",
+      "properties": {
+        "node_id": {
+          "title": "Node Id",
+          "type": "integer"
+        },
+        "parent": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Parent"
+        },
+        "panel_no": {
+          "default": 0,
+          "title": "Panel No",
+          "type": "integer"
+        },
+        "label_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Label Raw"
+        },
+        "label": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Label"
+        },
+        "cell_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "이 라벨이 인쇄된 칸",
+          "title": "Cell Id"
+        },
+        "state": {
+          "enum": [
+            "observed",
+            "inferred",
+            "unresolved"
+          ],
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "node_id",
+        "parent",
+        "label_raw",
+        "label",
+        "cell_id",
+        "state"
+      ],
+      "title": "Node",
+      "type": "object"
+    },
+    "Ocr": {
+      "additionalProperties": false,
+      "properties": {
+        "engine": {
+          "title": "Engine",
+          "type": "string"
+        },
+        "model": {
+          "title": "Model",
+          "type": "string"
+        },
+        "dpi": {
+          "title": "Dpi",
+          "type": "integer"
+        },
+        "mean_confidence": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Mean Confidence"
+        }
+      },
+      "required": [
+        "engine",
+        "model",
+        "dpi"
+      ],
+      "title": "Ocr",
+      "type": "object"
+    },
+    "OpenQuestion": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "reason"
+      ],
+      "title": "OpenQuestion",
+      "type": "object"
+    },
+    "Page": {
+      "additionalProperties": false,
+      "properties": {
+        "page_no": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Page No"
+        },
+        "width": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Width"
+        },
+        "height": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Height"
+        },
+        "text_source": {
+          "anyOf": [
+            {
+              "enum": [
+                "native",
+                "ocr",
+                "mixed",
+                "none"
+              ],
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text Source"
+        },
+        "ocr": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Ocr"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "items": {
+          "items": {
+            "$ref": "#/$defs/Item"
+          },
+          "title": "Items",
+          "type": "array"
+        }
+      },
+      "required": [
+        "page_no",
+        "items"
+      ],
+      "title": "Page",
+      "type": "object"
+    },
+    "Panel": {
+      "additionalProperties": false,
+      "properties": {
+        "panel_no": {
+          "title": "Panel No",
+          "type": "integer"
+        },
+        "first_col": {
+          "title": "First Col",
+          "type": "integer"
+        },
+        "last_col": {
+          "title": "Last Col",
+          "type": "integer"
+        },
+        "header_rows": {
+          "title": "Header Rows",
+          "type": "integer"
+        },
+        "label_columns": {
+          "title": "Label Columns",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "panel_no",
+        "first_col",
+        "last_col",
+        "header_rows",
+        "label_columns"
+      ],
+      "title": "Panel",
+      "type": "object"
+    },
+    "ParentCell": {
+      "additionalProperties": false,
+      "properties": {
+        "table_id": {
+          "minimum": 1,
+          "title": "Table Id",
+          "type": "integer"
+        },
+        "cell_id": {
+          "minimum": 1,
+          "title": "Cell Id",
+          "type": "integer"
+        },
+        "state": {
+          "enum": [
+            "observed",
+            "inferred"
+          ],
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "table_id",
+        "cell_id",
+        "state"
+      ],
+      "title": "ParentCell",
+      "type": "object"
+    },
+    "Path": {
+      "additionalProperties": false,
+      "description": "값 칸의 채택된 경로. 잎 노드 두 개.",
+      "properties": {
+        "cell_id": {
+          "title": "Cell Id",
+          "type": "integer"
+        },
+        "row_node": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Row Node"
+        },
+        "column_node": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Column Node"
+        },
+        "state": {
+          "enum": [
+            "observed",
+            "inferred",
+            "unresolved"
+          ],
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cell_id",
+        "row_node",
+        "column_node",
+        "state"
+      ],
+      "title": "Path",
+      "type": "object"
+    },
+    "Section": {
+      "additionalProperties": false,
+      "description": "제목 한 줄 아래의 묶음. 구성원은 항목의 `section_id`로 찾는다.",
+      "properties": {
+        "section_id": {
+          "title": "Section Id",
+          "type": "integer"
+        },
+        "parent": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "상위 섹션. 최상위면 null",
+          "title": "Parent"
+        },
+        "title": {
+          "description": "제목 원문",
+          "title": "Title",
+          "type": "string"
+        },
+        "title_content_id": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "제목이 인쇄된 본문 줄",
+          "title": "Title Content Id"
+        },
+        "first_page": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "구성원이 있는 첫 쪽",
+          "title": "First Page"
+        },
+        "last_page": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "구성원이 있는 마지막 쪽. 첫 쪽과 다르면 쪽을 넘어간다",
+          "title": "Last Page"
+        },
+        "reprinted_title_content_ids": {
+          "default": [],
+          "description": "같은 제목이 다음 쪽에 다시 인쇄된 줄. 새 섹션이 아니다",
+          "items": {
+            "type": "integer"
+          },
+          "title": "Reprinted Title Content Ids",
+          "type": "array"
+        },
+        "state": {
+          "enum": [
+            "inferred",
+            "unresolved"
+          ],
+          "title": "State",
+          "type": "string"
+        }
+      },
+      "required": [
+        "section_id",
+        "parent",
+        "title",
+        "title_content_id",
+        "first_page",
+        "last_page",
+        "state"
+      ],
+      "title": "Section",
+      "type": "object"
+    },
+    "Table": {
+      "additionalProperties": false,
+      "properties": {
+        "parent_cell": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ParentCell"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "table_id": {
+          "title": "Table Id",
+          "type": "integer"
+        },
+        "ref": {
+          "description": "원래 식별자(쪽/표). 다시 분석한 결과끼리 맞출 때 쓴다",
+          "title": "Ref",
+          "type": "string"
+        },
+        "page_no": {
+          "title": "Page No",
+          "type": "integer"
+        },
+        "bbox": {
+          "maxItems": 4,
+          "minItems": 4,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Bbox",
+          "type": "array"
+        },
+        "rows": {
+          "title": "Rows",
+          "type": "integer"
+        },
+        "columns": {
+          "title": "Columns",
+          "type": "integer"
+        },
+        "state": {
+          "enum": [
+            "candidate",
+            "partial",
+            "review_required",
+            "invalid",
+            "not_analyzed"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "logical_table": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "쪽을 넘어가는 표 조각을 묶는 번호",
+          "title": "Logical Table"
+        },
+        "panels": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Panel"
+          },
+          "title": "Panels",
+          "type": "array"
+        },
+        "row_nodes": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Node"
+          },
+          "title": "Row Nodes",
+          "type": "array"
+        },
+        "column_nodes": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Node"
+          },
+          "title": "Column Nodes",
+          "type": "array"
+        },
+        "paths": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Path"
+          },
+          "title": "Paths",
+          "type": "array"
+        },
+        "open_questions": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/OpenQuestion"
+          },
+          "title": "Open Questions",
+          "type": "array"
+        },
+        "grid": {
+          "items": {
+            "$ref": "#/$defs/Cell"
+          },
+          "title": "Grid",
+          "type": "array"
+        }
+      },
+      "required": [
+        "table_id",
+        "ref",
+        "page_no",
+        "bbox",
+        "rows",
+        "columns",
+        "state",
+        "grid"
+      ],
+      "title": "Table",
+      "type": "object"
+    },
+    "TableLink": {
+      "additionalProperties": false,
+      "description": "표 조각 사이의 연결. 조각은 합치지 않는다.\n\n`candidate`는 후보, `accepted`는 규칙이 채택한 것, `confirmed`·`rejected`는 사람이 판정한 것이다.",
+      "properties": {
+        "from_table": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "From Table"
+        },
+        "to_table": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "To Table"
+        },
+        "kind": {
+          "enum": [
+            "detached_header",
+            "page_continuation"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "state": {
+          "enum": [
+            "candidate",
+            "accepted",
+            "confirmed",
+            "rejected"
+          ],
+          "title": "State",
+          "type": "string"
+        },
+        "reasons": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Reasons",
+          "type": "array"
+        },
+        "header_cells": {
+          "default": [],
+          "description": "앞 표에서 빌려 오는 열 머리글 칸",
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Header Cells",
+          "type": "array"
+        },
+        "row_cells": {
+          "default": [],
+          "description": "앞 표에서 이어받는 행 라벨 칸",
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Row Cells",
+          "type": "array"
+        },
+        "candidate_tables": {
+          "default": [],
+          "description": "앞 표 후보가 여럿일 때 경쟁하는 표",
+          "items": {
+            "type": "integer"
+          },
+          "title": "Candidate Tables",
+          "type": "array"
+        },
+        "paths": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/LinkPath"
+          },
+          "title": "Paths",
+          "type": "array"
+        }
+      },
+      "required": [
+        "from_table",
+        "to_table",
+        "kind",
+        "state"
+      ],
+      "title": "TableLink",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "format": {
+      "const": "tabledoc/0.5",
+      "default": "tabledoc/0.5",
+      "title": "Format",
+      "type": "string"
+    },
+    "document": {
+      "$ref": "#/$defs/DocumentInfo"
+    },
+    "sections": {
+      "items": {
+        "$ref": "#/$defs/Section"
+      },
+      "title": "Sections",
+      "type": "array"
+    },
+    "pages": {
+      "items": {
+        "$ref": "#/$defs/Page"
+      },
+      "title": "Pages",
+      "type": "array"
+    },
+    "tables": {
+      "items": {
+        "$ref": "#/$defs/Table"
+      },
+      "title": "Tables",
+      "type": "array"
+    },
+    "links": {
+      "items": {
+        "$ref": "#/$defs/Link"
+      },
+      "title": "Links",
+      "type": "array"
+    },
+    "table_links": {
+      "items": {
+        "$ref": "#/$defs/TableLink"
+      },
+      "title": "Table Links",
+      "type": "array"
+    }
+  },
+  "required": [
+    "document",
+    "sections",
+    "pages",
+    "tables",
+    "links",
+    "table_links"
+  ],
+  "title": "CleanDocument",
+  "type": "object"
+}

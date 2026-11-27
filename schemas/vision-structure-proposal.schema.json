@@ -1,0 +1,69 @@
+{
+  "additionalProperties": false,
+  "description": "Unapplied, untrusted proposal: no generated cell, box, number or text fields.",
+  "properties": {
+    "target_id": {
+      "title": "Target Id",
+      "type": "string"
+    },
+    "operation": {
+      "enum": [
+        "propose_parent",
+        "propose_role",
+        "abstain"
+      ],
+      "title": "Operation",
+      "type": "string"
+    },
+    "parent_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Parent Id"
+    },
+    "proposed_role": {
+      "anyOf": [
+        {
+          "enum": [
+            "corner",
+            "row_label",
+            "column_header",
+            "value",
+            "unknown"
+          ],
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Proposed Role"
+    },
+    "evidence_cell_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Cell Ids",
+      "type": "array"
+    },
+    "reason": {
+      "title": "Reason",
+      "type": "string"
+    }
+  },
+  "required": [
+    "target_id",
+    "operation",
+    "evidence_cell_ids",
+    "reason"
+  ],
+  "title": "VisionStructureProposal",
+  "type": "object"
+}

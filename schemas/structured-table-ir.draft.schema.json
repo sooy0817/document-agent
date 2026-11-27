@@ -1,0 +1,526 @@
+{
+  "$defs": {
+    "BBox": {
+      "additionalProperties": false,
+      "description": "Unrotated visible page, PDF points, top-left origin (72 pt/in).",
+      "properties": {
+        "x0": {
+          "title": "X0",
+          "type": "number"
+        },
+        "y0": {
+          "title": "Y0",
+          "type": "number"
+        },
+        "x1": {
+          "title": "X1",
+          "type": "number"
+        },
+        "y1": {
+          "title": "Y1",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "title": "BBox",
+      "type": "object"
+    },
+    "CellMapping": {
+      "additionalProperties": false,
+      "properties": {
+        "value_cell_id": {
+          "minLength": 1,
+          "title": "Value Cell Id",
+          "type": "string"
+        },
+        "panel_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Panel Id"
+        },
+        "row_node_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Row Node Id"
+        },
+        "header_leaf_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Header Leaf Id"
+        },
+        "status": {
+          "enum": [
+            "resolved",
+            "ambiguous",
+            "unresolved"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "value_cell_id",
+        "panel_id",
+        "row_node_id",
+        "header_leaf_id",
+        "status"
+      ],
+      "title": "CellMapping",
+      "type": "object"
+    },
+    "ContextLink": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        },
+        "target_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Target Id"
+        },
+        "scope": {
+          "enum": [
+            "page",
+            "section",
+            "table",
+            "row",
+            "column",
+            "cell",
+            "unknown"
+          ],
+          "title": "Scope",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "note",
+            "caption",
+            "unit",
+            "formula"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "resolved",
+            "ambiguous",
+            "unresolved"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "target_id",
+        "scope",
+        "relation",
+        "status"
+      ],
+      "title": "ContextLink",
+      "type": "object"
+    },
+    "HierarchyNode": {
+      "additionalProperties": false,
+      "properties": {
+        "node_id": {
+          "minLength": 1,
+          "title": "Node Id",
+          "type": "string"
+        },
+        "panel_id": {
+          "minLength": 1,
+          "title": "Panel Id",
+          "type": "string"
+        },
+        "label_raw": {
+          "title": "Label Raw",
+          "type": "string"
+        },
+        "parent_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Parent Id"
+        },
+        "source_cell_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Source Cell Ids",
+          "type": "array"
+        },
+        "kind": {
+          "enum": [
+            "header",
+            "detail",
+            "group",
+            "subtotal",
+            "total",
+            "unknown"
+          ],
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "node_id",
+        "panel_id",
+        "label_raw",
+        "parent_id",
+        "source_cell_ids",
+        "kind"
+      ],
+      "title": "HierarchyNode",
+      "type": "object"
+    },
+    "Issue": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "minLength": 1,
+          "title": "Code",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "message": {
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "source_references": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "title": "Source References",
+          "type": "array"
+        }
+      },
+      "required": [
+        "code",
+        "severity",
+        "message"
+      ],
+      "title": "Issue",
+      "type": "object"
+    },
+    "Panel": {
+      "additionalProperties": false,
+      "properties": {
+        "panel_id": {
+          "minLength": 1,
+          "title": "Panel Id",
+          "type": "string"
+        },
+        "cell_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Cell Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "panel_id",
+        "cell_ids"
+      ],
+      "title": "Panel",
+      "type": "object"
+    },
+    "SourceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "minLength": 1,
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page_number": {
+          "exclusiveMinimum": 0,
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BBox"
+        },
+        "block_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Block Id"
+        },
+        "span_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Span Id"
+        },
+        "cell_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cell Id"
+        }
+      },
+      "required": [
+        "document_id",
+        "page_number",
+        "bbox"
+      ],
+      "title": "SourceRef",
+      "type": "object"
+    },
+    "StructuralFeature": {
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "enum": [
+            "multi_level_columns",
+            "hierarchical_rows",
+            "merged_cells",
+            "side_by_side_panels",
+            "continued_across_pages",
+            "repeated_headers",
+            "grouped_rows",
+            "subtotals",
+            "cross_tab",
+            "mixed_table_narrative",
+            "footnote_attached",
+            "irregular_grid",
+            "rotated_text"
+          ],
+          "title": "Type",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        },
+        "heuristic_id": {
+          "minLength": 1,
+          "title": "Heuristic Id",
+          "type": "string"
+        },
+        "disposition": {
+          "enum": [
+            "observed",
+            "candidate",
+            "unknown"
+          ],
+          "title": "Disposition",
+          "type": "string"
+        }
+      },
+      "required": [
+        "type",
+        "evidence_refs",
+        "heuristic_id",
+        "disposition"
+      ],
+      "title": "StructuralFeature",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "structured-table-ir/1.0",
+      "default": "structured-table-ir/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "table_id": {
+      "minLength": 1,
+      "title": "Table Id",
+      "type": "string"
+    },
+    "document_id": {
+      "minLength": 1,
+      "title": "Document Id",
+      "type": "string"
+    },
+    "analysis_run_id": {
+      "format": "uuid",
+      "title": "Analysis Run Id",
+      "type": "string"
+    },
+    "analyzer_version": {
+      "minLength": 1,
+      "title": "Analyzer Version",
+      "type": "string"
+    },
+    "source_ir_hash": {
+      "minLength": 1,
+      "title": "Source Ir Hash",
+      "type": "string"
+    },
+    "table_candidate_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Table Candidate Ids",
+      "type": "array"
+    },
+    "pages": {
+      "items": {
+        "exclusiveMinimum": 0,
+        "type": "integer"
+      },
+      "title": "Pages",
+      "type": "array"
+    },
+    "analysis_state": {
+      "default": "candidate",
+      "enum": [
+        "candidate",
+        "validated",
+        "partial",
+        "review_required",
+        "invalid"
+      ],
+      "title": "Analysis State",
+      "type": "string"
+    },
+    "features": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/StructuralFeature"
+      },
+      "title": "Features",
+      "type": "array"
+    },
+    "panels": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Panel"
+      },
+      "title": "Panels",
+      "type": "array"
+    },
+    "column_hierarchy": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/HierarchyNode"
+      },
+      "title": "Column Hierarchy",
+      "type": "array"
+    },
+    "row_hierarchy": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/HierarchyNode"
+      },
+      "title": "Row Hierarchy",
+      "type": "array"
+    },
+    "cell_mappings": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/CellMapping"
+      },
+      "title": "Cell Mappings",
+      "type": "array"
+    },
+    "context_links": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/ContextLink"
+      },
+      "title": "Context Links",
+      "type": "array"
+    },
+    "unresolved_regions": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/SourceRef"
+      },
+      "title": "Unresolved Regions",
+      "type": "array"
+    },
+    "issues": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Issue"
+      },
+      "title": "Issues",
+      "type": "array"
+    }
+  },
+  "required": [
+    "table_id",
+    "document_id",
+    "analysis_run_id",
+    "analyzer_version",
+    "source_ir_hash",
+    "table_candidate_ids",
+    "pages"
+  ],
+  "title": "StructuredTableIR",
+  "type": "object"
+}

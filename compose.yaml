@@ -1,0 +1,21 @@
+services:
+  postgres:
+    # 기존 PostgreSQL 16 데이터 볼륨을 유지하면서 벡터 확장을 제공한다.
+    image: pgvector/pgvector:pg16
+    # 벡터 검색을 병렬로 실행하면 작업자마다 공유 메모리를 쓴다. 기본 64MB로는 검색 항목 3만 개에서 실패했다(SQLSTATE 53100).
+    shm_size: "1gb"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-nh_document}
+      POSTGRES_USER: ${POSTGRES_USER:-nh_document}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Copy .env.example to .env and set a local password}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5433}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+volumes:
+  postgres_data:

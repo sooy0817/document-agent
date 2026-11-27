@@ -1,0 +1,259 @@
+{
+  "name": "rag-cross-document-review-v1",
+  "status": "draft",
+  "reviewed_by_human": false,
+  "note": "기존 5문항 회귀셋과 다른 문서의 12문항. GM1은 사용자가 원문에서 두 조합의 값을 확인했다. 나머지 11문항은 확인 대기 중이다. 문항별 판정은 동명의 Markdown 검토표에 기록한다.",
+  "documents": {
+    "gyuam": "sha256:01b652a8ef14542c62de3d1b5ea05eb2c47181cb3200ed4ce3f5887755c2434a",
+    "moga": "sha256:1dca0dfd71b0e15953008e04e3098010f24dad84caaf2e5a0c75f7e0b10758e0",
+    "jeonju": "sha256:81479e7b33292d438fc51a03dcdb6a60933e29bc943296947f50643cac9f9097",
+    "gyeongbuk": "sha256:617ca6a33f2e8254b54c77e1cbefab4f2924aa289614794ecd4e6bc1d6cea9c5",
+    "dongguk": "sha256:3368ee85b43e04052f870e827ac23fa0640acb5df498ff8b1593123cbeb17ad7"
+  },
+  "items": [
+    {
+      "id": "G1",
+      "type": "hierarchical_row",
+      "question": "규암농협의 2025년 금융업예치금은 몇 백만원인가요?",
+      "gold": [
+        {
+          "doc": "gyuam",
+          "page": 2,
+          "text": "83,570",
+          "row_label": "금융업예치금"
+        }
+      ],
+      "expected": [
+        "83,570",
+        "백만원"
+      ],
+      "require_selected_evidence": true,
+      "note": "83,570백만원 | 재무현황 → 자산 / Ⅱ.금융업예치금 → 2025년(B) / 금액 | 바로 오른쪽 20.42는 구성비(%)다."
+    },
+    {
+      "id": "G2",
+      "type": "lookup",
+      "question": "규암농협의 2025년도 요약 경영공시에 실린 2024년 예대비율은 얼마인가요?",
+      "gold": [
+        {
+          "doc": "gyuam",
+          "page": 4,
+          "text": "72.19",
+          "row_label": "예대비율"
+        }
+      ],
+      "expected": [
+        "72.19",
+        "%"
+      ],
+      "require_selected_evidence": true,
+      "note": "72.19% | 주요경영지표 → 예대비율 → 2024년(A) | 표지의 공시연도와 질문의 기준연도가 다르다. 77.84%는 2025년 값이다."
+    },
+    {
+      "id": "M1",
+      "type": "lookup",
+      "question": "모가농협의 2025년 자산총계는 몇 백만원인가요?",
+      "gold": [
+        {
+          "doc": "moga",
+          "page": 2,
+          "text": "262,487",
+          "row_label": "자산총계"
+        }
+      ],
+      "expected": [
+        "262,487",
+        "백만원"
+      ],
+      "require_selected_evidence": true,
+      "note": "262,487백만원 | 재무현황 → 자산총계 → 2025년(B) / 금액 | △6,281은 전년 대비 증감액이다."
+    },
+    {
+      "id": "M2",
+      "type": "lookup",
+      "question": "모가농협의 2025년 총자산순이익률은 얼마인가요?",
+      "gold": [
+        {
+          "doc": "moga",
+          "page": 4,
+          "text": "-1.11",
+          "row_label": "총자산순이익률"
+        }
+      ],
+      "expected": [
+        "-1.11",
+        "%"
+      ],
+      "require_selected_evidence": true,
+      "note": "−1.11% | 주요경영지표 → 총자산순이익률 → 2025년(B) | 음수 부호가 필요하다. 오른쪽 △1.20은 증감 열이다."
+    },
+    {
+      "id": "GM1",
+      "type": "multi_document",
+      "question": "규암농협과 모가농협의 2025년 연체대출금비율은 각각 얼마인가요?",
+      "gold": [
+        {
+          "doc": "gyuam",
+          "page": 4,
+          "text": "3.55",
+          "row_label": "연체대출금비율"
+        },
+        {
+          "doc": "moga",
+          "page": 4,
+          "text": "10.30",
+          "row_label": "연체대출금비율"
+        }
+      ],
+      "expected": [
+        "3.55",
+        "10.3",
+        "%"
+      ],
+      "require_selected_evidence": true,
+      "note": "2026-11-23 사용자 원문 확인. 규암농협 3.55%, 모가농협 10.30%. 두 공시 각각 4쪽 주요경영지표 → 연체대출금비율 → 2025년(B). 최종 답변에서 각각의 조합에 해당 값을 연결하고 두 원문 셀을 모두 인용해야 한다. 10.3%와 10.30%는 동등하다."
+    },
+    {
+      "id": "J1",
+      "type": "nested_scope",
+      "question": "전주정보문화산업진흥원 2025년 추가 모집공고에서 본원 문화산업지원센터 301호의 계약면적은 얼마인가요?",
+      "gold": [
+        {
+          "doc": "jeonju",
+          "page": 1,
+          "text": "78.86㎡",
+          "row_label": "계약면적"
+        }
+      ],
+      "expected": [
+        "78.86",
+        "㎡"
+      ],
+      "require_selected_evidence": true,
+      "note": "78.86㎡ | 본원 모집규모 표 → 계약면적 → 문화산업지원센터 / ② 301호 | 같은 센터의 302호·305호는 56.33㎡다."
+    },
+    {
+      "id": "J2",
+      "type": "synthesis",
+      "question": "2025년 전주정보문화산업진흥원 입주공고에서 1인창조기업지원센터의 ㎡당 임대관리비는 얼마이고, 무료라고 명시된 항목 두 가지는 무엇인가요?",
+      "gold": [
+        {
+          "doc": "jeonju",
+          "page": 2,
+          "text": "금5,200원/㎡(전기 및 회선사용료 무료)",
+          "row_label": "임대관리비"
+        }
+      ],
+      "expected": [
+        "5,200",
+        "전기",
+        "회선",
+        "무료"
+      ],
+      "require_selected_evidence": true,
+      "note": "5,200원/㎡. 전기 및 회선사용료 무료 | 1인 창조기업지원센터 모집규모 표 → 임대관리비 → 101·105·106호 공통 칸 | 본원과 요금이 다르다. 답변에는 금액과 무료 항목 두 가지가 모두 필요하다."
+    },
+    {
+      "id": "B1",
+      "type": "key_value",
+      "question": "2025 경북 뷰티산업 글로벌 유통망 입점사업에서 미국을 담당하는 무역관은 어디인가요?",
+      "gold": [
+        {
+          "doc": "gyeongbuk",
+          "page": 1,
+          "text": "로스앤젤레스무역관",
+          "row_label": "미국"
+        }
+      ],
+      "expected": [
+        "로스앤젤레스"
+      ],
+      "require_selected_evidence": true,
+      "note": "로스앤젤레스 무역관 | 사업개요 / 대상지역 → 연번 2 (북미·미국) → 무역관 | 원문의 기관명으로 확인한다."
+    },
+    {
+      "id": "B2",
+      "type": "enumeration",
+      "question": "2025 경북 뷰티산업 공고에서 태국 방콕무역관이 입점을 지원하는 온라인 유통망 후보 두 곳은 어디인가요?",
+      "gold": [
+        {
+          "doc": "gyeongbuk",
+          "page": 3,
+          "text": "라자다 또는 쇼피",
+          "row_label": "온라인 유통망 입점"
+        }
+      ],
+      "expected": [
+        "라자다",
+        "쇼피"
+      ],
+      "require_selected_evidence": true,
+      "note": "라자다 또는 쇼피 | 태국 방콕무역관 입점사업 / 지원내용 → 온라인 유통망 입점 → 내용 첫째 항목 | 두 이름이 필요하다. 공고는 둘 중 한 곳에 입점하는 선택지로 적고 있다."
+    },
+    {
+      "id": "D1",
+      "type": "applied_condition",
+      "question": "동국대학교 창업보육센터의 2024년 8월 공고 부담금 기준표를 15형에 적용하면 발전기금은 얼마인가요?",
+      "gold": [
+        {
+          "doc": "dongguk",
+          "page": 2,
+          "text": "3,500,000원",
+          "row_label": "발전기금"
+        }
+      ],
+      "expected": [
+        "3,500,000원"
+      ],
+      "require_selected_evidence": true,
+      "note": "3,500,000원 (350만원) | 입주기업 부담금 / 입주보증금, 발전기금 → 발전기금(기술창업 활성화 기금) → 내용 / 15∼25형 | 15형은 가운데 구간에 들어간다. 기준표 적용 문제이며 실제 모집 호실은 11형이다."
+    },
+    {
+      "id": "D2",
+      "type": "synthesis",
+      "question": "동국대학교 창업보육센터의 2024년 8월 공고에서 3차년 월 보육료는 3.3㎡당 얼마이며 부가세는 포함인가요?",
+      "gold": [
+        {
+          "doc": "dongguk",
+          "page": 2,
+          "text": "55,100원/3.3㎡",
+          "row_label": "보육료(임대료)"
+        },
+        {
+          "doc": "dongguk",
+          "page": 2,
+          "text": "부가세 별도",
+          "row_label": "보육료(임대료)"
+        }
+      ],
+      "expected": [
+        "55,100",
+        "부가세",
+        "별도"
+      ],
+      "require_selected_evidence": true,
+      "note": "월 55,100원/3.3㎡, 부가세 별도 | 입주기업 부담금 / 보육부담금(월납) → 보육료(임대료)/매월 → 내용 / 3차년 및 같은 행 비고 | 표에 적힌 금액과 비고를 각각 확인한다. 인상률로 다시 계산하지 않는다."
+    },
+    {
+      "id": "D3",
+      "type": "procedure",
+      "question": "동국대학교 창업보육센터의 2024년 8월 모집공고에서 입주보증금은 언제, 몇 퍼센트씩 납부하나요?",
+      "gold": [
+        {
+          "doc": "dongguk",
+          "page": 2,
+          "text": "입주 확정 후 10% 선납",
+          "row_label": "입주보증금"
+        }
+      ],
+      "expected": [
+        "확정",
+        "10%",
+        "계약",
+        "90%"
+      ],
+      "require_selected_evidence": true,
+      "note": "입주 확정 후 10% 선납, 입주 계약 체결 시 90% 후납 | 입주기업 부담금 / 입주보증금, 발전기금 → 입주보증금 → 비고 | 두 시점과 각각의 비율을 짝지어 확인한다. 발전기금의 납부 기한은 별도다."
+    }
+  ]
+}

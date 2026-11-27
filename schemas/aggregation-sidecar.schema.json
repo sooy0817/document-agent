@@ -1,0 +1,96 @@
+{
+  "$defs": {
+    "AggregationScope": {
+      "additionalProperties": false,
+      "properties": {
+        "scope_id": {
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "aggregate_id": {
+          "title": "Aggregate Id",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "subtotal_of",
+            "total_of"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "member_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Member Ids",
+          "type": "array"
+        },
+        "excluded_ids": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Excluded Ids",
+          "type": "array"
+        },
+        "evidence_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Ids",
+          "type": "array"
+        },
+        "status": {
+          "default": "proposed",
+          "enum": [
+            "proposed",
+            "review_required"
+          ],
+          "title": "Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scope_id",
+        "aggregate_id",
+        "relation",
+        "member_ids",
+        "evidence_ids"
+      ],
+      "title": "AggregationScope",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "aggregation-sidecar/1.0",
+      "default": "aggregation-sidecar/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "scopes": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/AggregationScope"
+      },
+      "title": "Scopes",
+      "type": "array"
+    },
+    "scope_type": {
+      "const": "aggregation_scope",
+      "default": "aggregation_scope",
+      "title": "Scope Type",
+      "type": "string"
+    },
+    "arithmetic_validated": {
+      "const": false,
+      "default": false,
+      "title": "Arithmetic Validated",
+      "type": "boolean"
+    }
+  },
+  "title": "AggregationSidecar",
+  "type": "object"
+}

@@ -1,0 +1,862 @@
+{
+  "$defs": {
+    "ArtifactRef": {
+      "additionalProperties": false,
+      "properties": {
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        },
+        "sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Sha256",
+          "type": "string"
+        },
+        "media_type": {
+          "minLength": 1,
+          "title": "Media Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "sha256",
+        "media_type"
+      ],
+      "title": "ArtifactRef",
+      "type": "object"
+    },
+    "BBox": {
+      "additionalProperties": false,
+      "description": "Unrotated visible page, PDF points, top-left origin (72 pt/in).",
+      "properties": {
+        "x0": {
+          "title": "X0",
+          "type": "number"
+        },
+        "y0": {
+          "title": "Y0",
+          "type": "number"
+        },
+        "x1": {
+          "title": "X1",
+          "type": "number"
+        },
+        "y1": {
+          "title": "Y1",
+          "type": "number"
+        }
+      },
+      "required": [
+        "x0",
+        "y0",
+        "x1",
+        "y1"
+      ],
+      "title": "BBox",
+      "type": "object"
+    },
+    "BlockIR": {
+      "additionalProperties": false,
+      "properties": {
+        "block_id": {
+          "minLength": 1,
+          "title": "Block Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "text",
+            "image",
+            "drawing",
+            "table_candidate"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        },
+        "extraction_order": {
+          "minimum": 0,
+          "title": "Extraction Order",
+          "type": "integer"
+        },
+        "text_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Text Raw"
+        },
+        "spans": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/TextSpanIR"
+          },
+          "title": "Spans",
+          "type": "array"
+        },
+        "drawing_commands": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/DrawingCommand"
+          },
+          "title": "Drawing Commands",
+          "type": "array"
+        },
+        "drawing_stroked": {
+          "anyOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Drawing Stroked"
+        },
+        "image": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/ArtifactRef"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "table_ref": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Table Ref"
+        },
+        "extraction_method": {
+          "default": "pdf_native",
+          "title": "Extraction Method",
+          "type": "string"
+        },
+        "confidence": {
+          "default": null,
+          "title": "Confidence",
+          "type": "null"
+        }
+      },
+      "required": [
+        "block_id",
+        "kind",
+        "source",
+        "extraction_order"
+      ],
+      "title": "BlockIR",
+      "type": "object"
+    },
+    "CellIR": {
+      "additionalProperties": false,
+      "properties": {
+        "cell_id": {
+          "minLength": 1,
+          "title": "Cell Id",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        },
+        "row_index": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Row Index"
+        },
+        "column_index": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Column Index"
+        },
+        "rowspan": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rowspan"
+        },
+        "colspan": {
+          "anyOf": [
+            {
+              "exclusiveMinimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Colspan"
+        },
+        "text_raw": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Text Raw"
+        },
+        "span_refs": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Span Refs",
+          "type": "array"
+        },
+        "extraction_status": {
+          "enum": [
+            "observed",
+            "blank",
+            "unreadable"
+          ],
+          "title": "Extraction Status",
+          "type": "string"
+        }
+      },
+      "required": [
+        "cell_id",
+        "source",
+        "text_raw",
+        "extraction_status"
+      ],
+      "title": "CellIR",
+      "type": "object"
+    },
+    "DocumentMetadata": {
+      "additionalProperties": false,
+      "properties": {
+        "institution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Institution"
+        },
+        "reporting_period": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reporting Period"
+        },
+        "period_end": {
+          "anyOf": [
+            {
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Period End"
+        },
+        "accounting_scope": {
+          "default": "unknown",
+          "enum": [
+            "integrated",
+            "credit",
+            "general",
+            "unknown"
+          ],
+          "title": "Accounting Scope",
+          "type": "string"
+        },
+        "provenance": {
+          "default": "unknown",
+          "enum": [
+            "caller_supplied",
+            "unknown"
+          ],
+          "title": "Provenance",
+          "type": "string"
+        }
+      },
+      "title": "DocumentMetadata",
+      "type": "object"
+    },
+    "DrawingCommand": {
+      "additionalProperties": false,
+      "properties": {
+        "operator": {
+          "minLength": 1,
+          "title": "Operator",
+          "type": "string"
+        },
+        "coordinates": {
+          "items": {
+            "type": "number"
+          },
+          "title": "Coordinates",
+          "type": "array"
+        }
+      },
+      "required": [
+        "operator",
+        "coordinates"
+      ],
+      "title": "DrawingCommand",
+      "type": "object"
+    },
+    "ExtractionRun": {
+      "additionalProperties": false,
+      "properties": {
+        "run_id": {
+          "format": "uuid",
+          "title": "Run Id",
+          "type": "string"
+        },
+        "started_at": {
+          "format": "date-time",
+          "title": "Started At",
+          "type": "string"
+        },
+        "parser_version": {
+          "minLength": 1,
+          "title": "Parser Version",
+          "type": "string"
+        },
+        "engine": {
+          "minLength": 1,
+          "title": "Engine",
+          "type": "string"
+        },
+        "engine_version": {
+          "minLength": 1,
+          "title": "Engine Version",
+          "type": "string"
+        },
+        "policy_version": {
+          "default": "extraction-policy/1.0",
+          "title": "Policy Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "parser_version",
+        "engine",
+        "engine_version"
+      ],
+      "title": "ExtractionRun",
+      "type": "object"
+    },
+    "Issue": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "minLength": 1,
+          "title": "Code",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "info",
+            "warning",
+            "error"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "message": {
+          "minLength": 1,
+          "title": "Message",
+          "type": "string"
+        },
+        "source_references": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/SourceRef"
+          },
+          "title": "Source References",
+          "type": "array"
+        }
+      },
+      "required": [
+        "code",
+        "severity",
+        "message"
+      ],
+      "title": "Issue",
+      "type": "object"
+    },
+    "PageIR": {
+      "additionalProperties": false,
+      "properties": {
+        "page_id": {
+          "minLength": 1,
+          "title": "Page Id",
+          "type": "string"
+        },
+        "page_number": {
+          "exclusiveMinimum": 0,
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "width": {
+          "exclusiveMinimum": 0,
+          "title": "Width",
+          "type": "number"
+        },
+        "height": {
+          "exclusiveMinimum": 0,
+          "title": "Height",
+          "type": "number"
+        },
+        "original_rotation": {
+          "enum": [
+            0,
+            90,
+            180,
+            270
+          ],
+          "title": "Original Rotation",
+          "type": "integer"
+        },
+        "original_cropbox": {
+          "$ref": "#/$defs/BBox"
+        },
+        "evidence_sha256": {
+          "pattern": "^[0-9a-f]{64}$",
+          "title": "Evidence Sha256",
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/$defs/RasterRef"
+        },
+        "blocks": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/BlockIR"
+          },
+          "title": "Blocks",
+          "type": "array"
+        },
+        "tables": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/TableCandidateIR"
+          },
+          "title": "Tables",
+          "type": "array"
+        },
+        "text_status": {
+          "enum": [
+            "native",
+            "ocr_required",
+            "empty"
+          ],
+          "title": "Text Status",
+          "type": "string"
+        },
+        "issues": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Issue"
+          },
+          "title": "Issues",
+          "type": "array"
+        }
+      },
+      "required": [
+        "page_id",
+        "page_number",
+        "width",
+        "height",
+        "original_rotation",
+        "original_cropbox",
+        "evidence_sha256",
+        "image",
+        "text_status"
+      ],
+      "title": "PageIR",
+      "type": "object"
+    },
+    "RasterRef": {
+      "additionalProperties": false,
+      "properties": {
+        "artifact": {
+          "$ref": "#/$defs/ArtifactRef"
+        },
+        "width_pixels": {
+          "exclusiveMinimum": 0,
+          "title": "Width Pixels",
+          "type": "integer"
+        },
+        "height_pixels": {
+          "exclusiveMinimum": 0,
+          "title": "Height Pixels",
+          "type": "integer"
+        },
+        "dpi": {
+          "exclusiveMinimum": 0,
+          "title": "Dpi",
+          "type": "integer"
+        },
+        "page_to_pixel": {
+          "maxItems": 6,
+          "minItems": 6,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Page To Pixel",
+          "type": "array"
+        },
+        "clip": {
+          "$ref": "#/$defs/BBox"
+        }
+      },
+      "required": [
+        "artifact",
+        "width_pixels",
+        "height_pixels",
+        "dpi",
+        "page_to_pixel",
+        "clip"
+      ],
+      "title": "RasterRef",
+      "type": "object"
+    },
+    "SourceRef": {
+      "additionalProperties": false,
+      "properties": {
+        "document_id": {
+          "minLength": 1,
+          "title": "Document Id",
+          "type": "string"
+        },
+        "page_number": {
+          "exclusiveMinimum": 0,
+          "title": "Page Number",
+          "type": "integer"
+        },
+        "bbox": {
+          "$ref": "#/$defs/BBox"
+        },
+        "block_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Block Id"
+        },
+        "span_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Span Id"
+        },
+        "cell_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Cell Id"
+        }
+      },
+      "required": [
+        "document_id",
+        "page_number",
+        "bbox"
+      ],
+      "title": "SourceRef",
+      "type": "object"
+    },
+    "TableCandidateIR": {
+      "additionalProperties": false,
+      "properties": {
+        "table_candidate_id": {
+          "minLength": 1,
+          "title": "Table Candidate Id",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        },
+        "cells": {
+          "items": {
+            "$ref": "#/$defs/CellIR"
+          },
+          "title": "Cells",
+          "type": "array"
+        },
+        "detector_grid": {
+          "items": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "type": "array"
+          },
+          "title": "Detector Grid",
+          "type": "array"
+        },
+        "row_count": {
+          "minimum": 0,
+          "title": "Row Count",
+          "type": "integer"
+        },
+        "column_count": {
+          "minimum": 0,
+          "title": "Column Count",
+          "type": "integer"
+        },
+        "issues": {
+          "default": [],
+          "items": {
+            "$ref": "#/$defs/Issue"
+          },
+          "title": "Issues",
+          "type": "array"
+        }
+      },
+      "required": [
+        "table_candidate_id",
+        "source",
+        "cells",
+        "detector_grid",
+        "row_count",
+        "column_count"
+      ],
+      "title": "TableCandidateIR",
+      "type": "object"
+    },
+    "TextSpanIR": {
+      "additionalProperties": false,
+      "properties": {
+        "span_id": {
+          "minLength": 1,
+          "title": "Span Id",
+          "type": "string"
+        },
+        "source": {
+          "$ref": "#/$defs/SourceRef"
+        },
+        "text_raw": {
+          "title": "Text Raw",
+          "type": "string"
+        },
+        "line_index": {
+          "minimum": 0,
+          "title": "Line Index",
+          "type": "integer"
+        },
+        "font": {
+          "title": "Font",
+          "type": "string"
+        },
+        "font_size": {
+          "minimum": 0,
+          "title": "Font Size",
+          "type": "number"
+        },
+        "flags": {
+          "title": "Flags",
+          "type": "integer"
+        },
+        "direction": {
+          "default": [
+            1.0,
+            0.0
+          ],
+          "maxItems": 2,
+          "minItems": 2,
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "title": "Direction",
+          "type": "array"
+        }
+      },
+      "required": [
+        "span_id",
+        "source",
+        "text_raw",
+        "line_index",
+        "font",
+        "font_size",
+        "flags"
+      ],
+      "title": "TextSpanIR",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "document-ir/1.0",
+      "default": "document-ir/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "document_id": {
+      "minLength": 1,
+      "title": "Document Id",
+      "type": "string"
+    },
+    "source_name": {
+      "minLength": 1,
+      "title": "Source Name",
+      "type": "string"
+    },
+    "source_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Source Sha256",
+      "type": "string"
+    },
+    "source": {
+      "$ref": "#/$defs/ArtifactRef"
+    },
+    "metadata": {
+      "$ref": "#/$defs/DocumentMetadata"
+    },
+    "bbox_space": {
+      "const": "unrotated_cropbox_pdf_points_top_left",
+      "default": "unrotated_cropbox_pdf_points_top_left",
+      "title": "Bbox Space",
+      "type": "string"
+    },
+    "pages": {
+      "items": {
+        "$ref": "#/$defs/PageIR"
+      },
+      "title": "Pages",
+      "type": "array"
+    },
+    "run": {
+      "$ref": "#/$defs/ExtractionRun"
+    },
+    "processing_status": {
+      "enum": [
+        "extracted",
+        "review_required"
+      ],
+      "title": "Processing Status",
+      "type": "string"
+    },
+    "validation_status": {
+      "const": "not_validated",
+      "default": "not_validated",
+      "title": "Validation Status",
+      "type": "string"
+    },
+    "issues": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Issue"
+      },
+      "title": "Issues",
+      "type": "array"
+    }
+  },
+  "required": [
+    "document_id",
+    "source_name",
+    "source_sha256",
+    "source",
+    "pages",
+    "run",
+    "processing_status"
+  ],
+  "title": "DocumentIR",
+  "type": "object"
+}

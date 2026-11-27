@@ -1,0 +1,96 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "model_id": {
+      "default": "",
+      "title": "Model Id",
+      "type": "string"
+    },
+    "timeout_seconds": {
+      "default": 30,
+      "exclusiveMinimum": 0,
+      "maximum": 120,
+      "title": "Timeout Seconds",
+      "type": "number"
+    },
+    "retries": {
+      "default": 0,
+      "maximum": 2,
+      "minimum": 0,
+      "title": "Retries",
+      "type": "integer"
+    },
+    "concurrency": {
+      "default": 1,
+      "maximum": 4,
+      "minimum": 1,
+      "title": "Concurrency",
+      "type": "integer"
+    },
+    "max_calls": {
+      "default": 2,
+      "maximum": 20,
+      "minimum": 0,
+      "title": "Max Calls",
+      "type": "integer"
+    },
+    "max_input_tokens": {
+      "default": 12000,
+      "exclusiveMinimum": 0,
+      "title": "Max Input Tokens",
+      "type": "integer"
+    },
+    "max_output_tokens": {
+      "default": 2000,
+      "exclusiveMinimum": 0,
+      "title": "Max Output Tokens",
+      "type": "integer"
+    },
+    "total_token_budget": {
+      "default": 30000,
+      "exclusiveMinimum": 0,
+      "title": "Total Token Budget",
+      "type": "integer"
+    },
+    "max_nodes_per_request": {
+      "default": 24,
+      "exclusiveMinimum": 0,
+      "maximum": 100,
+      "title": "Max Nodes Per Request",
+      "type": "integer"
+    },
+    "allow_external": {
+      "default": false,
+      "title": "Allow External",
+      "type": "boolean"
+    },
+    "input_price_per_million": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Input Price Per Million"
+    },
+    "output_price_per_million": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Output Price Per Million"
+    }
+  },
+  "title": "ResolverConfig",
+  "type": "object"
+}

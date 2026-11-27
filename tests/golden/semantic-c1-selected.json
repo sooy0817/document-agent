@@ -1,0 +1,32 @@
+{
+  "status":"provisional_independent_human_review_pending",
+  "origin":"User-requested relationships plus source-image/native-text inspection; selected expectations, not generated from predicted edges",
+  "prior_prediction_exposure":true,
+  "not_exhaustive":true,
+  "paths":[
+    {"document":"income-integrated","labels":["영업수익","신용사업영업수익","이자수익","예치금이자"]},
+    {"document":"income-integrated","labels":["영업수익","경제사업영업수익","상품매출액"]},
+    {"document":"income-integrated","labels":["영업수익","공제사업영업수익","공제수익"],"cross_page":true},
+    {"document":"income-credit","labels":["영업수익","이자수익","예치금이자"]},
+    {"document":"income-general","labels":["매출액","상품매출액"]},
+    {"document":"balance-integrated","labels":["자산","유동자산","현금"]},
+    {"document":"balance-integrated","labels":["자산","비유동자산","유형자산","건물"]},
+    {"document":"balance-general","labels":["자산","유동자산","당좌자산","현금"]},
+    {"document":"balance-general","labels":["자산","비유동자산","유형자산","건물"]},
+    {"document":"balance-credit","labels":["자산","현금및예치금","현금"]},
+    {"document":"balance-credit","labels":["부채","예수금","요구불예금","보통예탁금"]},
+    {"document":"balance-credit","labels":["자산","비유동자산","유형자산","건물"]},
+    {"document":"deficit","labels":["미처리결손금","전기이월미처분이익잉여금"]},
+    {"document":"deficit","labels":["미처리결손금","당기순손실"]},
+    {"document":"capital","labels":["증자","출자금납입"]},
+    {"document":"capital","labels":["증자","회전출자금납입"]},
+    {"document":"capital","labels":["증자","가입금납입"]},
+    {"document":"capital","labels":["증자","우선출자납입"]}
+  ],
+  "relations":[
+    {"document":"deficit","parent":"당기순손실","child":"(또는당기순이익)","type":"alternative_label"},
+    {"document":"deficit","parent":"전기이월미처분이익잉여금","child":"(또는전기이월미처리결손금)","type":"alternative_label"},
+    {"document":"business","parent":"2025.06.19","child":"탈퇴조합원자격확인및지분환급승인의건","type":"parent_child","cross_page":true},
+    {"document":"business","parent":"2025.07.17","child":"조합원자격심사및가입승낙의건","type":"parent_child"}
+  ]
+}

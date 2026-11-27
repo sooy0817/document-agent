@@ -1,0 +1,631 @@
+{
+  "name": "rag-holdout-v2",
+  "status": "draft",
+  "reviewed_by_human": false,
+  "note": "검증 전용(홀드아웃). 규칙·프롬프트·검색을 고칠 때 보지 않고 측정에만 쓴다. Claude 초안, 사람 검토 전. [역할 변경 2026-11-12] 이 세트의 실패는 2026-11-11~12에 실패 유형 분석과 개선 방향 결정에 쓰였다(묶음 제목 행·2단 행 라벨·좌우 표 조사, 라벨 글자 경로 충돌 규칙). 더 이상 미사용 검증 세트가 아니며, 이후 수치는 '개발 판단에 쓴 검증 세트' 수치로만 적는다. 최종 확인에는 개발 판단에 쓰지 않은 새 자료가 필요하다. 서대전농협은 개발 세트의 강동농협과 같은 양식 계열이라 독립된 확인이 아니다. v2: 원 질문·기대 의미를 유지하고 명시적인 동등 표현/동일 문서 근거 위치만 추가. v1과 기존 점수는 보존한다.",
+  "documents": {
+    "hana": "sha256:fc93d782e306e629b535606ae566f1bc10c93b65212368b33e5d867dad46393e",
+    "seodaejeon": "sha256:a17503050e523e124037c7250d017d4b7d29aec99e4e14de248ca7bcae5a04a8",
+    "bea": "sha256:2b71f6fda09716091b51990078e422aad847fbcc0d958d40cdce2a827856c9cc",
+    "tuta": "sha256:a29f3e9d4320432d665875c28b6ca1457f9716b77a20a5c824d6fc9e20aca27d",
+    "biscredit": "sha256:c2109425fbee7dac1542c60d9a907c970b2bf3f604b14362d2ee3a4345032046",
+    "wollong": "sha256:73153adcec06b018c0e8b88feee04f7746910a458811d33050ced6e2c7c128f0",
+    "gangdong": "sha256:4e251561e61e01ecd45f71507719bf4f3a0e47c79135444689e30b5bcbbb8145"
+  },
+  "items": [
+    {
+      "id": "h-01",
+      "type": "key_value",
+      "question": "하나은행 외화고단위플러스 정기예금의 가입금액은 얼마 이상인가요?",
+      "gold": [
+        {
+          "doc": "hana",
+          "page": 1,
+          "text": "미화 1백불 상당액 이상"
+        }
+      ],
+      "expected": [
+        "1백불"
+      ]
+    },
+    {
+      "id": "h-02",
+      "type": "key_value",
+      "question": "하나은행 외화고단위플러스 정기예금은 예금자보호가 얼마까지 되나요?",
+      "gold": [
+        {
+          "doc": "hana",
+          "page": 1,
+          "text": "원금과 이자 포함 5천만원까지 가능"
+        }
+      ],
+      "expected": [
+        "5천만원"
+      ]
+    },
+    {
+      "id": "h-03",
+      "type": "interval",
+      "question": "하나은행 외화고단위플러스 정기예금을 20일 만에 중도해지하면 중도해지이율은?",
+      "gold": [
+        {
+          "doc": "hana",
+          "page": 1,
+          "text": "약정이율 1/10"
+        }
+      ],
+      "expected": [
+        "1/10"
+      ],
+      "forbidden": [
+        "3/10",
+        "무이자"
+      ],
+      "note": "좌우로 나란한 표의 오른쪽 묶음(1개월 미만 → 약정이율 1/10)."
+    },
+    {
+      "id": "h-04",
+      "type": "interval",
+      "question": "하나은행 외화고단위플러스 정기예금을 5개월 만에 중도해지하면 중도해지이율은?",
+      "gold": [
+        {
+          "doc": "hana",
+          "page": 1,
+          "text": "약정이율 4/10"
+        }
+      ],
+      "expected": [
+        "4/10"
+      ],
+      "forbidden": [
+        "3/10",
+        "6/10"
+      ],
+      "note": "좌우로 나란한 표의 오른쪽 묶음(6개월 미만)."
+    },
+    {
+      "id": "h-05",
+      "type": "lookup",
+      "question": "하나은행 외화고단위플러스 금리확정형 USD의 1개월 이상 3개월 미만 금리는?",
+      "gold": [
+        {
+          "doc": "hana",
+          "page": 2,
+          "text": "4.7286",
+          "row_label": "USD"
+        }
+      ],
+      "expected": [
+        "4.7286"
+      ],
+      "alternative_gold": [
+        {
+          "doc": "hana",
+          "page": 3,
+          "text": "4.7286",
+          "row_label": "USD"
+        }
+      ],
+      "note": "같은 값이 3쪽 금리연동형 표(1개월변동)에도 있다."
+    },
+    {
+      "id": "h-06",
+      "type": "lookup",
+      "question": "하나은행 외화고단위플러스 금리확정형 CAD의 3개월 이상 6개월 미만 금리는?",
+      "gold": [
+        {
+          "doc": "hana",
+          "page": 3,
+          "text": "4.2215",
+          "row_label": "CAD"
+        }
+      ],
+      "expected": [
+        "4.2215"
+      ],
+      "note": "2쪽 표가 3쪽으로 이어진 부분(머리글은 앞쪽에만 있음)."
+    },
+    {
+      "id": "h-07",
+      "type": "lookup",
+      "question": "하나은행 외화고단위플러스 금리연동형 USD의 3개월변동 금리는?",
+      "gold": [
+        {
+          "doc": "hana",
+          "page": 3,
+          "text": "4.7769",
+          "row_label": "USD"
+        }
+      ],
+      "expected": [
+        "4.7769"
+      ],
+      "alternative_gold": [
+        {
+          "doc": "hana",
+          "page": 2,
+          "text": "4.7769",
+          "row_label": "USD"
+        }
+      ]
+    },
+    {
+      "id": "h-08",
+      "type": "hierarchical_row",
+      "question": "하나은행 외화고단위플러스에서 USD 지폐의 현찰 수수료율은?",
+      "gold": [
+        {
+          "doc": "hana",
+          "page": 4,
+          "text": "1.50%"
+        }
+      ],
+      "expected": [
+        "1.50%"
+      ],
+      "forbidden": [
+        "3.00%"
+      ]
+    },
+    {
+      "id": "h-09",
+      "type": "body",
+      "question": "하나은행 외화고단위플러스 정기예금 문의 고객센터 번호는?",
+      "gold": [
+        {
+          "doc": "hana",
+          "page": 1,
+          "text": "고객센터(1599-1111"
+        }
+      ],
+      "expected": [
+        "1599-1111"
+      ]
+    },
+    {
+      "id": "h-10",
+      "type": "body",
+      "question": "하나은행 외화고단위플러스 정기예금은 몇 회까지 분할 해지할 수 있나요?",
+      "gold": [
+        {
+          "doc": "hana",
+          "page": 4,
+          "text": "총 3회이내 분할 해지 가능"
+        }
+      ],
+      "expected": [
+        "3회"
+      ],
+      "alternative_gold": [
+        {
+          "doc": "hana",
+          "page": 1,
+          "text": "만기포함 총 3회"
+        }
+      ]
+    },
+    {
+      "id": "h-11",
+      "type": "key_value",
+      "question": "하나은행 외화고단위플러스 금리연동형의 금리 연동 주기는?",
+      "gold": [
+        {
+          "doc": "hana",
+          "page": 2,
+          "text": "1개월, 3개월"
+        }
+      ],
+      "expected": [
+        "1개월",
+        "3개월"
+      ],
+      "note": "라벨과 내용이 한 칸으로 겹쳐 잡힌 물리 표 조각."
+    },
+    {
+      "id": "h-12",
+      "type": "key_value",
+      "question": "하나은행 외화고단위플러스 설명서에서 가압류는 무엇이라고 설명하나요?",
+      "gold": [
+        {
+          "doc": "hana",
+          "page": 5,
+          "text": "법원이 채권자를 위하여"
+        }
+      ],
+      "expected": [
+        "강제 집행"
+      ]
+    },
+    {
+      "id": "s-01",
+      "type": "lookup",
+      "question": "서대전농협의 2025년 영업수익은 얼마인가요?",
+      "gold": [
+        {
+          "doc": "seodaejeon",
+          "page": 3,
+          "text": "101,599",
+          "row_label": "영업수익"
+        }
+      ],
+      "expected": [
+        "101,599"
+      ],
+      "forbidden": [
+        "31,638"
+      ],
+      "note": "같은 양식의 강동농협 문서(31,638)와 구분해야 한다."
+    },
+    {
+      "id": "s-02",
+      "type": "lookup",
+      "question": "서대전농협의 2025년 순자본비율은?",
+      "gold": [
+        {
+          "doc": "seodaejeon",
+          "page": 4,
+          "text": "8.61"
+        }
+      ],
+      "expected": [
+        "8.61"
+      ],
+      "forbidden": [
+        "8.34"
+      ]
+    },
+    {
+      "id": "s-03",
+      "type": "hierarchical_row",
+      "question": "서대전농협의 2024년 유동자산 금액은?",
+      "gold": [
+        {
+          "doc": "seodaejeon",
+          "page": 2,
+          "text": "22,073",
+          "row_label": "유동자산"
+        }
+      ],
+      "expected": [
+        "22,073"
+      ]
+    },
+    {
+      "id": "s-04",
+      "type": "hierarchical_row",
+      "question": "서대전농협의 2025년 이자수익은?",
+      "gold": [
+        {
+          "doc": "seodaejeon",
+          "page": 3,
+          "text": "64,312",
+          "row_label": "이자수익"
+        }
+      ],
+      "expected": [
+        "64,312"
+      ]
+    },
+    {
+      "id": "s-05",
+      "type": "lookup",
+      "question": "서대전농협의 연체대출금비율은 2024년 대비 2025년에 얼마나 변했나요?",
+      "gold": [
+        {
+          "doc": "seodaejeon",
+          "page": 4,
+          "text": "0.59",
+          "row_label": "연체대출금비율"
+        }
+      ],
+      "expected": [
+        "0.59"
+      ]
+    },
+    {
+      "id": "s-06",
+      "type": "body",
+      "question": "서대전농협 손익현황에서 보험사업 수익과 비용은 어디에 포함되나요?",
+      "gold": [
+        {
+          "doc": "seodaejeon",
+          "page": 3,
+          "text": "신용사업에 포함"
+        }
+      ],
+      "expected": [
+        "신용사업"
+      ]
+    },
+    {
+      "id": "b-01",
+      "type": "lookup",
+      "question": "What was the percent change in real GDP in the fourth quarter of 2025 according to the BEA advance estimate?",
+      "gold": [
+        {
+          "doc": "bea",
+          "page": 1,
+          "text": "1.4",
+          "row_label": "Real GDP"
+        }
+      ],
+      "expected": [
+        "1.4"
+      ],
+      "alternative_gold": [
+        {
+          "doc": "bea",
+          "page": 1,
+          "text": "increased at an annual rate of 1.4 percent"
+        }
+      ]
+    },
+    {
+      "id": "b-02",
+      "type": "lookup",
+      "question": "What was the percent change in the PCE price index in the BEA advance estimate table?",
+      "gold": [
+        {
+          "doc": "bea",
+          "page": 1,
+          "text": "2.9",
+          "row_label": "PCE price index"
+        }
+      ],
+      "expected": [
+        "2.9"
+      ],
+      "forbidden": [
+        "2.7"
+      ]
+    },
+    {
+      "id": "b-03",
+      "type": "lookup",
+      "question": "When will the second estimate of GDP for 2026 Q1 be released?",
+      "gold": [
+        {
+          "doc": "bea",
+          "page": 1,
+          "text": "May 28, 2026",
+          "row_label": "Second Estimate"
+        }
+      ],
+      "expected": [
+        "May 28, 2026"
+      ]
+    },
+    {
+      "id": "b-04",
+      "type": "hierarchical_row",
+      "question": "When is the preliminary estimate of corporate profits for 2026 Q2 released?",
+      "gold": [
+        {
+          "doc": "bea",
+          "page": 1,
+          "text": "August 26, 2026",
+          "row_label": "Preliminary Estimate"
+        }
+      ],
+      "expected": [
+        "August 26, 2026"
+      ],
+      "note": "묶음 제목 행(Corporate Profits) 아래의 행."
+    },
+    {
+      "id": "b-05",
+      "type": "body",
+      "question": "By how much did real GDP increase in 2025 compared with 2024?",
+      "gold": [
+        {
+          "doc": "bea",
+          "page": 1,
+          "text": "Real GDP increased 2.2 percent in 2025"
+        }
+      ],
+      "expected": [
+        "2.2"
+      ]
+    },
+    {
+      "id": "b-06",
+      "type": "body",
+      "question": "When was the BEA advance report for the fourth quarter of 2025 originally scheduled?",
+      "gold": [
+        {
+          "doc": "bea",
+          "page": 1,
+          "text": "originally scheduled for January 29, 2026"
+        }
+      ],
+      "expected": [
+        "January 29, 2026"
+      ]
+    },
+    {
+      "id": "t-01",
+      "type": "hierarchical_row",
+      "question": "In the TUTA paper's example table, how many households aged 20 to 24 have three or more people?",
+      "gold": [
+        {
+          "doc": "tuta",
+          "page": 6,
+          "text": "584"
+        }
+      ],
+      "expected": [
+        "584"
+      ],
+      "forbidden": [
+        "436"
+      ],
+      "note": "Age › Household Size 2단 행 라벨."
+    },
+    {
+      "id": "t-02",
+      "type": "hierarchical_row",
+      "question": "In the TUTA paper's example table, what percent of households aged 15 to 19 are two-person households?",
+      "gold": [
+        {
+          "doc": "tuta",
+          "page": 6,
+          "text": "40.0%"
+        }
+      ],
+      "expected": [
+        "40.0%"
+      ],
+      "forbidden": [
+        "60.0%"
+      ]
+    },
+    {
+      "id": "t-03",
+      "type": "lookup",
+      "question": "In the TUTA paper's example, what is the total number of households aged 25 to 34?",
+      "gold": [
+        {
+          "doc": "tuta",
+          "page": 6,
+          "text": "8,483"
+        }
+      ],
+      "expected": [
+        "8,483"
+      ]
+    },
+    {
+      "id": "t-04",
+      "type": "body",
+      "question": "What does the TUTA paper propose?",
+      "gold": [
+        {
+          "doc": "tuta",
+          "page": 1,
+          "text": "ture for understanding generally structured tables"
+        }
+      ],
+      "expected": [
+        "pre-training"
+      ],
+      "alternative_gold": [
+        {
+          "doc": "tuta",
+          "page": 1,
+          "text": "In this paper, we propose TUTA, a unified pre-training architec"
+        }
+      ]
+    },
+    {
+      "id": "c-01",
+      "type": "body",
+      "question": "How large are private credit funds' assets under management today according to the BIS article?",
+      "gold": [
+        {
+          "doc": "biscredit",
+          "page": 1,
+          "text": "$0.2 billion in the early 2000s to over $2,500 billion today",
+          "equivalent_locations": [
+            {
+              "doc": "biscredit",
+              "page": 4,
+              "text": "private credit funds exceed $2.5 trillion globally."
+            }
+          ]
+        }
+      ],
+      "expected": [
+        "2,500 billion"
+      ],
+      "expected_equivalents": {
+        "2,500 billion": [
+          "$2.5 trillion"
+        ]
+      },
+      "require_selected_evidence": true
+    },
+    {
+      "id": "c-02",
+      "type": "body",
+      "question": "According to the BIS article, in which kinds of countries is the footprint of private credit larger?",
+      "gold": [
+        {
+          "doc": "biscredit",
+          "page": 1,
+          "text": "with lower policy rates, more stringent banking regulation"
+        }
+      ],
+      "expected": [
+        "lower policy rates"
+      ],
+      "alternative_gold": [
+        {
+          "doc": "biscredit",
+          "page": 2,
+          "text": "The footprint of private credit is larger in countries with lower policy rates"
+        }
+      ]
+    },
+    {
+      "id": "c-03",
+      "type": "body",
+      "question": "How many countries does the BIS private credit loan panel cover?",
+      "gold": [
+        {
+          "doc": "biscredit",
+          "page": 2,
+          "text": "In a panel covering private credit loans for 45 countries"
+        }
+      ],
+      "expected": [
+        "45"
+      ]
+    },
+    {
+      "id": "m-01",
+      "type": "multi_document",
+      "question": "강동농협과 서대전농협의 2025년 순자본비율은 각각 얼마인가요?",
+      "gold": [
+        {
+          "doc": "gangdong",
+          "page": 4,
+          "text": "8.34"
+        },
+        {
+          "doc": "seodaejeon",
+          "page": 4,
+          "text": "8.61"
+        }
+      ],
+      "expected": [
+        "8.34",
+        "8.61"
+      ]
+    },
+    {
+      "id": "u-01",
+      "type": "unanswerable",
+      "question": "월롱농협의 2025년 당기순이익은 얼마인가요?",
+      "gold": [],
+      "expected": [],
+      "answerable": false,
+      "note": "글자 정보가 없는 스캔 문서(OCR 필요). 보류해야 한다."
+    },
+    {
+      "id": "u-02",
+      "type": "unanswerable",
+      "question": "하나은행 외화고단위플러스 정기예금의 2026년 USD 금리는?",
+      "gold": [],
+      "expected": [],
+      "answerable": false
+    },
+    {
+      "id": "u-03",
+      "type": "unanswerable",
+      "question": "What was real GDP growth in the first quarter of 2026?",
+      "gold": [],
+      "expected": [],
+      "answerable": false
+    }
+  ]
+}

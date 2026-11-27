@@ -1,0 +1,13 @@
+/* 역할: 화면 폭에 따른 배치와 움직임 줄이기 설정 대응. 다른 파일의 규칙을 덮어쓰므로 맨 마지막에 불러온다. */
+@media (max-width:1020px){
+  .ask{grid-template-columns:1fr;padding:var(--s4)}
+  #viewer{position:static;max-height:none}
+  .docs{padding:var(--s4)}
+  .top{padding:0 var(--s4);gap:var(--s3)}
+  .brand .muted{display:none}
+  .doc-row,.doc-head{grid-template-columns:minmax(0,1fr) 56px 20px}
+  .doc-row .state,.doc-head span:nth-child(3){display:none}
+  .slide{padding:var(--s3) 52px}
+}
+@media (max-width:560px){.btn .long{display:none}.tabs{margin-left:0}.slide{padding:var(--s2)}.nav{top:auto;bottom:var(--s3);transform:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}

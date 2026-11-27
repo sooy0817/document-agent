@@ -1,0 +1,446 @@
+[
+  {
+    "body": {
+      "page": 2,
+      "notes": [],
+      "source": {
+        "bbox": {
+          "x0": 123.05000305175781,
+          "x1": 442.29998779296875,
+          "y0": 562.9839477539062,
+          "y1": 577.0599975585938
+        },
+        "cell_id": null,
+        "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008/l0000s0000",
+        "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008",
+        "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+        "page_number": 2
+      },
+      "cell_id": null,
+      "row_path": [],
+      "table_id": null,
+      "span_refs": [
+        "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008/l0000s0000"
+      ],
+      "value_raw": "디폴트옵션상품이비교적높은수익률과낮은보수를추구해서마음에드는데",
+      "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008/line0",
+      "source_uri": null,
+      "value_kind": "body",
+      "column_path": [],
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "unit_context": [],
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "semantic_status": "unvalidated_candidate",
+      "source_media_type": "application/pdf",
+      "source_references": [
+        {
+          "bbox": {
+            "x0": 123.05000305175781,
+            "x1": 442.29998779296875,
+            "y0": 562.9839477539062,
+            "y1": 577.0599975585938
+          },
+          "cell_id": null,
+          "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008/l0000s0000",
+          "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008",
+          "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+          "page_number": 2
+        }
+      ]
+    },
+    "source": {
+      "bbox": {
+        "x0": 123.05000305175781,
+        "x1": 442.29998779296875,
+        "y0": 562.9839477539062,
+        "y1": 577.0599975585938
+      },
+      "cell_id": null,
+      "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008/l0000s0000",
+      "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008",
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "page_number": 2
+    },
+    "document": {
+      "source_uri": null,
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "source_media_type": "application/pdf"
+    },
+    "position": 60,
+    "text_raw": "디폴트옵션상품이비교적높은수익률과낮은보수를추구해서마음에드는데",
+    "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008/line0"
+  },
+  {
+    "body": {
+      "page": 2,
+      "notes": [],
+      "source": {
+        "bbox": {
+          "x0": 123.05000305175781,
+          "x1": 322.6719970703125,
+          "y0": 577.6239624023438,
+          "y1": 591.7000122070312
+        },
+        "cell_id": null,
+        "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008/l0001s0000",
+        "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008",
+        "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+        "page_number": 2
+      },
+      "cell_id": null,
+      "row_path": [],
+      "table_id": null,
+      "span_refs": [
+        "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008/l0001s0000"
+      ],
+      "value_raw": "직접디폴트옵션상품으로매수가가능한가요?",
+      "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008/line1",
+      "source_uri": null,
+      "value_kind": "body",
+      "column_path": [],
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "unit_context": [],
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "semantic_status": "unvalidated_candidate",
+      "source_media_type": "application/pdf",
+      "source_references": [
+        {
+          "bbox": {
+            "x0": 123.05000305175781,
+            "x1": 322.6719970703125,
+            "y0": 577.6239624023438,
+            "y1": 591.7000122070312
+          },
+          "cell_id": null,
+          "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008/l0001s0000",
+          "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008",
+          "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+          "page_number": 2
+        }
+      ]
+    },
+    "source": {
+      "bbox": {
+        "x0": 123.05000305175781,
+        "x1": 322.6719970703125,
+        "y0": 577.6239624023438,
+        "y1": 591.7000122070312
+      },
+      "cell_id": null,
+      "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008/l0001s0000",
+      "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008",
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "page_number": 2
+    },
+    "document": {
+      "source_uri": null,
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "source_media_type": "application/pdf"
+    },
+    "position": 61,
+    "text_raw": "직접디폴트옵션상품으로매수가가능한가요?",
+    "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0008/line1"
+  },
+  {
+    "body": {
+      "page": 2,
+      "notes": [],
+      "source": {
+        "bbox": {
+          "x0": 141.47999572753906,
+          "x1": 411.8179931640625,
+          "y0": 640.9039306640625,
+          "y1": 654.97998046875
+        },
+        "cell_id": null,
+        "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024/l0000s0000",
+        "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024",
+        "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+        "page_number": 2
+      },
+      "cell_id": null,
+      "row_path": [],
+      "table_id": null,
+      "span_refs": [
+        "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024/l0000s0000"
+      ],
+      "value_raw": "대기기간없이디폴트옵션상품을직접매수하는것도가능합니다.",
+      "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024/line0",
+      "source_uri": null,
+      "value_kind": "body",
+      "column_path": [],
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "unit_context": [],
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "semantic_status": "unvalidated_candidate",
+      "source_media_type": "application/pdf",
+      "source_references": [
+        {
+          "bbox": {
+            "x0": 141.47999572753906,
+            "x1": 411.8179931640625,
+            "y0": 640.9039306640625,
+            "y1": 654.97998046875
+          },
+          "cell_id": null,
+          "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024/l0000s0000",
+          "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024",
+          "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+          "page_number": 2
+        }
+      ]
+    },
+    "source": {
+      "bbox": {
+        "x0": 141.47999572753906,
+        "x1": 411.8179931640625,
+        "y0": 640.9039306640625,
+        "y1": 654.97998046875
+      },
+      "cell_id": null,
+      "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024/l0000s0000",
+      "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024",
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "page_number": 2
+    },
+    "document": {
+      "source_uri": null,
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "source_media_type": "application/pdf"
+    },
+    "position": 62,
+    "text_raw": "대기기간없이디폴트옵션상품을직접매수하는것도가능합니다.",
+    "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024/line0"
+  },
+  {
+    "body": {
+      "page": 2,
+      "notes": [],
+      "source": {
+        "bbox": {
+          "x0": 326.8599853515625,
+          "x1": 456.9599914550781,
+          "y0": 658.02392578125,
+          "y1": 672.0999755859375
+        },
+        "cell_id": null,
+        "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/l0001s0000",
+        "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025",
+        "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+        "page_number": 2
+      },
+      "cell_id": null,
+      "row_path": [],
+      "table_id": null,
+      "span_refs": [
+        "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/l0001s0000"
+      ],
+      "value_raw": "‘현재운용상품변경’거래를통해",
+      "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/line1",
+      "source_uri": null,
+      "value_kind": "body",
+      "column_path": [],
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "unit_context": [],
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "semantic_status": "unvalidated_candidate",
+      "source_media_type": "application/pdf",
+      "source_references": [
+        {
+          "bbox": {
+            "x0": 326.8599853515625,
+            "x1": 456.9599914550781,
+            "y0": 658.02392578125,
+            "y1": 672.0999755859375
+          },
+          "cell_id": null,
+          "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/l0001s0000",
+          "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025",
+          "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+          "page_number": 2
+        }
+      ]
+    },
+    "source": {
+      "bbox": {
+        "x0": 326.8599853515625,
+        "x1": 456.9599914550781,
+        "y0": 658.02392578125,
+        "y1": 672.0999755859375
+      },
+      "cell_id": null,
+      "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/l0001s0000",
+      "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025",
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "page_number": 2
+    },
+    "document": {
+      "source_uri": null,
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "source_media_type": "application/pdf"
+    },
+    "position": 63,
+    "text_raw": "‘현재운용상품변경’거래를통해",
+    "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/line1"
+  },
+  {
+    "body": {
+      "page": 2,
+      "notes": [],
+      "source": {
+        "bbox": {
+          "x0": 144.5800018310547,
+          "x1": 313.36798095703125,
+          "y0": 658.0439453125,
+          "y1": 672.1199951171875
+        },
+        "cell_id": null,
+        "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/l0000s0000",
+        "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025",
+        "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+        "page_number": 2
+      },
+      "cell_id": null,
+      "row_path": [],
+      "table_id": null,
+      "span_refs": [
+        "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/l0000s0000"
+      ],
+      "value_raw": "이것을옵트인(OPT-IN) 이라고해요!",
+      "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/line0",
+      "source_uri": null,
+      "value_kind": "body",
+      "column_path": [],
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "unit_context": [],
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "semantic_status": "unvalidated_candidate",
+      "source_media_type": "application/pdf",
+      "source_references": [
+        {
+          "bbox": {
+            "x0": 144.5800018310547,
+            "x1": 313.36798095703125,
+            "y0": 658.0439453125,
+            "y1": 672.1199951171875
+          },
+          "cell_id": null,
+          "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/l0000s0000",
+          "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025",
+          "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+          "page_number": 2
+        }
+      ]
+    },
+    "source": {
+      "bbox": {
+        "x0": 144.5800018310547,
+        "x1": 313.36798095703125,
+        "y0": 658.0439453125,
+        "y1": 672.1199951171875
+      },
+      "cell_id": null,
+      "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/l0000s0000",
+      "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025",
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "page_number": 2
+    },
+    "document": {
+      "source_uri": null,
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "source_media_type": "application/pdf"
+    },
+    "position": 64,
+    "text_raw": "이것을옵트인(OPT-IN) 이라고해요!",
+    "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/line0"
+  },
+  {
+    "body": {
+      "page": 2,
+      "notes": [],
+      "source": {
+        "bbox": {
+          "x0": 141.47999572753906,
+          "x1": 403.7779846191406,
+          "y0": 675.1539306640625,
+          "y1": 689.22998046875
+        },
+        "cell_id": null,
+        "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/l0002s0000",
+        "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025",
+        "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+        "page_number": 2
+      },
+      "cell_id": null,
+      "row_path": [],
+      "table_id": null,
+      "span_refs": [
+        "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/l0002s0000"
+      ],
+      "value_raw": "옵트인(OPT-IN)으로디폴트옵션상품을직접매수해보세요!",
+      "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/line2",
+      "source_uri": null,
+      "value_kind": "body",
+      "column_path": [],
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "unit_context": [],
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "semantic_status": "unvalidated_candidate",
+      "source_media_type": "application/pdf",
+      "source_references": [
+        {
+          "bbox": {
+            "x0": 141.47999572753906,
+            "x1": 403.7779846191406,
+            "y0": 675.1539306640625,
+            "y1": 689.22998046875
+          },
+          "cell_id": null,
+          "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/l0002s0000",
+          "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025",
+          "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+          "page_number": 2
+        }
+      ]
+    },
+    "source": {
+      "bbox": {
+        "x0": 141.47999572753906,
+        "x1": 403.7779846191406,
+        "y0": 675.1539306640625,
+        "y1": 689.22998046875
+      },
+      "cell_id": null,
+      "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/l0002s0000",
+      "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025",
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "page_number": 2
+    },
+    "document": {
+      "source_uri": null,
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "source_media_type": "application/pdf"
+    },
+    "position": 65,
+    "text_raw": "옵트인(OPT-IN)으로디폴트옵션상품을직접매수해보세요!",
+    "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0025/line2"
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "semantic-revision/1.0",
+      "default": "semantic-revision/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "before": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Before",
+      "type": "object"
+    },
+    "after": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "After",
+      "type": "object"
+    },
+    "history": {
+      "items": {
+        "additionalProperties": true,
+        "type": "object"
+      },
+      "title": "History",
+      "type": "array"
+    },
+    "abstained": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Abstained",
+      "type": "array"
+    },
+    "physical_states": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Physical States",
+      "type": "object"
+    },
+    "status": {
+      "const": "review_required",
+      "default": "review_required",
+      "title": "Status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "before",
+    "after",
+    "history",
+    "abstained",
+    "physical_states"
+  ],
+  "title": "Revision",
+  "type": "object"
+}

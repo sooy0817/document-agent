@@ -1,0 +1,172 @@
+{
+  "question": "하나은행 퇴직연금에서 대기기간 없이 디폴트옵션 상품을 직접 매수하는 방법은 무엇이라고 하나요?",
+  "evidence": [
+    {
+      "evidence_id": "E1",
+      "page": 2,
+      "notes": [],
+      "source": {
+        "bbox": {
+          "x0": 135.60000610351562,
+          "x1": 204.55316162109375,
+          "y0": 733.8341064453125,
+          "y1": 742.7020263671875
+        },
+        "cell_id": null,
+        "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0009/l0000s0000",
+        "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0009",
+        "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+        "page_number": 2
+      },
+      "cell_id": null,
+      "row_path": [],
+      "table_id": null,
+      "span_refs": [
+        "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0009/l0000s0000",
+        "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0009/l0000s0001",
+        "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0009/l0000s0002"
+      ],
+      "value_raw": "(모바일어플)하나원큐I 퇴직연금상품운용> 현재운용상품변경> 보유상품중매도상품선택> 디폴트옵션상품매수",
+      "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0009/line0",
+      "source_uri": null,
+      "value_kind": "body",
+      "column_path": [],
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "unit_context": [],
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "semantic_status": "unvalidated_candidate",
+      "source_media_type": "application/pdf",
+      "source_references": [
+        {
+          "bbox": {
+            "x0": 135.60000610351562,
+            "x1": 204.55316162109375,
+            "y0": 733.8341064453125,
+            "y1": 742.7020263671875
+          },
+          "cell_id": null,
+          "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0009/l0000s0000",
+          "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0009",
+          "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+          "page_number": 2
+        },
+        {
+          "bbox": {
+            "x0": 204.55316162109375,
+            "x1": 208.5800018310547,
+            "y0": 733.8341064453125,
+            "y1": 742.7020263671875
+          },
+          "cell_id": null,
+          "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0009/l0000s0001",
+          "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0009",
+          "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+          "page_number": 2
+        },
+        {
+          "bbox": {
+            "x0": 208.5800018310547,
+            "x1": 457.1139831542969,
+            "y0": 733.8341064453125,
+            "y1": 742.7020263671875
+          },
+          "cell_id": null,
+          "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0009/l0000s0002",
+          "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0009",
+          "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+          "page_number": 2
+        }
+      ],
+      "run_id": "dbacccee-bd4e-4345-9064-5f6927ee5512"
+    },
+    {
+      "evidence_id": "E2",
+      "page": 2,
+      "notes": [],
+      "source": {
+        "bbox": {
+          "x0": 141.47999572753906,
+          "x1": 411.8179931640625,
+          "y0": 640.9039306640625,
+          "y1": 654.97998046875
+        },
+        "cell_id": null,
+        "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024/l0000s0000",
+        "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024",
+        "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+        "page_number": 2
+      },
+      "cell_id": null,
+      "row_path": [],
+      "table_id": null,
+      "span_refs": [
+        "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024/l0000s0000"
+      ],
+      "value_raw": "대기기간없이디폴트옵션상품을직접매수하는것도가능합니다.",
+      "content_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024/line0",
+      "source_uri": null,
+      "value_kind": "body",
+      "column_path": [],
+      "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+      "source_name": "input.pdf",
+      "unit_context": [],
+      "document_label": "input.pdf | 2026년10월 하나은행사전지정운용방법 (디폴트옵션) 포트폴리오상품안내",
+      "semantic_status": "unvalidated_candidate",
+      "source_media_type": "application/pdf",
+      "source_references": [
+        {
+          "bbox": {
+            "x0": 141.47999572753906,
+            "x1": 411.8179931640625,
+            "y0": 640.9039306640625,
+            "y1": 654.97998046875
+          },
+          "cell_id": null,
+          "span_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024/l0000s0000",
+          "block_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f/p0002/b0024",
+          "document_id": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+          "page_number": 2
+        }
+      ],
+      "run_id": "dbacccee-bd4e-4345-9064-5f6927ee5512"
+    }
+  ],
+  "assessment": {
+    "question": "하나은행 퇴직연금에서 대기기간 없이 디폴트옵션 상품을 직접 매수하는 방법은 무엇이라고 하나요?",
+    "status": "supported",
+    "requires_external_verification": false,
+    "requirements": [
+      {
+        "question_quote": "하나은행 퇴직연금에서 대기기간 없이 디폴트옵션 상품을 직접 매수하는 방법은 무엇이라고 하나요?",
+        "requirement": "하나은행 퇴직연금에서 대기기간 없이 디폴트옵션 상품을 직접 매수하는 방법의 명칭 또는 절차를 제시해야 한다.",
+        "status": "supported",
+        "supports": [
+          {
+            "source_id": "E1",
+            "field": "text_raw",
+            "quote": "(모바일어플)하나원큐I 퇴직연금상품운용> 현재운용상품변경> 보유상품중매도상품선택> 디폴트옵션상품매수"
+          },
+          {
+            "source_id": "E2",
+            "field": "text_raw",
+            "quote": "대기기간없이디폴트옵션상품을직접매수하는것도가능합니다."
+          }
+        ]
+      }
+    ],
+    "explanation": "E1은 하나은행 퇴직연금에서 모바일 어플을 통해 대기기간 없이 디폴트옵션 상품을 직접 매수하는 절차를 구체적으로 안내하고 있으며, E2는 대기기간 없이 직접 매수하는 것이 가능함을 명시적으로 언급하고 있습니다."
+  },
+  "selection": {
+    "evidence_ids": [
+      "E1",
+      "E2"
+    ],
+    "values_raw": [
+      "(모바일어플)하나원큐I 퇴직연금상품운용> 현재운용상품변경> 보유상품중매도상품선택> 디폴트옵션상품매수",
+      "대기기간없이디폴트옵션상품을직접매수하는것도가능합니다."
+    ],
+    "abstained": false
+  },
+  "answer_text": "(모바일어플)하나원큐I 퇴직연금상품운용> 현재운용상품변경> 보유상품중매도상품선택> 디폴트옵션상품매수 (input.pdf 2쪽)\n대기기간없이디폴트옵션상품을직접매수하는것도가능합니다. (input.pdf 2쪽)"
+}

@@ -1,0 +1,363 @@
+{
+  "item_v1": {
+    "id": "g-20",
+    "type": "multi_document",
+    "question": "카카오뱅크 정기예금과 신한 My플러스 정기예금 중 최소 가입금액이 더 낮은 상품은 무엇이고 각각 얼마인가요?",
+    "gold": [
+      {
+        "doc": "kakao",
+        "page": 1,
+        "text": "100 만원 이상",
+        "row_label": null,
+        "equivalent_locations": [],
+        "conditional_terms": [],
+        "value_aliases": []
+      },
+      {
+        "doc": "shinhan",
+        "page": 1,
+        "text": "50만원 이상 1억원 이내",
+        "row_label": null,
+        "equivalent_locations": [],
+        "conditional_terms": [],
+        "value_aliases": []
+      }
+    ],
+    "expected": [
+      "신한",
+      "50만원",
+      "100"
+    ],
+    "expected_equivalents": {},
+    "forbidden": [],
+    "answerable": true,
+    "ambiguous": false,
+    "alternative_gold": [],
+    "clarification_terms": [],
+    "require_selected_evidence": false,
+    "note": null
+  },
+  "item_v2": {
+    "id": "g-20",
+    "type": "multi_document",
+    "question": "카카오뱅크 정기예금과 신한 My플러스 정기예금 중 최소 가입금액이 더 낮은 상품은 무엇이고 각각 얼마인가요?",
+    "gold": [
+      {
+        "doc": "kakao",
+        "page": 1,
+        "text": "100 만원 이상",
+        "row_label": null,
+        "equivalent_locations": [],
+        "conditional_terms": [],
+        "value_aliases": []
+      },
+      {
+        "doc": "shinhan",
+        "page": 1,
+        "text": "50만원 이상 1억원 이내",
+        "row_label": null,
+        "equivalent_locations": [
+          {
+            "doc": "shinhan",
+            "page": 6,
+            "text": "50만원",
+            "row_label": "최저가입금액"
+          }
+        ],
+        "conditional_terms": [],
+        "value_aliases": []
+      }
+    ],
+    "expected": [
+      "신한",
+      "50만원",
+      "100"
+    ],
+    "expected_equivalents": {},
+    "forbidden": [],
+    "answerable": true,
+    "ambiguous": false,
+    "alternative_gold": [],
+    "clarification_terms": [],
+    "require_selected_evidence": false,
+    "note": null
+  },
+  "documents": {
+    "kakao": "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c",
+    "bankline": "sha256:d4c73a8f4951986776937c8f1e63ee97290bc3efa9029dda557e7b258b39f7bd",
+    "hanadefault": "sha256:b73c6caa34e86f1b3d00407edb79541b47900a9cada8f1cee8cd70c55b198e6f",
+    "shinhan": "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da",
+    "sejong": "sha256:0759cf8d45f6db4e98d78c221b7ebea52bc712076bfc6c9898815328eb9cd718",
+    "webtoon": "sha256:f7ae5622464bb8c9b5dd977dff1c3b80be21d4eb9f278a6e5743ef42ad979757",
+    "didimdol": "sha256:195fb318c0edb9f569a858468c579780e4757ff795063651819b0b65dcd8be21",
+    "gwangmyeong": "sha256:fd0b8e08a22c8000fd1185187d11e156add512250b00e2aeebc1b056c17273a4",
+    "ganggu": "sha256:265773e474895c6f5fd0515d5282ba3c7a677ce3205aff5d97ebc523bb15d8ea",
+    "unju": "sha256:b30f317e2e539452e5c4bf65e9809ea03f3b2d7800b79fa3cae66f86eff1c917",
+    "seodaejeon": "sha256:a17503050e523e124037c7250d017d4b7d29aec99e4e14de248ca7bcae5a04a8"
+  },
+  "original_resolved": {
+    "gold": [
+      "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0001/b0023/line1",
+      "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/physical000/cell0005"
+    ],
+    "gold_groups": [
+      [
+        "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/physical000/cell0005"
+      ],
+      [
+        "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0001/b0023/line1"
+      ]
+    ],
+    "alternative": [],
+    "alternative_groups": [],
+    "unresolved": [],
+    "unresolved_gold": [],
+    "unresolved_alternative": []
+  },
+  "source_excerpts": {
+    "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da": {
+      "physical_tables": [
+        {
+          "page_number": 6,
+          "cells": [
+            {
+              "cell_id": "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/physical000/cell0007",
+              "original_text": "최저가입금액 ",
+              "row_index": 3,
+              "rowspan": 1
+            },
+            {
+              "cell_id": "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/physical000/cell0008",
+              "original_text": "50만원",
+              "row_index": 3,
+              "rowspan": 1
+            },
+            {
+              "cell_id": "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/physical000/cell0009",
+              "original_text": "최고가입금액 ",
+              "row_index": 3,
+              "rowspan": 1
+            },
+            {
+              "cell_id": "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/physical000/cell0010",
+              "original_text": "1억원",
+              "row_index": 3,
+              "rowspan": 1
+            }
+          ]
+        }
+      ],
+      "contents": [
+        {
+          "content_id": "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0001/b0023/line1",
+          "text_raw": "50만원 이상 1억원 이내 ",
+          "source_references": [
+            {
+              "page_number": 1
+            }
+          ]
+        },
+        {
+          "content_id": "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/b0006/line1",
+          "text_raw": "50만원 ",
+          "source_references": [
+            {
+              "page_number": 6
+            }
+          ]
+        }
+      ]
+    },
+    "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c": {
+      "physical_tables": [
+        {
+          "page_number": 1,
+          "cells": [
+            {
+              "cell_id": "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/physical000/cell0004",
+              "original_text": "최소 가입(납입)금액  ",
+              "row_index": 2,
+              "rowspan": 1
+            },
+            {
+              "cell_id": "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/physical000/cell0005",
+              "original_text": "100 만원 이상",
+              "row_index": 2,
+              "rowspan": 1
+            }
+          ]
+        }
+      ],
+      "contents": [
+        {
+          "content_id": "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/b0012/line1",
+          "text_raw": "100 만원 이상 ",
+          "source_references": [
+            {
+              "page_number": 1
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "source_file_sha256": {
+    "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da": "77bc2a7d46ba030d47d060a7d3195e4f87f55db7a64722ae35d4030fc1bd04c7",
+    "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c": "75379d6ab16c5742052383b0cbc2184d6893db3e27039454b998afce3a3edf6d"
+  },
+  "run": {
+    "question": "카카오뱅크 정기예금과 신한 My플러스 정기예금 중 최소 가입금액이 더 낮은 상품은 무엇이고 각각 얼마인가요?",
+    "evidence": [
+      {
+        "page": 1,
+        "notes": [],
+        "source": {
+          "bbox": {
+            "x0": 129.95999908447266,
+            "x1": 556.7999877929688,
+            "y0": 287.6400146484375,
+            "y1": 313.20001220703125
+          },
+          "cell_id": "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/physical000/cell0005",
+          "span_id": null,
+          "block_id": null,
+          "document_id": "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c",
+          "page_number": 1
+        },
+        "cell_id": "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/physical000/cell0005",
+        "row_path": [
+          "최소 가입(납입)금액  "
+        ],
+        "table_id": "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/physical000",
+        "span_refs": [
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/b0012/l0001s0000"
+        ],
+        "value_raw": "100 만원 이상",
+        "source_uri": null,
+        "value_kind": "text",
+        "column_path": [],
+        "document_id": "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c",
+        "source_name": "input.pdf",
+        "value_group": null,
+        "group_values": [],
+        "row_node_ids": [
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/physical000/main/row/sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/physical000/cell0004"
+        ],
+        "unit_context": [],
+        "mapping_state": "inferred",
+        "scope_context": [],
+        "table_context": [],
+        "document_label": "input.pdf | 카카오뱅크 정기예금 상품설명서 (요약) | 준법감시인 심의필 25-1948 (2025.10.17.~2027.10.16.)",
+        "physical_state": "inferred",
+        "column_node_ids": [],
+        "lookup_eligible": true,
+        "semantic_status": "unvalidated_candidate",
+        "source_cell_ids": [
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/t0000/c0007",
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/t0000/c0011",
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/t0000/c0012",
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/t0000/c0013",
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/t0000/c0016",
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/t0000/c0017"
+        ],
+        "structure_review": "layout_candidate",
+        "numeric_candidate": null,
+        "source_media_type": "application/pdf",
+        "container_duplicate": false,
+        "context_content_ids": [
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/b0009/line0",
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/b0009/line1",
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/b0009/line2",
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/b0031/line0",
+          "sha256:fa2b2ab60089acbc0e9e577ea724256bb635e345166c3b4fbeb4576e5b00b80c/p0001/b0032/line0"
+        ],
+        "run_id": "ad019532-f392-4177-a62f-9adfa6cb5601",
+        "evidence_id": "E1"
+      },
+      {
+        "page": 6,
+        "notes": [],
+        "source": {
+          "bbox": {
+            "x0": 134.18000030517578,
+            "x1": 248.09000396728516,
+            "y0": 206.77996826171875,
+            "y1": 230.41998291015625
+          },
+          "cell_id": "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/physical000/cell0008",
+          "span_id": null,
+          "block_id": null,
+          "document_id": "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da",
+          "page_number": 6
+        },
+        "cell_id": "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/physical000/cell0008",
+        "row_path": [
+          "최저가입금액 "
+        ],
+        "table_id": "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/physical000",
+        "span_refs": [
+          "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/b0006/l0001s0000"
+        ],
+        "value_raw": "50만원",
+        "source_uri": null,
+        "value_kind": "text",
+        "column_path": [
+          "1년제 연 2.65%"
+        ],
+        "document_id": "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da",
+        "source_name": "input.pdf",
+        "value_group": null,
+        "group_values": [],
+        "row_node_ids": [
+          "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/physical000/main/row/sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/physical000/cell0007"
+        ],
+        "unit_context": [],
+        "mapping_state": "inferred",
+        "scope_context": [],
+        "table_context": [
+          "기본이자율 ",
+          "1년제 연 2.65%",
+          "’24.09.02 현재, 세전/ 기간별 이자율은 상품설명서 확인"
+        ],
+        "document_label": "input.pdf | 신한 My플러스 정기예금 상품설명서",
+        "physical_state": "inferred",
+        "column_node_ids": [
+          "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/physical000/main/column/sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/physical000/cell0001"
+        ],
+        "lookup_eligible": true,
+        "semantic_status": "unvalidated_candidate",
+        "source_cell_ids": [
+          "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/t0000/c0012",
+          "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/t0000/c0016"
+        ],
+        "structure_review": "layout_candidate",
+        "numeric_candidate": null,
+        "source_media_type": "application/pdf",
+        "container_duplicate": false,
+        "context_content_ids": [
+          "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/b0000/line0",
+          "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/b0001/line0",
+          "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/b0002/line0",
+          "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/b0012/line0",
+          "sha256:e306398a7a9f7eb93a2f6a98363e47b48e852471cce6124735ff3d0cae2114da/p0006/b0013/line0"
+        ],
+        "evidence_id": "E2",
+        "run_id": "3f6a39b2-d587-40e6-a1f4-70062c759c76"
+      }
+    ],
+    "result": {
+      "selection": {
+        "evidence_ids": [
+          "E1",
+          "E2"
+        ],
+        "values_raw": [
+          "100 만원 이상",
+          "50만원"
+        ],
+        "abstained": false
+      },
+      "answer_text": "신한 My플러스 정기예금의 최소 가입금액이 더 낮으며, 카카오뱅크 정기예금은 100 만원 이상, 신한 My플러스 정기예금은 50만원입니다."
+    }
+  }
+}

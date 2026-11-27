@@ -1,0 +1,4 @@
+[
+  {"id": "merged", "name": "병합 셀 · 구조 테스트", "path": "reports/physical-fixtures/horizontal.pdf"},
+  {"id": "hierarchy", "name": "계층형 표 · 구조 테스트", "path": "reports/physical-fixtures/nested.pdf"}
+]

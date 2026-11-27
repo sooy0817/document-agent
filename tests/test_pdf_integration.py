@@ -8,7 +8,7 @@ import unittest
 from pathlib import Path
 
 from doc_understanding.domain.contracts import ExtractionError, ExtractionLimits, ExtractionRequest
-from doc_understanding.orchestrator.workflow import extract_ir
+from doc_understanding.parser.orchestration.workflow import extract_ir
 
 HAS_ENGINE = importlib.util.find_spec("pymupdf") is not None
 
@@ -47,7 +47,7 @@ def native_pdf(rotation=0, scan=False, pages=1, merged=False, cropped=False):
 @unittest.skipUnless(HAS_ENGINE, "PyMuPDF not installed: native extraction not executed")
 class PDFIntegrationTests(unittest.TestCase):
     def extract(self, data, root, limits=None):
-        from doc_understanding.extraction.pymupdf_adapter import PyMuPDFExtractor
+        from doc_understanding.parser.extraction.pymupdf_adapter import PyMuPDFExtractor
         return extract_ir(ExtractionRequest(data, "synthetic.pdf", limits=limits or ExtractionLimits()),
                           PyMuPDFExtractor(), root)
 

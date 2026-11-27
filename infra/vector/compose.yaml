@@ -1,0 +1,21 @@
+name: nh-rag-vector-experiment
+services:
+  vector:
+    image: pgvector/pgvector:pg16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: retrieval
+      POSTGRES_DB: retrieval_experiment
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets: [db_password]
+    volumes: ['vector_data:/var/lib/postgresql/data']
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U retrieval -d retrieval_experiment']
+      interval: 5s
+      timeout: 3s
+      retries: 15
+secrets:
+  db_password:
+    file: ./password.local.txt
+volumes:
+  vector_data:

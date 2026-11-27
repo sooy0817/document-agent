@@ -4,7 +4,7 @@ from starlette.concurrency import run_in_threadpool
 from doc_understanding.config import artifact_root, extraction_limits
 from doc_understanding.domain.contracts import ExtractionError, ExtractionRequest, PDFExtractor
 from doc_understanding.domain.models import DocumentIR
-from doc_understanding.orchestrator.workflow import extract_ir
+from doc_understanding.parser.orchestration.workflow import extract_ir
 
 
 def create_app(extractor: PDFExtractor | None = None, output_root=None) -> FastAPI:
@@ -28,7 +28,7 @@ def create_app(extractor: PDFExtractor | None = None, output_root=None) -> FastA
         try:
             adapter = extractor
             if adapter is None:
-                from doc_understanding.extraction.pymupdf_adapter import PyMuPDFExtractor
+                from doc_understanding.parser.extraction.pymupdf_adapter import PyMuPDFExtractor
                 adapter = PyMuPDFExtractor()
             return await run_in_threadpool(extract_ir,
                                            ExtractionRequest(b"".join(chunks), "upload.pdf", limits=limits),

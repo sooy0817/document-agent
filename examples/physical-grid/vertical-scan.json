@@ -1,0 +1,1804 @@
+{
+  "schema_version": "physical-table-ir/2.0",
+  "table_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000",
+  "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+  "analysis_run_id": "07e83b08-d446-42c6-9095-3b16e2da9311",
+  "analyzer_version": "physical-grid/0.1.0",
+  "policy": {
+    "tolerance": 0.75,
+    "min_line_length": 12.0,
+    "max_grid_slots": 20000,
+    "raster_threshold": 100,
+    "max_lines": 6000
+  },
+  "source_ir_sha256": "6ee4587784547d5b7a5b7d0698ced1a8cbb52ff5ef371ae865dbb128e088788b",
+  "page_number": 1,
+  "bounding_box": {
+    "x0": 39.9,
+    "y0": 60.0,
+    "x1": 440.09999999999997,
+    "y1": 219.89999999999998
+  },
+  "rows": [
+    {
+      "index": 0,
+      "start": 60.0,
+      "end": 99.89999999999999
+    },
+    {
+      "index": 1,
+      "start": 99.89999999999999,
+      "end": 140.1
+    },
+    {
+      "index": 2,
+      "start": 140.1,
+      "end": 180.0
+    },
+    {
+      "index": 3,
+      "start": 180.0,
+      "end": 219.89999999999998
+    }
+  ],
+  "columns": [
+    {
+      "index": 0,
+      "start": 39.9,
+      "end": 140.1
+    },
+    {
+      "index": 1,
+      "start": 140.1,
+      "end": 240.0
+    },
+    {
+      "index": 2,
+      "start": 240.0,
+      "end": 339.9
+    },
+    {
+      "index": 3,
+      "start": 339.9,
+      "end": 440.09999999999997
+    }
+  ],
+  "cells": [
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0000",
+      "row_index": 0,
+      "column_index": 0,
+      "rowspan": 3,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 39.9,
+        "y0": 60.0,
+        "x1": 140.1,
+        "y1": 180.0
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 39.9,
+          "y0": 60.0,
+          "x1": 140.1,
+          "y1": 180.0
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0000"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h0-0",
+        "h1-0",
+        "h2-0",
+        "h3-0",
+        "v0-0",
+        "v0-1",
+        "v1-0",
+        "v1-1",
+        "v2-0",
+        "v2-1"
+      ],
+      "occupied_slots": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0001",
+      "row_index": 0,
+      "column_index": 1,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 140.1,
+        "y0": 60.0,
+        "x1": 240.0,
+        "y1": 99.89999999999999
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 140.1,
+          "y0": 60.0,
+          "x1": 240.0,
+          "y1": 99.89999999999999
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0001"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h0-1",
+        "h1-1",
+        "v0-1",
+        "v0-2"
+      ],
+      "occupied_slots": [
+        [
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0002",
+      "row_index": 0,
+      "column_index": 2,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 240.0,
+        "y0": 60.0,
+        "x1": 339.9,
+        "y1": 99.89999999999999
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 240.0,
+          "y0": 60.0,
+          "x1": 339.9,
+          "y1": 99.89999999999999
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0002"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h0-2",
+        "h1-2",
+        "v0-2",
+        "v0-3"
+      ],
+      "occupied_slots": [
+        [
+          0,
+          2
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0003",
+      "row_index": 0,
+      "column_index": 3,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 339.9,
+        "y0": 60.0,
+        "x1": 440.09999999999997,
+        "y1": 99.89999999999999
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 339.9,
+          "y0": 60.0,
+          "x1": 440.09999999999997,
+          "y1": 99.89999999999999
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0003"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h0-3",
+        "h1-3",
+        "v0-3",
+        "v0-4"
+      ],
+      "occupied_slots": [
+        [
+          0,
+          3
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0004",
+      "row_index": 1,
+      "column_index": 1,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 140.1,
+        "y0": 99.89999999999999,
+        "x1": 240.0,
+        "y1": 140.1
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 140.1,
+          "y0": 99.89999999999999,
+          "x1": 240.0,
+          "y1": 140.1
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0004"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h1-1",
+        "h2-1",
+        "v1-1",
+        "v1-2"
+      ],
+      "occupied_slots": [
+        [
+          1,
+          1
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0005",
+      "row_index": 1,
+      "column_index": 2,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 240.0,
+        "y0": 99.89999999999999,
+        "x1": 339.9,
+        "y1": 140.1
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 240.0,
+          "y0": 99.89999999999999,
+          "x1": 339.9,
+          "y1": 140.1
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0005"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h1-2",
+        "h2-2",
+        "v1-2",
+        "v1-3"
+      ],
+      "occupied_slots": [
+        [
+          1,
+          2
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0006",
+      "row_index": 1,
+      "column_index": 3,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 339.9,
+        "y0": 99.89999999999999,
+        "x1": 440.09999999999997,
+        "y1": 140.1
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 339.9,
+          "y0": 99.89999999999999,
+          "x1": 440.09999999999997,
+          "y1": 140.1
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0006"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h1-3",
+        "h2-3",
+        "v1-3",
+        "v1-4"
+      ],
+      "occupied_slots": [
+        [
+          1,
+          3
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0007",
+      "row_index": 2,
+      "column_index": 1,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 140.1,
+        "y0": 140.1,
+        "x1": 240.0,
+        "y1": 180.0
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 140.1,
+          "y0": 140.1,
+          "x1": 240.0,
+          "y1": 180.0
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0007"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h2-1",
+        "h3-1",
+        "v2-1",
+        "v2-2"
+      ],
+      "occupied_slots": [
+        [
+          2,
+          1
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0008",
+      "row_index": 2,
+      "column_index": 2,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 240.0,
+        "y0": 140.1,
+        "x1": 339.9,
+        "y1": 180.0
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 240.0,
+          "y0": 140.1,
+          "x1": 339.9,
+          "y1": 180.0
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0008"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h2-2",
+        "h3-2",
+        "v2-2",
+        "v2-3"
+      ],
+      "occupied_slots": [
+        [
+          2,
+          2
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0009",
+      "row_index": 2,
+      "column_index": 3,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 339.9,
+        "y0": 140.1,
+        "x1": 440.09999999999997,
+        "y1": 180.0
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 339.9,
+          "y0": 140.1,
+          "x1": 440.09999999999997,
+          "y1": 180.0
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0009"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h2-3",
+        "h3-3",
+        "v2-3",
+        "v2-4"
+      ],
+      "occupied_slots": [
+        [
+          2,
+          3
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0010",
+      "row_index": 3,
+      "column_index": 0,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 39.9,
+        "y0": 180.0,
+        "x1": 140.1,
+        "y1": 219.89999999999998
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 39.9,
+          "y0": 180.0,
+          "x1": 140.1,
+          "y1": 219.89999999999998
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0010"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h3-0",
+        "h4-0",
+        "v3-0",
+        "v3-1"
+      ],
+      "occupied_slots": [
+        [
+          3,
+          0
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0011",
+      "row_index": 3,
+      "column_index": 1,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 140.1,
+        "y0": 180.0,
+        "x1": 240.0,
+        "y1": 219.89999999999998
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 140.1,
+          "y0": 180.0,
+          "x1": 240.0,
+          "y1": 219.89999999999998
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0011"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h3-1",
+        "h4-1",
+        "v3-1",
+        "v3-2"
+      ],
+      "occupied_slots": [
+        [
+          3,
+          1
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0012",
+      "row_index": 3,
+      "column_index": 2,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 240.0,
+        "y0": 180.0,
+        "x1": 339.9,
+        "y1": 219.89999999999998
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 240.0,
+          "y0": 180.0,
+          "x1": 339.9,
+          "y1": 219.89999999999998
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0012"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h3-2",
+        "h4-2",
+        "v3-2",
+        "v3-3"
+      ],
+      "occupied_slots": [
+        [
+          3,
+          2
+        ]
+      ]
+    },
+    {
+      "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0013",
+      "row_index": 3,
+      "column_index": 3,
+      "rowspan": 1,
+      "colspan": 1,
+      "original_text": null,
+      "source_bbox": {
+        "x0": 339.9,
+        "y0": 180.0,
+        "x1": 440.09999999999997,
+        "y1": 219.89999999999998
+      },
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 339.9,
+          "y0": 180.0,
+          "x1": 440.09999999999997,
+          "y1": 219.89999999999998
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/physical000/cell0013"
+      },
+      "source_cell_ids": [],
+      "span_refs": [],
+      "extraction_method": "raster_grid",
+      "status": "resolved",
+      "boundary_ids": [
+        "h3-3",
+        "h4-3",
+        "v3-3",
+        "v3-4"
+      ],
+      "occupied_slots": [
+        [
+          3,
+          3
+        ]
+      ]
+    }
+  ],
+  "source_cells": [],
+  "source_links": [],
+  "unassigned_source_cell_ids": [],
+  "table_candidate_ids": [],
+  "page_refs": [
+    1
+  ],
+  "source_references": [
+    {
+      "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+      "page_number": 1,
+      "bbox": {
+        "x0": 39.9,
+        "y0": 60.0,
+        "x1": 440.09999999999997,
+        "y1": 219.89999999999998
+      },
+      "block_id": null,
+      "span_id": null,
+      "cell_id": null
+    }
+  ],
+  "crop_refs": [
+    {
+      "artifact": {
+        "path": "pages/0001.png",
+        "sha256": "71fcbe838336f5c064929dc672062196c2a73930dc74e6c40dd1743e72e9db0c",
+        "media_type": "image/png"
+      },
+      "width_pixels": 834,
+      "height_pixels": 667,
+      "dpi": 120,
+      "page_to_pixel": [
+        1.6666666666666667,
+        0.0,
+        0.0,
+        1.6666666666666667,
+        0.0,
+        0.0
+      ],
+      "clip": {
+        "x0": 0.0,
+        "y0": 0.0,
+        "x1": 500.0,
+        "y1": 400.0
+      }
+    }
+  ],
+  "lines": [
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/99/67",
+      "axis": "horizontal",
+      "position": 59.699999999999996,
+      "start": 40.199999999999996,
+      "end": 439.79999999999995,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 40.199999999999996,
+          "y0": 59.699999999999996,
+          "x1": 439.79999999999995,
+          "y1": 59.699999999999996
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    },
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/100/66",
+      "axis": "horizontal",
+      "position": 60.3,
+      "start": 39.6,
+      "end": 440.4,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 39.6,
+          "y0": 60.3,
+          "x1": 440.4,
+          "y1": 60.3
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    },
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/166/233",
+      "axis": "horizontal",
+      "position": 99.89999999999999,
+      "start": 139.79999999999998,
+      "end": 440.4,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 139.79999999999998,
+          "y0": 99.89999999999999,
+          "x1": 440.4,
+          "y1": 99.89999999999999
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    },
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/233/233",
+      "axis": "horizontal",
+      "position": 140.1,
+      "start": 139.79999999999998,
+      "end": 440.4,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 139.79999999999998,
+          "y0": 140.1,
+          "x1": 440.4,
+          "y1": 140.1
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    },
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/299/66",
+      "axis": "horizontal",
+      "position": 179.7,
+      "start": 39.6,
+      "end": 440.4,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 39.6,
+          "y0": 179.7,
+          "x1": 440.4,
+          "y1": 179.7
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    },
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/300/66",
+      "axis": "horizontal",
+      "position": 180.29999999999998,
+      "start": 39.6,
+      "end": 440.4,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 39.6,
+          "y0": 180.29999999999998,
+          "x1": 440.4,
+          "y1": 180.29999999999998
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    },
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/366/66",
+      "axis": "horizontal",
+      "position": 219.89999999999998,
+      "start": 39.6,
+      "end": 440.4,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 39.6,
+          "y0": 219.89999999999998,
+          "x1": 440.4,
+          "y1": 219.89999999999998
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    },
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/66/100",
+      "axis": "vertical",
+      "position": 39.9,
+      "start": 60.0,
+      "end": 220.2,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 39.9,
+          "y0": 60.0,
+          "x1": 39.9,
+          "y1": 220.2
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    },
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/233/99",
+      "axis": "vertical",
+      "position": 140.1,
+      "start": 59.4,
+      "end": 220.2,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 140.1,
+          "y0": 59.4,
+          "x1": 140.1,
+          "y1": 220.2
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    },
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/399/99",
+      "axis": "vertical",
+      "position": 239.7,
+      "start": 59.4,
+      "end": 220.2,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 239.7,
+          "y0": 59.4,
+          "x1": 239.7,
+          "y1": 220.2
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    },
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/400/99",
+      "axis": "vertical",
+      "position": 240.29999999999998,
+      "start": 59.4,
+      "end": 220.2,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 240.29999999999998,
+          "y0": 59.4,
+          "x1": 240.29999999999998,
+          "y1": 220.2
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    },
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/566/99",
+      "axis": "vertical",
+      "position": 339.9,
+      "start": 59.4,
+      "end": 220.2,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 339.9,
+          "y0": 59.4,
+          "x1": 339.9,
+          "y1": 220.2
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    },
+    {
+      "line_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/733/100",
+      "axis": "vertical",
+      "position": 440.09999999999997,
+      "start": 60.0,
+      "end": 220.2,
+      "source": {
+        "document_id": "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c",
+        "page_number": 1,
+        "bbox": {
+          "x0": 440.09999999999997,
+          "y0": 60.0,
+          "x1": 440.09999999999997,
+          "y1": 220.2
+        },
+        "block_id": null,
+        "span_id": null,
+        "cell_id": null
+      },
+      "method": "raster"
+    }
+  ],
+  "intersections": [
+    {
+      "intersection_id": "i0-0",
+      "x": 39.9,
+      "y": 60.0,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/99/67",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/100/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/66/100"
+      ]
+    },
+    {
+      "intersection_id": "i0-1",
+      "x": 140.1,
+      "y": 60.0,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/99/67",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/100/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/233/99"
+      ]
+    },
+    {
+      "intersection_id": "i0-2",
+      "x": 240.0,
+      "y": 60.0,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/99/67",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/100/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/399/99",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/400/99"
+      ]
+    },
+    {
+      "intersection_id": "i0-3",
+      "x": 339.9,
+      "y": 60.0,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/99/67",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/100/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/566/99"
+      ]
+    },
+    {
+      "intersection_id": "i0-4",
+      "x": 440.09999999999997,
+      "y": 60.0,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/99/67",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/100/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/733/100"
+      ]
+    },
+    {
+      "intersection_id": "i1-1",
+      "x": 140.1,
+      "y": 99.89999999999999,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/166/233",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/233/99"
+      ]
+    },
+    {
+      "intersection_id": "i1-2",
+      "x": 240.0,
+      "y": 99.89999999999999,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/166/233",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/399/99",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/400/99"
+      ]
+    },
+    {
+      "intersection_id": "i1-3",
+      "x": 339.9,
+      "y": 99.89999999999999,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/166/233",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/566/99"
+      ]
+    },
+    {
+      "intersection_id": "i1-4",
+      "x": 440.09999999999997,
+      "y": 99.89999999999999,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/166/233",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/733/100"
+      ]
+    },
+    {
+      "intersection_id": "i2-1",
+      "x": 140.1,
+      "y": 140.1,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/233/233",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/233/99"
+      ]
+    },
+    {
+      "intersection_id": "i2-2",
+      "x": 240.0,
+      "y": 140.1,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/233/233",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/399/99",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/400/99"
+      ]
+    },
+    {
+      "intersection_id": "i2-3",
+      "x": 339.9,
+      "y": 140.1,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/233/233",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/566/99"
+      ]
+    },
+    {
+      "intersection_id": "i2-4",
+      "x": 440.09999999999997,
+      "y": 140.1,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/233/233",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/733/100"
+      ]
+    },
+    {
+      "intersection_id": "i3-0",
+      "x": 39.9,
+      "y": 180.0,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/299/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/300/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/66/100"
+      ]
+    },
+    {
+      "intersection_id": "i3-1",
+      "x": 140.1,
+      "y": 180.0,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/299/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/300/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/233/99"
+      ]
+    },
+    {
+      "intersection_id": "i3-2",
+      "x": 240.0,
+      "y": 180.0,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/299/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/300/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/399/99",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/400/99"
+      ]
+    },
+    {
+      "intersection_id": "i3-3",
+      "x": 339.9,
+      "y": 180.0,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/299/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/300/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/566/99"
+      ]
+    },
+    {
+      "intersection_id": "i3-4",
+      "x": 440.09999999999997,
+      "y": 180.0,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/299/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/300/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/733/100"
+      ]
+    },
+    {
+      "intersection_id": "i4-0",
+      "x": 39.9,
+      "y": 219.89999999999998,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/366/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/66/100"
+      ]
+    },
+    {
+      "intersection_id": "i4-1",
+      "x": 140.1,
+      "y": 219.89999999999998,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/366/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/233/99"
+      ]
+    },
+    {
+      "intersection_id": "i4-2",
+      "x": 240.0,
+      "y": 219.89999999999998,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/366/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/399/99",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/400/99"
+      ]
+    },
+    {
+      "intersection_id": "i4-3",
+      "x": 339.9,
+      "y": 219.89999999999998,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/366/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/566/99"
+      ]
+    },
+    {
+      "intersection_id": "i4-4",
+      "x": 440.09999999999997,
+      "y": 219.89999999999998,
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/366/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/733/100"
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "boundary_id": "h0-0",
+      "axis": "horizontal",
+      "row": 0,
+      "column": 0,
+      "position": 60.0,
+      "start": 39.9,
+      "end": 140.1,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/99/67",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/100/66"
+      ]
+    },
+    {
+      "boundary_id": "h0-1",
+      "axis": "horizontal",
+      "row": 0,
+      "column": 1,
+      "position": 60.0,
+      "start": 140.1,
+      "end": 240.0,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/99/67",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/100/66"
+      ]
+    },
+    {
+      "boundary_id": "h0-2",
+      "axis": "horizontal",
+      "row": 0,
+      "column": 2,
+      "position": 60.0,
+      "start": 240.0,
+      "end": 339.9,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/99/67",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/100/66"
+      ]
+    },
+    {
+      "boundary_id": "h0-3",
+      "axis": "horizontal",
+      "row": 0,
+      "column": 3,
+      "position": 60.0,
+      "start": 339.9,
+      "end": 440.09999999999997,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/99/67",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/100/66"
+      ]
+    },
+    {
+      "boundary_id": "h1-0",
+      "axis": "horizontal",
+      "row": 1,
+      "column": 0,
+      "position": 99.89999999999999,
+      "start": 39.9,
+      "end": 140.1,
+      "coverage": 0.0,
+      "status": "absent",
+      "line_ids": []
+    },
+    {
+      "boundary_id": "h1-1",
+      "axis": "horizontal",
+      "row": 1,
+      "column": 1,
+      "position": 99.89999999999999,
+      "start": 140.1,
+      "end": 240.0,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/166/233"
+      ]
+    },
+    {
+      "boundary_id": "h1-2",
+      "axis": "horizontal",
+      "row": 1,
+      "column": 2,
+      "position": 99.89999999999999,
+      "start": 240.0,
+      "end": 339.9,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/166/233"
+      ]
+    },
+    {
+      "boundary_id": "h1-3",
+      "axis": "horizontal",
+      "row": 1,
+      "column": 3,
+      "position": 99.89999999999999,
+      "start": 339.9,
+      "end": 440.09999999999997,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/166/233"
+      ]
+    },
+    {
+      "boundary_id": "h2-0",
+      "axis": "horizontal",
+      "row": 2,
+      "column": 0,
+      "position": 140.1,
+      "start": 39.9,
+      "end": 140.1,
+      "coverage": 0.0,
+      "status": "absent",
+      "line_ids": []
+    },
+    {
+      "boundary_id": "h2-1",
+      "axis": "horizontal",
+      "row": 2,
+      "column": 1,
+      "position": 140.1,
+      "start": 140.1,
+      "end": 240.0,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/233/233"
+      ]
+    },
+    {
+      "boundary_id": "h2-2",
+      "axis": "horizontal",
+      "row": 2,
+      "column": 2,
+      "position": 140.1,
+      "start": 240.0,
+      "end": 339.9,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/233/233"
+      ]
+    },
+    {
+      "boundary_id": "h2-3",
+      "axis": "horizontal",
+      "row": 2,
+      "column": 3,
+      "position": 140.1,
+      "start": 339.9,
+      "end": 440.09999999999997,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/233/233"
+      ]
+    },
+    {
+      "boundary_id": "h3-0",
+      "axis": "horizontal",
+      "row": 3,
+      "column": 0,
+      "position": 180.0,
+      "start": 39.9,
+      "end": 140.1,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/299/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/300/66"
+      ]
+    },
+    {
+      "boundary_id": "h3-1",
+      "axis": "horizontal",
+      "row": 3,
+      "column": 1,
+      "position": 180.0,
+      "start": 140.1,
+      "end": 240.0,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/299/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/300/66"
+      ]
+    },
+    {
+      "boundary_id": "h3-2",
+      "axis": "horizontal",
+      "row": 3,
+      "column": 2,
+      "position": 180.0,
+      "start": 240.0,
+      "end": 339.9,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/299/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/300/66"
+      ]
+    },
+    {
+      "boundary_id": "h3-3",
+      "axis": "horizontal",
+      "row": 3,
+      "column": 3,
+      "position": 180.0,
+      "start": 339.9,
+      "end": 440.09999999999997,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/299/66",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/300/66"
+      ]
+    },
+    {
+      "boundary_id": "h4-0",
+      "axis": "horizontal",
+      "row": 4,
+      "column": 0,
+      "position": 219.89999999999998,
+      "start": 39.9,
+      "end": 140.1,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/366/66"
+      ]
+    },
+    {
+      "boundary_id": "h4-1",
+      "axis": "horizontal",
+      "row": 4,
+      "column": 1,
+      "position": 219.89999999999998,
+      "start": 140.1,
+      "end": 240.0,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/366/66"
+      ]
+    },
+    {
+      "boundary_id": "h4-2",
+      "axis": "horizontal",
+      "row": 4,
+      "column": 2,
+      "position": 219.89999999999998,
+      "start": 240.0,
+      "end": 339.9,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/366/66"
+      ]
+    },
+    {
+      "boundary_id": "h4-3",
+      "axis": "horizontal",
+      "row": 4,
+      "column": 3,
+      "position": 219.89999999999998,
+      "start": 339.9,
+      "end": 440.09999999999997,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/horizontal/366/66"
+      ]
+    },
+    {
+      "boundary_id": "v0-0",
+      "axis": "vertical",
+      "row": 0,
+      "column": 0,
+      "position": 39.9,
+      "start": 60.0,
+      "end": 99.89999999999999,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/66/100"
+      ]
+    },
+    {
+      "boundary_id": "v1-0",
+      "axis": "vertical",
+      "row": 1,
+      "column": 0,
+      "position": 39.9,
+      "start": 99.89999999999999,
+      "end": 140.1,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/66/100"
+      ]
+    },
+    {
+      "boundary_id": "v2-0",
+      "axis": "vertical",
+      "row": 2,
+      "column": 0,
+      "position": 39.9,
+      "start": 140.1,
+      "end": 180.0,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/66/100"
+      ]
+    },
+    {
+      "boundary_id": "v3-0",
+      "axis": "vertical",
+      "row": 3,
+      "column": 0,
+      "position": 39.9,
+      "start": 180.0,
+      "end": 219.89999999999998,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/66/100"
+      ]
+    },
+    {
+      "boundary_id": "v0-1",
+      "axis": "vertical",
+      "row": 0,
+      "column": 1,
+      "position": 140.1,
+      "start": 60.0,
+      "end": 99.89999999999999,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/233/99"
+      ]
+    },
+    {
+      "boundary_id": "v1-1",
+      "axis": "vertical",
+      "row": 1,
+      "column": 1,
+      "position": 140.1,
+      "start": 99.89999999999999,
+      "end": 140.1,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/233/99"
+      ]
+    },
+    {
+      "boundary_id": "v2-1",
+      "axis": "vertical",
+      "row": 2,
+      "column": 1,
+      "position": 140.1,
+      "start": 140.1,
+      "end": 180.0,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/233/99"
+      ]
+    },
+    {
+      "boundary_id": "v3-1",
+      "axis": "vertical",
+      "row": 3,
+      "column": 1,
+      "position": 140.1,
+      "start": 180.0,
+      "end": 219.89999999999998,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/233/99"
+      ]
+    },
+    {
+      "boundary_id": "v0-2",
+      "axis": "vertical",
+      "row": 0,
+      "column": 2,
+      "position": 240.0,
+      "start": 60.0,
+      "end": 99.89999999999999,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/399/99",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/400/99"
+      ]
+    },
+    {
+      "boundary_id": "v1-2",
+      "axis": "vertical",
+      "row": 1,
+      "column": 2,
+      "position": 240.0,
+      "start": 99.89999999999999,
+      "end": 140.1,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/399/99",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/400/99"
+      ]
+    },
+    {
+      "boundary_id": "v2-2",
+      "axis": "vertical",
+      "row": 2,
+      "column": 2,
+      "position": 240.0,
+      "start": 140.1,
+      "end": 180.0,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/399/99",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/400/99"
+      ]
+    },
+    {
+      "boundary_id": "v3-2",
+      "axis": "vertical",
+      "row": 3,
+      "column": 2,
+      "position": 240.0,
+      "start": 180.0,
+      "end": 219.89999999999998,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/399/99",
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/400/99"
+      ]
+    },
+    {
+      "boundary_id": "v0-3",
+      "axis": "vertical",
+      "row": 0,
+      "column": 3,
+      "position": 339.9,
+      "start": 60.0,
+      "end": 99.89999999999999,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/566/99"
+      ]
+    },
+    {
+      "boundary_id": "v1-3",
+      "axis": "vertical",
+      "row": 1,
+      "column": 3,
+      "position": 339.9,
+      "start": 99.89999999999999,
+      "end": 140.1,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/566/99"
+      ]
+    },
+    {
+      "boundary_id": "v2-3",
+      "axis": "vertical",
+      "row": 2,
+      "column": 3,
+      "position": 339.9,
+      "start": 140.1,
+      "end": 180.0,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/566/99"
+      ]
+    },
+    {
+      "boundary_id": "v3-3",
+      "axis": "vertical",
+      "row": 3,
+      "column": 3,
+      "position": 339.9,
+      "start": 180.0,
+      "end": 219.89999999999998,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/566/99"
+      ]
+    },
+    {
+      "boundary_id": "v0-4",
+      "axis": "vertical",
+      "row": 0,
+      "column": 4,
+      "position": 440.09999999999997,
+      "start": 60.0,
+      "end": 99.89999999999999,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/733/100"
+      ]
+    },
+    {
+      "boundary_id": "v1-4",
+      "axis": "vertical",
+      "row": 1,
+      "column": 4,
+      "position": 440.09999999999997,
+      "start": 99.89999999999999,
+      "end": 140.1,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/733/100"
+      ]
+    },
+    {
+      "boundary_id": "v2-4",
+      "axis": "vertical",
+      "row": 2,
+      "column": 4,
+      "position": 440.09999999999997,
+      "start": 140.1,
+      "end": 180.0,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/733/100"
+      ]
+    },
+    {
+      "boundary_id": "v3-4",
+      "axis": "vertical",
+      "row": 3,
+      "column": 4,
+      "position": 440.09999999999997,
+      "start": 180.0,
+      "end": 219.89999999999998,
+      "coverage": 1.0,
+      "status": "present",
+      "line_ids": [
+        "sha256:9139a492245475dd0de3b7cfaeff1d6914522da78635955dc1d223ae1f4dc53c/p0001/raster/vertical/733/100"
+      ]
+    }
+  ],
+  "unresolved_boundaries": [],
+  "validation_issues": [],
+  "analysis_state": "validated"
+}

@@ -1,0 +1,193 @@
+{
+  "$defs": {
+    "Operation": {
+      "additionalProperties": false,
+      "properties": {
+        "schema_version": {
+          "const": "semantic-operation/1.0",
+          "default": "semantic-operation/1.0",
+          "title": "Schema Version",
+          "type": "string"
+        },
+        "registry_hash": {
+          "title": "Registry Hash",
+          "type": "string"
+        },
+        "operation": {
+          "enum": [
+            "ADD",
+            "REPLACE",
+            "ABSTAIN"
+          ],
+          "title": "Operation",
+          "type": "string"
+        },
+        "child": {
+          "title": "Child",
+          "type": "string"
+        },
+        "parent": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Parent"
+        },
+        "expected_parent": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Expected Parent"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "registry_hash",
+        "operation",
+        "child",
+        "reason"
+      ],
+      "title": "Operation",
+      "type": "object"
+    },
+    "RootClaim": {
+      "additionalProperties": false,
+      "properties": {
+        "node": {
+          "title": "Node",
+          "type": "string"
+        },
+        "support_nodes": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Support Nodes",
+          "type": "array"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "node",
+        "support_nodes",
+        "reason"
+      ],
+      "title": "RootClaim",
+      "type": "object"
+    },
+    "ShortAggregation": {
+      "additionalProperties": false,
+      "properties": {
+        "scope_id": {
+          "title": "Scope Id",
+          "type": "string"
+        },
+        "aggregate": {
+          "title": "Aggregate",
+          "type": "string"
+        },
+        "relation": {
+          "enum": [
+            "subtotal_of",
+            "total_of"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "members": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Members",
+          "type": "array"
+        },
+        "excluded": {
+          "default": [],
+          "items": {
+            "type": "string"
+          },
+          "title": "Excluded",
+          "type": "array"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        }
+      },
+      "required": [
+        "scope_id",
+        "aggregate",
+        "relation",
+        "members",
+        "reason"
+      ],
+      "title": "ShortAggregation",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "text-structure-response/1.0",
+      "default": "text-structure-response/1.0",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "registry_hash": {
+      "title": "Registry Hash",
+      "type": "string"
+    },
+    "context_digest": {
+      "title": "Context Digest",
+      "type": "string"
+    },
+    "operations": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/Operation"
+      },
+      "title": "Operations",
+      "type": "array"
+    },
+    "roots": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/RootClaim"
+      },
+      "title": "Roots",
+      "type": "array"
+    },
+    "aggregations": {
+      "default": [],
+      "items": {
+        "$ref": "#/$defs/ShortAggregation"
+      },
+      "title": "Aggregations",
+      "type": "array"
+    }
+  },
+  "required": [
+    "registry_hash",
+    "context_digest"
+  ],
+  "title": "ContextResponse",
+  "type": "object"
+}

@@ -1,0 +1,35 @@
+{
+  "note": "KB development source, original table and paragraph representations of the same amount. Test varies the reference location; no development dataset is modified.",
+  "source_file_sha256": "2c07ad681bdda083ca5f9e1974eed261135355d4b614e8564ce9d28aa89d94c1",
+  "documents": {
+    "kb": "sha256:aa706cd96524136e2b60a760e83a41a739e8ac31fca0ab4300e0d3c7c92d9460"
+  },
+  "source_excerpts": {
+    "sha256:aa706cd96524136e2b60a760e83a41a739e8ac31fca0ab4300e0d3c7c92d9460": {
+      "physical_tables": [
+        {
+          "page_number": 6,
+          "cells": [
+            {
+              "cell_id": "sha256:aa706cd96524136e2b60a760e83a41a739e8ac31fca0ab4300e0d3c7c92d9460/p0006/physical000/cell0012",
+              "original_text": "- 확정기여형, 개인형 퇴직연금 :\n이 퇴직연금은 예금자보호법에 따라 예금보호 대상 금융상품으로 운용되는\n적립금에 대하여 다른 보호상품과는 별도로 1인당 “1억원까지”(운용되는\n금융상품 판매회사별 보호상품 합산) 보호됩니다.",
+              "row_index": 5,
+              "rowspan": 1
+            }
+          ]
+        }
+      ],
+      "contents": [
+        {
+          "content_id": "sha256:aa706cd96524136e2b60a760e83a41a739e8ac31fca0ab4300e0d3c7c92d9460/p0006/b0043/line0",
+          "text_raw": "적립금에 대하여 다른 보호상품과는 별도로 1인당 “1억원까지”(운용되는 ",
+          "source_references": [
+            {
+              "page_number": 6
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>문서 검색</title>
+<!-- 글꼴(Pretendard)은 받아 오지 못해도 시스템 글꼴로 그대로 동작한다. -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="/search/assets/css/tokens.css?v=4">
+<link rel="stylesheet" href="/search/assets/css/base.css?v=4">
+<link rel="stylesheet" href="/search/assets/css/layout.css?v=4">
+<link rel="stylesheet" href="/search/assets/css/answer.css?v=4">
+<link rel="stylesheet" href="/search/assets/css/viewer.css?v=4">
+<link rel="stylesheet" href="/search/assets/css/documents.css?v=4">
+<link rel="stylesheet" href="/search/assets/css/dialogs.css?v=4">
+<link rel="stylesheet" href="/search/assets/css/responsive.css?v=4">
+<script>window.token="__TOKEN__";</script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 18-6-6 6-6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></symbol>
+</svg>
+<header class="top">
+  <div class="brand"><h1>문서 검색</h1><span class="muted" id="corpus-line" aria-live="polite">문서를 확인하는 중</span></div>
+  <nav class="tabs" role="tablist" aria-label="화면">
+    <button class="tab" role="tab" id="tab-ask" aria-controls="view-ask" aria-selected="true">질문</button>
+    <button class="tab" role="tab" id="tab-docs" aria-controls="view-docs" aria-selected="false">문서 <span class="count" id="docs-count"></span></button>
+  </nav>
+  <span class="spacer"></span>
+  <button class="btn primary" id="add-open" aria-haspopup="dialog"><svg class="icon"><use href="#i-plus"/></svg><span class="long">문서 추가</span><span class="dot" id="add-dot" hidden title="처리 중인 문서가 있습니다"></span></button>
+</header>
+
+<main id="view-ask" class="ask" role="tabpanel" aria-labelledby="tab-ask">
+  <div class="panel">
+    <div class="composer">
+      <fieldset id="ask-controls">
+        <div class="field">
+          <label for="question">질문</label>
+          <textarea id="question" maxlength="2000" placeholder="예: 강동농협의 2025년 영업이익은 얼마인가요?"></textarea>
+        </div>
+        <div class="row">
+          <button class="btn primary" id="ask">질문하기</button>
+          <span class="muted" id="scope-summary">전체 문서에서 검색</span>
+        </div>
+      </fieldset>
+      <div id="scope-chosen" class="scope-chips"></div>
+      <details id="filter-box" style="margin-top:12px"><summary>특정 문서에서만 찾기</summary>
+        <div class="row" style="margin-top:8px"><div class="search-box" style="max-width:none"><svg class="icon"><use href="#i-search"/></svg><input type="search" id="filter-text" placeholder="문서 이름" aria-label="문서 이름으로 찾기" maxlength="200"></div><button class="btn small" id="filter-clear">전체로 되돌리기</button></div>
+        <div id="filter-list" class="filter-list"></div>
+        <div class="row" style="margin-top:8px"><button class="btn small" id="filter-more" hidden>더 보기</button><span id="filter-count" class="muted"></span></div>
+      </details>
+      <p class="hint">질문과 검색된 문서 내용 일부가 OpenAI로 전송됩니다. 답변은 사람 검증 전 후보입니다. 인용 근거를 눌러 원문과 대조하세요.</p>
+      <div id="ask-error" class="notice error" role="alert" hidden></div>
+      <div id="progress" hidden><ol class="steps" id="steps" aria-label="처리 단계"></ol><span class="sr" id="progress-text" aria-live="polite"></span></div>
+    </div>
+    <div id="history-empty" class="empty turn"><h3>아직 질문이 없습니다</h3><p>문서를 고르지 않아도 됩니다. 검색 가능한 전체 문서에서 찾고, 답변에 쓴 근거를 원문과 함께 보여 줍니다.</p></div>
+    <div id="history" aria-live="polite"></div>
+  </div>
+  <section id="viewer" class="panel" aria-label="원문">
+    <div class="viewer-head"><h2 id="viewer-title">원문</h2>
+      <div class="row" id="viewer-controls" hidden style="gap:8px;flex-wrap:nowrap">
+        <button class="btn small" id="page-cited" hidden><svg class="icon"><use href="#i-target"/></svg>인용 쪽</button>
+        <button class="btn small icon-only" id="page-prev" aria-label="이전 쪽"><svg class="icon"><use href="#i-left"/></svg></button>
+        <span id="page-label" class="muted" style="white-space:nowrap"></span>
+        <button class="btn small icon-only" id="page-next" aria-label="다음 쪽"><svg class="icon"><use href="#i-right"/></svg></button>
+        <input type="range" id="zoom" min="60" max="220" value="100" aria-label="원문 크기" style="width:90px">
+      </div></div>
+    <div class="viewer-body">
+      <div id="viewer-empty" class="empty" style="padding:24px 8px"><h3>인용 근거를 누르면 원문이 열립니다</h3><p>해당 문서의 쪽과 근거 위치, 표에서는 인용 칸과 같은 행·열을 함께 볼 수 있습니다.</p></div>
+      <div id="viewer-note" class="notice warn" hidden></div>
+      <div id="viewer-quote" hidden></div>
+      <div id="page-wrap" class="page-wrap" hidden></div>
+      <div id="viewer-structure"></div>
+    </div>
+  </section>
+</main>
+
+<main id="view-docs" class="docs" role="tabpanel" aria-labelledby="tab-docs" hidden>
+  <div class="docs-bar">
+    <div class="search-box"><svg class="icon"><use href="#i-search"/></svg><input type="search" id="docs-search" placeholder="문서 이름으로 찾기" aria-label="문서 이름으로 찾기" maxlength="200"></div>
+    <span class="muted" id="docs-summary" aria-live="polite"></span>
+  </div>
+  <div class="panel">
+    <div class="doc-head"><span>문서</span><span>쪽수</span><span>상태</span><span></span></div>
+    <ul class="doc-list" id="docs-list"></ul>
+  </div>
+  <nav class="pager" id="docs-pager" aria-label="문서 목록 쪽"></nav>
+  <div id="docs-error" class="notice error" role="alert" hidden style="margin-top:16px"></div>
+</main>
+
+<dialog id="reader" aria-labelledby="reader-title">
+  <div class="dlg-head">
+    <h2 id="reader-title">문서</h2>
+    <div class="reader-tools" id="reader-tools">
+      <label class="sr" for="reader-page">쪽 번호</label><input type="number" id="reader-page" min="1" value="1"><span id="reader-total"></span>
+      <input type="range" id="reader-zoom" min="50" max="200" value="100" aria-label="크기" style="width:90px">
+    </div>
+    <button class="btn small icon-only" id="reader-close" aria-label="닫기"><svg class="icon"><use href="#i-x"/></svg></button>
+  </div>
+  <div class="stage" id="reader-stage">
+    <button class="nav prev" id="reader-prev" aria-label="이전 쪽"><svg class="icon"><use href="#i-left"/></svg></button>
+    <button class="nav next" id="reader-next" aria-label="다음 쪽"><svg class="icon"><use href="#i-right"/></svg></button>
+  </div>
+</dialog>
+
+<dialog id="adder" aria-labelledby="adder-title">
+  <div class="dlg-head"><h2 id="adder-title">문서 추가</h2><button class="btn small icon-only" id="adder-close" aria-label="닫기"><svg class="icon"><use href="#i-x"/></svg></button></div>
+  <div class="dlg-body">
+    <div class="drop" id="drop">
+      <label class="label" for="file">파일 선택</label>
+      <input type="file" id="file" accept=".pdf,.png,.jpg,.jpeg">
+      <span class="muted">PDF, PNG, JPG. 20MB, 20쪽 이하. 여기로 끌어다 놓아도 됩니다.</span>
+    </div>
+    <label><input type="checkbox" id="auto-ingest" checked> 분석이 끝나면 바로 검색 준비</label>
+    <div class="row"><button id="upload" class="btn primary">올리기</button></div>
+    <p class="hint" style="margin:0">올리면 분석, 검색 준비(구조 검토, 색인, 임베딩) 순서로 진행되고 "검색 가능"이 되면 질문에 쓰입니다. 검색 준비 때 문서 내용이 OpenAI로 전송됩니다. 준비 중에도 질문은 할 수 있습니다.</p>
+    <div id="upload-error" class="notice error" role="alert" hidden></div>
+    <div id="uploads" aria-live="polite"></div>
+    <details id="pending-box"><summary>검색에 아직 없는 분석 완료 문서 <span id="pending-count"></span></summary><div id="pending" class="pending"></div></details>
+  </div>
+</dialog>
+<script type="module" src="/search/assets/js/main.js?v=4"></script>
+</body>
+</html>
